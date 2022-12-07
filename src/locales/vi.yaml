@@ -1,0 +1,257 @@
+commands:
+  start: Bắt đầu (tin nhắn chào mừng)
+  settings: Cài đặt
+  help: Giúp đỡ
+
+labels:
+  ACCOUNTS: 💳 Tài Khoản
+  ADD_CATEGORIES: ➕ Thêm danh mục
+  CANCEL: ✖ Hủy bỏ
+  CATEGORIES: 🔖 Danh mục
+  CHANGE_CATEGORY: 🔖 Danh mục
+  CHANGE_DATE: 📆 Lịch
+  CHANGE_AMOUNT: 💸 Số tiền
+  CHANGE_DESCRIPTION: 📝 Ghi chú
+  CHANGE_REVENUE_ACCOUNT: 🏦 Thu nhập
+  CHANGE_EXPENSE_ACCOUNT: 🏛️ Chi tiêu
+  CHANGE_ASSET_ACCOUNT: 💳 Tài khoản
+  CLASSIFICATION: 🏷️  Phần loại
+  CLOSE: 🔙 Quay lại
+  DECLINE_CATEGORIES_LIST: ✏️ Không, thử lại
+  DEFAULT_ASSET_ACCOUNT_BUTTON: 💳 Tài khoản mặc định
+  DELETE: ❌ Xóa
+  DONE: ✅ OK
+  EDIT_TRANSACTION: ✏️ Chỉnh sửa
+  FIREFLY_ACCESS_TOKEN_BUTTON: 🔑 Access Token
+  FIREFLY_URL_BUTTON: 🔗 Firefly URL
+  LIST_TAGS: 🏷️  Thẻ
+  RENAME_CATEGORY: ✏️ Đổi tên
+  REPORTS: 📈 Báo cáo
+  SETTINGS: 🔧 Cài đặt
+  TEST_CONNECTION: 🔌 Kiểm tra kết nối
+  TO_WITHDRAWALS: 📤 Chi tiền
+  TO_DEPOSITS: 📥 Thu tiền
+  TO_TRANSFERS: ↔️ Chuyển tiền
+  TRANSACTIONS: 🔀 Giao dịch
+  YES: ✅ Đúng
+  SWITCH_TO_ENGLISH: 🇬🇧 Đổi sang tiếng Anh
+  SWITCH_TO_RUSSIAN: 🇷🇺 Đổi sang tiếng Nga
+  SWITCH_TO_VIETNAMESE: 🇻🇳 Đổi sang tiếng Việt
+
+welcome: >
+  👋 Xin chào! Tôi là bot và tôi sẽ giúp nhanh chóng thêm các giao dịch trong Firefly III.
+
+  Tôi cũng có thể quản lý một số cài đặt của Firefly.
+needToSet: 'Để bắt đầu làm việc với bot, bạn cần chỉ định những điều sau:'
+setFireflyUrl: '  - *🔗 Firefly URL* - Địa chỉ URL của phiên bản Firefly III của bạn'
+setFireflyAccessToken: '  - *🔑 Access Token* được tạo trong giao diện web Firefly III'
+navigateToSettings: Để tiếp tục đi đến *🔧 Cài đặt*.
+
+help: >
+  ❕ Để thêm một giao dịch, hãy gửi một số tiền. Nó có thể là một số, hoặc một biểu thức toán học,
+  như `100-5*3`.
+  Khi nhận được số tiền, bot sẽ đặt câu hỏi bổ sung cho các thông số giao dịch.
+    
+  Bạn cũng có thể thêm các giao dịch không yêu cầu thêm câu hỏi từ bot,
+  bằng cách gửi mô tả giao dịch và số tiền, như vậy
+    
+  `Cafe 35`
+    
+  Trong trường hợp này, một giao dịch rút tiền mới từ tài khoản tài sản mặc định và
+  mô tả `Cafe` với số lượng `35` sẽ được tạo.
+    
+  ✨ Ngoài ra, bạn có thể thiết lập các *Quy tắc* khác nhau trong phần tương ứng của
+  Firefly III, trong trường hợp đó, tất cả các giao dịch bot của bạn sẽ được tạo theo các giao dịch đó
+  quy tắc.
+
+common:
+  errorOccurred: Đã xảy ra lỗi!
+
+mdlwr:
+  noFireflyURLFound: Để làm việc với bot, bạn cần chỉ định *🔗 Firefly URL* trong *🔧 Cài Đặt*.
+  noFireflyAccessTokenFound: Để làm việc với bot, bạn cần chỉ định một *🔑 Access Token* hợp lệ trong *🔧 Cài Đặt*.
+settings:
+  notSpecified: '🚨 <CHƯA TỒN TẠI>'
+  inputFireflyUrl: >
+    Nhập địa chỉ URL của phiên bản Firefly III của bạn.
+    Nó phải ở định dạng sau: *https://firefly.example.com*
+    hoặc cái này: *http://localhost:8080*
+  inputFireflyAccessToken: >
+    Dán Mã truy cập cá nhân của bạn.
+    Bạn có thể tạo và sao chép nó từ giao diện web Firefly III:
+    *Tùy chọn → Hồ sơ → OAuth → Tạo mã thông báo mới*
+  defaultAssetAccountSet: Tài khoản mặc định của bạn đã được chọn.
+  whatDoYouWantToChange: >
+    🔧 *Cài Đặt*  
+       
+    Bạn muốn thay đổi gì?  
+       
+    *🔗 Firefly URL*: ${fireflyUrl || '🚨 <CHƯA TỒN TẠI>'}
+
+    *🔑 Access Token*: ${accessToken || '🚨 <CHƯA TỒN TẠI>'}
+
+    *💳 Tài khoản mặc định*: ${defaultAssetAccount || '🚨 <CHƯA TỒN TẠI>'}
+
+    *🌐 Ngôn ngữ*: ${language}
+  selectDefaultAssetAccount: >
+    Chọn một tài khoản nội dung sẽ được sử dụng làm tài khoản mặc định để rút tiền.
+    Nếu không đặt chính sách này, tài khoản nội dung đầu tiên trong danh sách bên dưới sẽ được sử dụng bởi
+    mặc định với mỗi lần rút tiền.
+  specifySmthFirst: Nhập ${smth} trước.
+  connectionFailed: Kết nối CHƯA được thiết lập!
+  connectionSuccess: >
+    Kết nối thành công!
+
+    Chào, ${email}!
+  badAccessToken: Thứ bạn đã nhập vào không phải Access Token. Xin vui lòng thử lại.
+  badUrl: >
+    Thứ bạn đã nhập vào không phải địa chỉ URL. Xin vui lòng thử lại.
+    Nhập địa chỉ URL của phiên bản Firefly III của bạn, ví dụ: https://firefly.example.com:
+
+accounts:
+  labels:
+    asset: Tài khoản
+    expense: Tài khoản chi tiêu
+    revenue: Tài khoản thu nhập
+    liability: Nợ phải trả
+  list:
+    noAccounts: Chưa có tài khoản nào 🤷
+    asset: >
+      Số dư tài khoản của bạn:
+       
+      <pre>${accounts.replace(/\n$/, '')}
+      
+      ──────────────────
+      
+      TỔNG: ${sums ? sums : '0'}</pre>
+    expense: >
+      Số dư tài khoản chi tiêu của bạn:
+       
+      <pre>${accounts.replace(/\n$/, '')}
+      
+      ──────────────────
+      
+      TỔNG: ${sums ? sums : '0'}</pre>
+    revenue: >
+      Số dư tài khoản thu nhập của bạn:
+       
+      <pre>${accounts.replace(/\n$/, '')}
+      
+      ──────────────────
+      
+      TỔNG: ${sums ? sums : '0'}</pre>
+    liability: >
+      Nợ của bạn:
+       
+      <pre>${accounts.replace(/\n$/, '')}
+      
+      ──────────────────
+      
+      TỔNG: ${sums ? sums : '0'}</pre>
+
+transactions:
+  list:
+    withdrawal: >
+      Bạn đã rút tiền trong ngày <b>${day}</b>:  
+        
+      <pre>${transactions.replace(/\n$/, '')}
+      
+      ──────────────────
+      
+      TỔNG: ${sums ? sums : '0'}</pre>
+    deposit: >
+      Bạn đã nhận tiền trong ngày <b>${day}</b>:  
+        
+      <pre>${transactions.replace(/\n$/, '')}
+      
+      ──────────────────
+      
+      TỔNG: ${sums ? sums : '0'}</pre>
+    transfer: >
+      Giao dịch của bạn ngày <b>${day}</b>:  
+        
+      <pre>${transactions.replace(/\n$/, '')}</pre>
+    noTransactions: 🤷 Không có giao dịch nào cả
+  add:
+    dontUnderstand: >
+      🤖 Tôi không hiểu.
+      Nhập số tiền giao dịch, nó phải là một con số! 😉
+    withdrawalMessage: >
+      📆 ${date}  
+        
+      📤 Đã thêm ${description === 'N/A' ? '' : '*' + description + '*'}
+      *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* *${currency}*${category ? ' vào danh mục *' + category + '*' : ''}  
+
+      ${source} ➡️ ${destination}
+        
+      id: ${trId}
+    depositMessage: >
+      📆 ${date}  
+       
+      📥 Đã thêm ${description === 'N/A' ? '' : '*' + description + '* '}
+      *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* *${currency}*
+      
+      ${source} ➡️ ${destination}
+    transferMessage: >
+      📆 ${date}  
+         
+      ↔️ Chuyển *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* *${currency}* từ tài khoản *${source}* đến tài khoản *${destination}*
+    selectCategory: 'Bạn muốn thêm *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* vào danh mục:'
+    transactionDeleted: Giao dịch đã được xóa!
+    couldNotDelete: 'Không thể xóa giao dịch với id: ${id}'
+    selectRevenueAccount: 'Chọn một tài khoản để rút *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}*:'
+    selectAssetAccount: 'Chọn tài khoản để thêm *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}*:'
+    selectSourceAccount: 'Chọn tài khoản để chuyển *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* đến:'
+    selectDestAccount: 'Chọn tài khoản để chuyển đến:'
+    transactionError: '❗😰 Đã xảy ra lỗi trong quá trình tạo giao dịch: *${message}*'
+    created: Giao dịch đã được tạo!
+
+  edit:
+    whatToEdit: ❓Bạn muốn thay đổi cái gì?
+    updated: Giao dịch đã cập nhật!
+    badAmountTyped: 'Số tiền phải là một con số, vui lòng nhập lại:'
+    badDescriptionTyped: 'Ghi chú phải làm một tin nhắn, nhập lại nhé:'
+    typeNewAmount: 'Nhập số tiền mới:'
+    typeNewDescription: 'Nhập ghi chú mới:'
+    chooseNewCategory: 'Chọn danh mục mới:'
+    chooseNewAssetAccount: 'Chọn tài khoản mới:'
+    chooseNewExpenseAccount: 'Chọn tài khoản chi tiêu mới:'
+    chooseNewRevenueAccount: 'Chọn tài khoản thu nhập mới:'
+
+categories:
+  listEmpty: Không có danh mục nào để hiển thị.
+  list: >
+    Để xem các giao dịch cho một danh mục cụ thể, hãy chọn danh mục đó từ danh sách bên dưới. 
+    Bạn cũng có thể đổi tên hoặc xóa danh mục sau khi đã chọn.
+  typeCategories: >
+    Nhập các danh mục mới của bạn để mỗi danh mục nằm trên một dòng riêng, ví dụ:
+       
+    💡 Tiện ích
+
+    👕 Quần áo và giày dép
+
+    🥦 Tạp hóa
+      
+    *P.S.*: Tên chuyên mục có thể thay đổi sau.
+
+    *P.P.S.*: Đã tồn tại danh mục trùng tên thì không sao.  
+  typeNewName: 'Nhập vào tên danh mục:'
+  confirmNewCategory: >
+    Điều này sẽ tạo thêm ${categories.length} danh mục mới:
+
+    ${categories.join('\n')}
+
+    Bạn chắc chắn chứ?
+  confirmDeletion: >
+    Bạn có chắc chắn muốn xóa danh mục này không?
+    Các giao dịch tương ứng sẽ không bị xóa. Chúng có thể được tìm thấy trong phần *🔀 Giao dịch*.  
+  deleted: Đã xóa danh mục!
+  noTransactions: 🤷 Không có giao dịch nào cả
+  transactionsList: >
+    <b>${categoryName}</b> đã chi tiêu trong tháng <b>${monthName}</b>:  
+      
+    <pre>${transactions.replace(/\n$/, '')}
+    
+    ──────────────────
+    
+    TỔNG: ${sums ? sums : '0'}</pre>
