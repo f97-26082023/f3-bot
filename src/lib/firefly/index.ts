@@ -30,5 +30,6 @@ export default function firefly(userId: number) {
     Categories: api.CategoriesApiFactory(configuration),
     Insight: api.InsightApiFactory(configuration),
     Transactions: api.TransactionsApiFactory(configuration),
+    Charts: api.ChartsApiFactory(configuration),
   }
 }
