@@ -3,21 +3,21 @@ import Debug from 'debug'
 import { Composer, InlineKeyboard } from 'grammy'
 import { table, getBorderCharacters } from 'table'
 
-import type { MyContext } from '../../types/MyContext'
-import i18n from '../../lib/i18n'
+import type { F3Context } from '../../types/F3Context'
+import i18n from '../../libs/i18n'
 import {
   listTransactionsMapper as mapper
 } from '../helpers'
 
-import firefly from '../../lib/firefly'
-import { TransactionRead } from '../../lib/firefly/model/transaction-read'
-import { TransactionTypeFilter } from '../../lib/firefly/model/transaction-type-filter'
-import { TransactionTypeProperty } from '../../lib/firefly/model'
-import { getUserStorage } from '../../lib/storage'
+import firefly from '../../libs/firefly'
+import { TransactionRead } from '../../libs/firefly/model/transaction-read'
+import { TransactionTypeFilter } from '../../libs/firefly/model/transaction-type-filter'
+import { TransactionTypeProperty } from '../../libs/firefly/model'
+import { getUserStorage } from '../../libs/storage'
 
 const debug = Debug(`bot:transactions:list`)
 
-const bot = new Composer<MyContext>()
+const bot = new Composer<F3Context>()
 
 // List transactions
 bot.hears(i18n.t('en', 'labels.TRANSACTIONS'), showTransactions)
@@ -27,7 +27,7 @@ bot.callbackQuery(mapper.close.regex(), closeHandler)
 
 export default bot
 
-async function showTransactions(ctx: MyContext) {
+async function showTransactions(ctx: F3Context) {
   const log = debug.extend('showTransactions')
   log(`Entered showTransactions callback handler...`)
   try {
@@ -84,7 +84,7 @@ async function showTransactions(ctx: MyContext) {
   }
 }
 
-async function closeHandler(ctx: MyContext) {
+async function closeHandler(ctx: F3Context) {
   const log = debug.extend('closeHandler')
   log('ctx.session: %O', ctx.session)
   await ctx.answerCallbackQuery()
@@ -93,7 +93,7 @@ async function closeHandler(ctx: MyContext) {
   return ctx.deleteMessage()
 }
 
-function formatTransactions(ctx: MyContext, transactions: TransactionRead[]) {
+function formatTransactions(ctx: F3Context, transactions: TransactionRead[]) {
   const log = debug.extend('formatTransactions')
   if (transactions.length === 0) return ctx.i18n.t('transactions.list.noTransactions')
   const { language } = getUserStorage(ctx.from!.id)
@@ -145,7 +145,7 @@ function formatTransactions(ctx: MyContext, transactions: TransactionRead[]) {
 }
 
 function createTransactionsNavigationKeyboard(
-  ctx: MyContext, curDay: string, trType: TransactionTypeFilter
+  ctx: F3Context, curDay: string, trType: TransactionTypeFilter
 ): InlineKeyboard {
   const log = debug.extend('createTransactionsNavigationKeyboard')
   const prevDay = moment(curDay).subtract(1, 'day')
@@ -196,7 +196,7 @@ function createTransactionsNavigationKeyboard(
 
 // Assumed that transactions is a list of only one particular transaction type
 function formatTransactionMessage(
-  ctx: MyContext, day: string, trType: TransactionTypeFilter, transactions: TransactionRead[]
+  ctx: F3Context, day: string, trType: TransactionTypeFilter, transactions: TransactionRead[]
 ) {
   const log = debug.extend('formatTransactionMessage')
   const sumsObject = transactions.reduce((res, t) => {

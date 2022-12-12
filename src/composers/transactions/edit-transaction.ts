@@ -2,7 +2,7 @@ import debug from 'debug'
 import { Composer, InlineKeyboard } from 'grammy'
 import { Router } from "@grammyjs/router"
 
-import type { MyContext } from '../../types/MyContext'
+import type { F3Context } from '../../types/F3Context'
 import {
   editTransactionsMapper as mapper,
   parseAmountInput,
@@ -14,8 +14,8 @@ import {
   createEditMenuKeyboard
 } from '../helpers'
 
-import firefly from '../../lib/firefly'
-import { AccountTypeFilter } from '../../lib/firefly/model/account-type-filter'
+import firefly from '../../libs/firefly'
+import { AccountTypeFilter } from '../../libs/firefly/model/account-type-filter'
 
 export enum Route {
   IDLE               = 'IDLE',
@@ -25,8 +25,8 @@ export enum Route {
 
 const rootLog = debug(`bot:transactions:edit`)
 
-const bot = new Composer<MyContext>()
-const router = new Router<MyContext>((ctx) => ctx.session.step)
+const bot = new Composer<F3Context>()
+const router = new Router<F3Context>((ctx) => ctx.session.step)
 
 // Common for all transaction types
 bot.callbackQuery(mapper.editMenu.regex(), showEditTransactionMenu)
@@ -60,7 +60,7 @@ bot.use(router)
 
 export default bot
 
-async function showEditTransactionMenu(ctx: MyContext) {
+async function showEditTransactionMenu(ctx: F3Context) {
   const log = rootLog.extend('showEditTransactionMenu')
   log('Entered showEditTransactionMenu action handler')
   try {
@@ -87,7 +87,7 @@ async function showEditTransactionMenu(ctx: MyContext) {
     // another one with the updated transaction data. This function is meant to
     // be called only from the route handler functions where a user types in
     // things as opposed to clicking on inline keyboard buttons.
-    ctx.session.deleteBotsMessage = (function(ctx: MyContext) {
+    ctx.session.deleteBotsMessage = (function(ctx: F3Context) {
       const messageId = ctx.update?.callback_query?.message!.message_id || 0
       const chatId = ctx.update?.callback_query?.message!.chat.id || 0
       return function() {
@@ -115,7 +115,7 @@ async function showEditTransactionMenu(ctx: MyContext) {
   }
 }
 
-async function doneEditTransactionCbQH(ctx: MyContext) {
+async function doneEditTransactionCbQH(ctx: F3Context) {
   const log = rootLog.extend('doneEditTransactionCbQH')
   try {
     const userId = ctx.from!.id
@@ -137,7 +137,7 @@ async function doneEditTransactionCbQH(ctx: MyContext) {
   }
 }
 
-async function changeTransactionAmountCbQH(ctx: MyContext) {
+async function changeTransactionAmountCbQH(ctx: F3Context) {
   const log = rootLog.extend('changeTransactionAmount')
   log('Entered changeTransactionAmount action handler')
   try {
@@ -156,7 +156,7 @@ async function changeTransactionAmountCbQH(ctx: MyContext) {
   }
 }
 
-async function changeTransactionDescriptionCbQH(ctx: MyContext) {
+async function changeTransactionDescriptionCbQH(ctx: F3Context) {
   const log = rootLog.extend('changeTransactionDescription')
   log('Entered changeTransactionDescription action handler')
   try {
@@ -175,7 +175,7 @@ async function changeTransactionDescriptionCbQH(ctx: MyContext) {
   }
 }
 
-async function changeAmountRouteHandler(ctx: MyContext) {
+async function changeAmountRouteHandler(ctx: F3Context) {
   const log = rootLog.extend('changeAmountRouteHandler')
   log('Entered change amount route handler')
   try {
@@ -215,7 +215,7 @@ async function changeAmountRouteHandler(ctx: MyContext) {
   }
 }
 
-async function changeDescriptionRouteHandler(ctx: MyContext) {
+async function changeDescriptionRouteHandler(ctx: F3Context) {
   const log = rootLog.extend('changeDescriptionRouteHandler')
   log('Entered change description route handler')
   try {
@@ -254,7 +254,7 @@ async function changeDescriptionRouteHandler(ctx: MyContext) {
   }
 }
 
-async function selectNewCategory(ctx: MyContext) {
+async function selectNewCategory(ctx: F3Context) {
   const log = rootLog.extend('selectNewCategory')
   log('Entered selectNewCategory action handler')
   try {
@@ -279,7 +279,7 @@ async function selectNewCategory(ctx: MyContext) {
   }
 }
 
-async function selectNewAssetAccount(ctx: MyContext) {
+async function selectNewAssetAccount(ctx: F3Context) {
   const log = rootLog.extend('selectNewAssetAccount')
   log('Entered selectNewAssetAccount action handler')
   try {
@@ -308,7 +308,7 @@ async function selectNewAssetAccount(ctx: MyContext) {
   }
 }
 
-async function selectNewDepositAssetAccount(ctx: MyContext) {
+async function selectNewDepositAssetAccount(ctx: F3Context) {
   const log = rootLog.extend('selectNewDepositAssetAccount')
   log('Entered selectNewDepositAssetAccount action handler')
   try {
@@ -337,7 +337,7 @@ async function selectNewDepositAssetAccount(ctx: MyContext) {
   }
 }
 
-async function selectNewExpenseAccount(ctx: MyContext) {
+async function selectNewExpenseAccount(ctx: F3Context) {
   const log = rootLog.extend('selectNewExpenseAccount')
   log('Entered selectNewExpenseAccount action handler')
   try {
@@ -359,7 +359,7 @@ async function selectNewExpenseAccount(ctx: MyContext) {
   }
 }
 
-async function selectNewRevenueAccount(ctx: MyContext) {
+async function selectNewRevenueAccount(ctx: F3Context) {
   const log = rootLog.extend('selectNewRevenueAccount')
   log('Entered selectNewRevenueAccount action handler')
   try {
@@ -385,7 +385,7 @@ async function selectNewRevenueAccount(ctx: MyContext) {
   }
 }
 
-async function setNewCategory(ctx: MyContext) {
+async function setNewCategory(ctx: F3Context) {
   const log = rootLog.extend('setNewCategory')
   log('Entered editTransactionCategory action handler')
   try {
@@ -412,7 +412,7 @@ async function setNewCategory(ctx: MyContext) {
   }
 }
 
-async function setNewAssetAccount(ctx: MyContext) {
+async function setNewAssetAccount(ctx: F3Context) {
   const log = rootLog.extend('setNewAssetAccount')
   log('Entered setNewAssetAccount action handler')
   try {
@@ -439,7 +439,7 @@ async function setNewAssetAccount(ctx: MyContext) {
   }
 }
 
-async function setNewExpenseAccount(ctx: MyContext) {
+async function setNewExpenseAccount(ctx: F3Context) {
   const log = rootLog.extend('setNewExpenseAccount')
   log('Entered setNewExpenseAccount action handler')
   try {
@@ -466,7 +466,7 @@ async function setNewExpenseAccount(ctx: MyContext) {
   }
 }
 
-async function setNewRevenueAccount(ctx: MyContext) {
+async function setNewRevenueAccount(ctx: F3Context) {
   const log = rootLog.extend('setNewRevenueAccount')
   log('Entered setNewRevenueAccount action handler')
   try {
@@ -492,7 +492,7 @@ async function setNewRevenueAccount(ctx: MyContext) {
   }
 }
 
-async function setNewDepositAssetAccount(ctx: MyContext) {
+async function setNewDepositAssetAccount(ctx: F3Context) {
   const log = rootLog.extend('setNewDepositAssetAccount')
   log('Entered setNewDepositAssetAccount action handler')
   try {

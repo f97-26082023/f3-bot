@@ -5,11 +5,11 @@ import { table, getBorderCharacters } from 'table'
 import { Composer, InlineKeyboard } from 'grammy'
 import { Router } from "@grammyjs/router"
 
-import type { MyContext } from '../types/MyContext'
-import i18n from '../lib/i18n';
-import firefly from '../lib/firefly'
-import { TransactionRead } from '../lib/firefly/model/transaction-read'
-import { getUserStorage } from '../lib/storage'
+import type { F3Context } from '../types/F3Context'
+import i18n from '../libs/i18n';
+import firefly from '../libs/firefly'
+import { TransactionRead } from '../libs/firefly/model/transaction-read'
+import { getUserStorage } from '../libs/storage'
 
 export enum Route {
   IDLE            = 'IDLE',
@@ -29,8 +29,8 @@ const DO_DELETE               = /^DO_DELETE_ID=(.+)/
 const CONFIRM_CATEGORIES_LIST = 'CONFIRM_CATEGORIES_LIST'
 const DECLINE_CATEGORIES_LIST = 'DECLINE_CATEGORIES_LIST'
 
-const bot = new Composer<MyContext>()
-const router = new Router<MyContext>((ctx) => ctx.session.step)
+const bot = new Composer<F3Context>()
+const router = new Router<F3Context>((ctx) => ctx.session.step)
 
 bot.hears(i18n.t('en', 'labels.CATEGORIES'), listCategoriesCommandHandler)
 bot.hears(i18n.t('vi', 'labels.CATEGORIES'), listCategoriesCommandHandler)
@@ -50,7 +50,7 @@ bot.use(router)
 
 export default bot
 
-async function listCategoriesCommandHandler(ctx: MyContext) {
+async function listCategoriesCommandHandler(ctx: F3Context) {
   const log = rootLog.extend('listCategoriesCommandHandler')
   log(`Entered the listCategoriesCommandHandler...`)
   try {
@@ -60,7 +60,7 @@ async function listCategoriesCommandHandler(ctx: MyContext) {
   }
 }
 
-async function addCategoriesCbQH(ctx: MyContext) {
+async function addCategoriesCbQH(ctx: F3Context) {
   const log = rootLog.extend('addCategoriesCbQH')
   log(`Entered the ${ADD_CATEGORIES} callback query handler`)
   try {
@@ -79,7 +79,7 @@ async function addCategoriesCbQH(ctx: MyContext) {
   }
 }
 
-async function typeNewCategoryName(ctx: MyContext) {
+async function typeNewCategoryName(ctx: F3Context) {
   const log = rootLog.extend('typeNewCategoryName')
   log('Entered the typeNewCategoryName...')
   try {
@@ -107,7 +107,7 @@ async function typeNewCategoryName(ctx: MyContext) {
   }
 }
 
-async function confirmDeletionCategoryCbQH(ctx: MyContext) {
+async function confirmDeletionCategoryCbQH(ctx: F3Context) {
   const log = rootLog.extend('confirmDeletionCategoryCbQH')
   log('Entered the confirmDeletionCategoryCbQH...')
   try {
@@ -131,7 +131,7 @@ async function confirmDeletionCategoryCbQH(ctx: MyContext) {
   }
 }
 
-async function doDeleteCategoryCbQH(ctx: MyContext) {
+async function doDeleteCategoryCbQH(ctx: F3Context) {
   const log = rootLog.extend('doDeleteCategoryCbQH')
   log('Entered the doDeleteCategoryCbQH...')
   try {
@@ -152,7 +152,7 @@ async function doDeleteCategoryCbQH(ctx: MyContext) {
   }
 }
 
-function addCategoriesRouteHandler(ctx: MyContext) {
+function addCategoriesRouteHandler(ctx: F3Context) {
   const log = rootLog.extend('addCategoriesRouteHandler')
   log('Entered addCategoriesRouteHandler...')
   try {
@@ -179,7 +179,7 @@ function addCategoriesRouteHandler(ctx: MyContext) {
   }
 }
 
-async function newCategoryNameRouteHandler(ctx: MyContext) {
+async function newCategoryNameRouteHandler(ctx: F3Context) {
   const log = rootLog.extend('newCategoryNameRouteHandler')
   log('Entered newCategoryNameRouteHandler...')
   try {
@@ -196,7 +196,7 @@ async function newCategoryNameRouteHandler(ctx: MyContext) {
   }
 }
 
-async function cancelCbQH(ctx: MyContext) {
+async function cancelCbQH(ctx: F3Context) {
   const log = rootLog.extend('cancelCbQH')
   try {
     log('Cancelling...: ')
@@ -208,7 +208,7 @@ async function cancelCbQH(ctx: MyContext) {
   }
 }
 
-async function closeHandler(ctx: MyContext) {
+async function closeHandler(ctx: F3Context) {
   const log = rootLog.extend('closeHandler')
   log('ctx.session: %O', ctx.session)
   ctx.session.step = Route.IDLE
@@ -224,7 +224,7 @@ function parseCategoriesInput(input: string) {
   return splitted.filter(e => String(e).trim())
 }
 
-async function confirmCategoriesCbQH(ctx: MyContext) {
+async function confirmCategoriesCbQH(ctx: F3Context) {
   const log = rootLog.extend('confirmCategoriesCbQH')
   try {
     log('Creating categories in firefly(userId): %O', ctx.session.newCategories)
@@ -241,7 +241,7 @@ async function confirmCategoriesCbQH(ctx: MyContext) {
   }
 }
 
-async function replyWithListOfCategories(ctx: MyContext) {
+async function replyWithListOfCategories(ctx: F3Context) {
   const log = rootLog.extend('replyWithListOfCategories')
   log('ctx: %O', ctx)
   try {
@@ -274,7 +274,7 @@ async function replyWithListOfCategories(ctx: MyContext) {
   }
 }
 
-export async function createCategoriesInlineKeyboard(ctx: MyContext): Promise<InlineKeyboard> {
+export async function createCategoriesInlineKeyboard(ctx: F3Context): Promise<InlineKeyboard> {
   const log = rootLog.extend('createCategoriesInlineKeyboard')
   try {
     const userId = ctx.from!.id
@@ -304,7 +304,7 @@ export async function createCategoriesInlineKeyboard(ctx: MyContext): Promise<In
   }
 }
 
-async function showCategoryDetails(ctx: MyContext) {
+async function showCategoryDetails(ctx: F3Context) {
   const log = rootLog.extend('showCategoryDetails')
   try {
     await ctx.answerCallbackQuery()
@@ -365,7 +365,7 @@ async function showCategoryDetails(ctx: MyContext) {
   }
 }
 
-function formatTransactions(ctx: MyContext, transactions: TransactionRead[]) {
+function formatTransactions(ctx: F3Context, transactions: TransactionRead[]) {
   const log = rootLog.extend('formatTransactions')
   if (transactions.length === 0) return ctx.i18n.t('categories.noTransactions')
   log('transactions: %O', transactions[0].attributes)
@@ -396,7 +396,7 @@ function formatTransactions(ctx: MyContext, transactions: TransactionRead[]) {
 }
 
 function createSingleCategoryKeyboard(
-  ctx: MyContext,
+  ctx: F3Context,
   curMonth: string,
   categoryId: string | number
 ): InlineKeyboard {

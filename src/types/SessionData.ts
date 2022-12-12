@@ -1,11 +1,11 @@
-// import { ITransaction } from '../lib/firefly/transactions'
-// import { ICategory } from '../lib/firefly/categories'
+// import { ITransaction } from '../libs/firefly/transactions'
+// import { ICategory } from '../libs/firefly/categories'
 // import { Route } from '../index'
 import { Route as SettingsRoute } from '../composers/settings'
 import { Route as CategoriesRoute } from '../composers/categories'
 import { Route as EditTransactionRoute } from '../composers/transactions/edit-transaction'
-import { TransactionStore } from '../lib/firefly/model/transaction-store'
-import { TransactionRead } from '../lib/firefly/model/transaction-read'
+import { TransactionStore } from '../libs/firefly/model/transaction-store'
+import { TransactionRead } from '../libs/firefly/model/transaction-read'
 
 export interface SessionData {
   step: 'IDLE' | CategoriesRoute | SettingsRoute | EditTransactionRoute

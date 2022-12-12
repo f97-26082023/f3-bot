@@ -2,8 +2,8 @@ import moment from 'moment'
 import debug from 'debug'
 import { Composer } from 'grammy'
 
-import type { MyContext } from '../../types/MyContext'
-import { getUserStorage } from '../../lib/storage'
+import type { F3Context } from '../../types/F3Context'
+import { getUserStorage } from '../../libs/storage'
 import {
   addTransactionsMapper as mapper,
   parseAmountInput,
@@ -13,14 +13,14 @@ import {
   createAccountsKeyboard
 } from '../helpers'
 
-import firefly from '../../lib/firefly'
-import { TransactionRead } from '../../lib/firefly/model/transaction-read'
-import { AccountTypeFilter } from '../../lib/firefly/model/account-type-filter'
-import { TransactionTypeProperty } from '../../lib/firefly/model'
+import firefly from '../../libs/firefly'
+import { TransactionRead } from '../../libs/firefly/model/transaction-read'
+import { AccountTypeFilter } from '../../libs/firefly/model/account-type-filter'
+import { TransactionTypeProperty } from '../../libs/firefly/model'
 
 const rootLog = debug(`bot:transactions:add`)
 
-const bot = new Composer<MyContext>()
+const bot = new Composer<F3Context>()
 
 // Add Withdrawal and common handlers
 bot.callbackQuery(mapper.selectCategory.regex(), newTransactionCategoryCbQH)
@@ -39,7 +39,7 @@ bot.callbackQuery(mapper.selectDestAccount.regex(), createTransferTransaction)
 
 export default bot
 
-export async function addTransaction(ctx: MyContext) {
+export async function addTransaction(ctx: F3Context) {
   const log = rootLog.extend('textHandler')
   log('Entered text handler')
   try {
@@ -118,7 +118,7 @@ export async function addTransaction(ctx: MyContext) {
   }
 }
 
-async function newTransactionCategoryCbQH(ctx: MyContext) {
+async function newTransactionCategoryCbQH(ctx: F3Context) {
   const log = rootLog.extend('newTransactionCategoryCbQH')
   log('Entered the newTransactionCategory callback handler...')
 
@@ -152,7 +152,7 @@ async function newTransactionCategoryCbQH(ctx: MyContext) {
   }
 }
 
-async function cancelCbQH(ctx: MyContext) {
+async function cancelCbQH(ctx: F3Context) {
   const log = rootLog.extend('cancelCbQH')
   try {
     log('Cancelling...: ')
@@ -164,7 +164,7 @@ async function cancelCbQH(ctx: MyContext) {
   }
 }
 
-async function deleteTransactionActionHandler(ctx: MyContext) {
+async function deleteTransactionActionHandler(ctx: F3Context) {
   const log = rootLog.extend('deleteTransactionActionHandler')
   log('Entered deleteTransaction action handler')
   try {
@@ -209,7 +209,7 @@ async function createFastTransaction(userId: number, amount: number, description
   }
 }
 
-async function startCreatingDepositTransaction(ctx: MyContext) {
+async function startCreatingDepositTransaction(ctx: F3Context) {
   const log = rootLog.extend('startCreatingDepositTransaction')
   try {
     const text: string = ctx.match![1] || ''
@@ -253,7 +253,7 @@ async function startCreatingDepositTransaction(ctx: MyContext) {
   }
 }
 
-async function selectAssetAccount(ctx: MyContext) {
+async function selectAssetAccount(ctx: F3Context) {
   const log = rootLog.extend('selectAssetAccount')
   try {
     const revenueAccountId: string = ctx.match![1] || ''
@@ -287,7 +287,7 @@ async function selectAssetAccount(ctx: MyContext) {
   }
 }
 
-async function selectDestAccount(ctx: MyContext) {
+async function selectDestAccount(ctx: F3Context) {
   const log = rootLog.extend('selectSourceAccount')
   try {
     const sourceId: string = ctx.match![1] || ''
@@ -323,7 +323,7 @@ async function selectDestAccount(ctx: MyContext) {
   }
 }
 
-async function createDepositTransaction(ctx: MyContext) {
+async function createDepositTransaction(ctx: F3Context) {
   const log = rootLog.extend('createDepositTransaction')
   try {
     const assetAccountId: string = ctx.match![1] || ''
@@ -349,7 +349,7 @@ async function createDepositTransaction(ctx: MyContext) {
   }
 }
 
-async function startCreatingTransferTransaction(ctx: MyContext) {
+async function startCreatingTransferTransaction(ctx: F3Context) {
   const log = rootLog.extend('startCreatingTransferTransaction')
   log('Entered the startCreatingTransferTransaction query handler...')
   try {
@@ -394,7 +394,7 @@ async function startCreatingTransferTransaction(ctx: MyContext) {
   }
 }
 
-async function createTransferTransaction(ctx: MyContext) {
+async function createTransferTransaction(ctx: F3Context) {
   const log = rootLog.extend('createTransferTransaction')
   try {
     const destId: string = ctx.match![1] || ''

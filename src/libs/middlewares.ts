@@ -3,13 +3,13 @@ import debug from 'debug'
 import i18n from './i18n'
 import { command } from './constants'
 import { getUserStorage } from './storage'
-import type { MyContext } from '../types/MyContext'
+import type { F3Context } from '../types/F3Context'
 
 const rootLog = debug(`bot:mdlwr`)
 
 // Add a method to delete the last user's message.
 export function cleanup() {
-  return async (ctx: MyContext, next: () => Promise<void>) => {
+  return async (ctx: F3Context, next: () => Promise<void>) => {
     const log = rootLog.extend(`cleanup`)
     log('Entered the cleanup middleware')
 
@@ -35,7 +35,7 @@ export function cleanup() {
     // Not interested in anything that is not a keyboard menu command
     if (!keyboardCommandList.includes(text)) return next()
 
-    ctx.session.deleteKeyboardMenuMessage = (function(ctx: MyContext) {
+    ctx.session.deleteKeyboardMenuMessage = (function(ctx: F3Context) {
       log('ctx.msg: %O', ctx.msg)
       const messageId = ctx.msg!.message_id
       log('messageId: %O', messageId)
@@ -51,7 +51,7 @@ export function cleanup() {
   }
 }
 export function requireSettings() {
-  return async (ctx: MyContext, next: () => Promise<void>) => {
+  return async (ctx: F3Context, next: () => Promise<void>) => {
     const log = rootLog.extend(`requireSettings`)
     log('Entered the requireSettings middleware')
     // log('ctx: %O', ctx)

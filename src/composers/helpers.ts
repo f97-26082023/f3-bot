@@ -3,14 +3,14 @@ import Debug from 'debug'
 import { ParseMode } from '@grammyjs/types'
 import { Keyboard, InlineKeyboard } from 'grammy'
 
-import firefly from '../lib/firefly'
-import Mapper from '../lib/Mapper'
-import type { MyContext } from '../types/MyContext'
-import { getUserStorage } from '../lib/storage'
-import { TransactionRead } from '../lib/firefly/model/transaction-read'
-import { TransactionSplit } from '../lib/firefly/model/transaction-split'
-import { AccountTypeFilter } from '../lib/firefly/model/account-type-filter'
-import { ShortAccountTypeProperty, TransactionTypeProperty } from '../lib/firefly/model'
+import firefly from '../libs/firefly'
+import Mapper from '../libs/Mapper'
+import type { F3Context } from '../types/F3Context'
+import { getUserStorage } from '../libs/storage'
+import { TransactionRead } from '../libs/firefly/model/transaction-read'
+import { TransactionSplit } from '../libs/firefly/model/transaction-split'
+import { AccountTypeFilter } from '../libs/firefly/model/account-type-filter'
+import { ShortAccountTypeProperty, TransactionTypeProperty } from '../libs/firefly/model'
 
 const debug = Debug('bot:transactions:helpers')
 
@@ -98,7 +98,7 @@ function parseAmountInput(amount: string): number | null {
   return unabbreviateNumber(amount.toUpperCase()) ?? null
 }
 
-function formatTransactionKeyboard(ctx: MyContext, tr: TransactionRead) {
+function formatTransactionKeyboard(ctx: F3Context, tr: TransactionRead) {
   const trSplit = tr.attributes.transactions[0]
   const inlineKeyboard = new InlineKeyboard()
     .text(
@@ -116,7 +116,7 @@ function formatTransactionKeyboard(ctx: MyContext, tr: TransactionRead) {
   }
 }
 
-function formatTransaction(ctx: MyContext, tr: Partial<TransactionRead>){
+function formatTransaction(ctx: F3Context, tr: Partial<TransactionRead>){
   const trSplit = tr.attributes!.transactions[0]
   const baseProps: any = {
     amount: parseFloat(trSplit.amount),
@@ -238,7 +238,7 @@ async function createExpenseAccountsKeyboard(userId: number) {
 }
 
 function formatTransactionUpdate(
-  ctx: MyContext,
+  ctx: F3Context,
   trRead: Partial<TransactionRead>,
   trSplit: Partial<TransactionSplit>
 ): string {
@@ -283,7 +283,7 @@ function formatTransactionUpdate(
   }
 }
 
-function createEditWithdrawalTransactionKeyboard(ctx: MyContext, trId: string | number) {
+function createEditWithdrawalTransactionKeyboard(ctx: F3Context, trId: string | number) {
   return new InlineKeyboard()
     .text(ctx.i18n.t('labels.CHANGE_DESCRIPTION'), editTransactionsMapper.editDesc.template({ trId }))
     .text(ctx.i18n.t('labels.CHANGE_CATEGORY'), editTransactionsMapper.editCategory.template({ trId })).row()
@@ -294,7 +294,7 @@ function createEditWithdrawalTransactionKeyboard(ctx: MyContext, trId: string | 
     .text(ctx.i18n.t('labels.DONE'), editTransactionsMapper.done.template({ trId })).row()
 }
 
-function createEditDepositTransactionKeyboard(ctx: MyContext, trId: string | number) {
+function createEditDepositTransactionKeyboard(ctx: F3Context, trId: string | number) {
   return new InlineKeyboard()
     .text(ctx.i18n.t('labels.CHANGE_DESCRIPTION'), editTransactionsMapper.editDesc.template({ trId })).row()
     .text(ctx.i18n.t('labels.CHANGE_REVENUE_ACCOUNT'), editTransactionsMapper.editRevenueAccount.template({ trId }))
@@ -304,7 +304,7 @@ function createEditDepositTransactionKeyboard(ctx: MyContext, trId: string | num
     .text(ctx.i18n.t('labels.DONE'), editTransactionsMapper.done.template({ trId })).row()
 }
 
-function createEditTransferTransactionKeyboard(ctx: MyContext, trId: string | number) {
+function createEditTransferTransactionKeyboard(ctx: F3Context, trId: string | number) {
   return new InlineKeyboard()
     .text(ctx.i18n.t('labels.CHANGE_DESCRIPTION'), editTransactionsMapper.editDesc.template({ trId })).row()
     .text(ctx.i18n.t('labels.CHANGE_ASSET_ACCOUNT'), editTransactionsMapper.editSourceAccount.template({ trId }))
@@ -314,7 +314,7 @@ function createEditTransferTransactionKeyboard(ctx: MyContext, trId: string | nu
     .text(ctx.i18n.t('labels.DONE'), editTransactionsMapper.done.template({ trId })).row()
 }
 
-function createEditMenuKeyboard(ctx: MyContext, tr: TransactionRead) {
+function createEditMenuKeyboard(ctx: F3Context, tr: TransactionRead) {
   switch (tr.attributes.transactions[0].type) {
     case 'withdrawal':
       return createEditWithdrawalTransactionKeyboard(ctx, tr.id)
@@ -327,7 +327,7 @@ function createEditMenuKeyboard(ctx: MyContext, tr: TransactionRead) {
   }
 }
 
-function createAccountsMenuKeyboard( ctx: MyContext, accType: ShortAccountTypeProperty) {
+function createAccountsMenuKeyboard( ctx: F3Context, accType: ShortAccountTypeProperty) {
   const mapper = listAccountsMapper
   const keyboard = new InlineKeyboard()
 
@@ -384,7 +384,7 @@ function createAccountsMenuKeyboard( ctx: MyContext, accType: ShortAccountTypePr
   return keyboard
 }
 
-function generateWelcomeMessage(ctx: MyContext) {
+function generateWelcomeMessage(ctx: F3Context) {
   const log = debug.extend('generateWelcomeMessage')
 
   log('start: %O', ctx.message)
@@ -411,7 +411,7 @@ function generateWelcomeMessage(ctx: MyContext) {
   return welcomeMessage
 }
 
-function createMainKeyboard(ctx: MyContext) {
+function createMainKeyboard(ctx: F3Context) {
   return new Keyboard()
     .text(ctx.i18n.t('labels.ACCOUNTS'))
     .text(ctx.i18n.t('labels.TRANSACTIONS')).row()

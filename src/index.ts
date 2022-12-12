@@ -4,10 +4,10 @@ import { Bot, GrammyError, HttpError, session } from 'grammy'
 
 dotenv.config();
 
-import i18n from './lib/i18n'
+import i18n from './libs/i18n'
 import config from './config'
-import { command } from './lib/constants'
-import { requireSettings, cleanup } from './lib/middlewares'
+import { command } from './libs/constants'
+import { requireSettings, cleanup } from './libs/middlewares'
 import { createMainKeyboard, generateWelcomeMessage } from './composers/helpers'
 
 import settings from './composers/settings'
@@ -18,7 +18,7 @@ import accounts from './composers/accounts'
 import categories from './composers/categories'
 import reports from './composers/reports'
 
-import type { MyContext } from './types/MyContext'
+import type { F3Context } from './types/F3Context'
 import type { SessionData } from './types/SessionData'
 
 export const Route = {
@@ -27,7 +27,7 @@ export const Route = {
 
 const rootLog = debug(`bot:root`)
 
-const bot = new Bot<MyContext>(config.botToken)
+const bot = new Bot<F3Context>(config.botToken)
 
 // Attach a session middleware and specify the initial data
 bot.use(
@@ -61,7 +61,7 @@ bot.on('message:text', textHandler)
 bot.start()
 bot.catch(errorHandler)
 
-async function startHandler(ctx: MyContext) {
+async function startHandler(ctx: F3Context) {
   const log = rootLog.extend('startHandler')
   log('start: %O', ctx.message)
 
@@ -78,7 +78,7 @@ async function startHandler(ctx: MyContext) {
   })
 }
 
-function helpHandler(ctx: MyContext) {
+function helpHandler(ctx: F3Context) {
   const log = rootLog.extend('helpHandler')
   log('help: %O', ctx.message)
 
@@ -91,7 +91,7 @@ function helpHandler(ctx: MyContext) {
   })
 }
 
-function setBotCommands(ctx: MyContext) {
+function setBotCommands(ctx: F3Context) {
   const log = rootLog.extend('setBotCommands')
   log('Setting bot commands...')
   const myCommands: {command: string, description: string}[] = []

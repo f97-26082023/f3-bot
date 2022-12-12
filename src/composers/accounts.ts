@@ -4,21 +4,21 @@ import { Composer } from 'grammy'
 import { table, getBorderCharacters } from 'table'
 import type { Alignment } from 'table'
 
-import type { MyContext } from '../types/MyContext'
-import i18n from '../lib/i18n'
+import type { F3Context } from '../types/F3Context'
+import i18n from '../libs/i18n'
 import {
   listAccountsMapper as mapper,
   createAccountsMenuKeyboard
 } from './helpers'
 
-import firefly from '../lib/firefly'
-import { AccountTypeFilter } from '../lib/firefly/model/account-type-filter'
-import { AccountRead } from '../lib/firefly/model/account-read'
-import { ShortAccountTypeProperty } from '../lib/firefly/model'
+import firefly from '../libs/firefly'
+import { AccountTypeFilter } from '../libs/firefly/model/account-type-filter'
+import { AccountRead } from '../libs/firefly/model/account-read'
+import { ShortAccountTypeProperty } from '../libs/firefly/model'
 
 const debug = Debug(`bot:accounts`)
 
-const bot = new Composer<MyContext>()
+const bot = new Composer<F3Context>()
 
 // List transactions
 bot.hears(i18n.t('en', 'labels.ACCOUNTS'), showAccounts)
@@ -28,7 +28,7 @@ bot.callbackQuery(mapper.close.regex(), closeHandler)
 
 export default bot
 
-async function showAccounts(ctx: MyContext) {
+async function showAccounts(ctx: F3Context) {
   const log = debug.extend('showAccounts')
   log(`Entered showAccounts callback handler...`)
   try {
@@ -74,7 +74,7 @@ async function showAccounts(ctx: MyContext) {
   }
 }
 
-async function closeHandler(ctx: MyContext) {
+async function closeHandler(ctx: F3Context) {
   const log = debug.extend('closeHandler')
   log('ctx.session: %O', ctx.session)
   await ctx.answerCallbackQuery()
@@ -85,7 +85,7 @@ async function closeHandler(ctx: MyContext) {
 
 // Assumed that accounts is a list of only one particular account type
 function formatAccountsMessage(
-  ctx: MyContext, accType: ShortAccountTypeProperty, accounts: AccountRead[]
+  ctx: F3Context, accType: ShortAccountTypeProperty, accounts: AccountRead[]
 ) {
   const log = debug.extend('formatAccountsMessage')
   const sumsObject = accounts.reduce((res, acc) => {
@@ -113,7 +113,7 @@ function formatAccountsMessage(
   })
 }
 
-function formatAccounts(ctx: MyContext, accounts: AccountRead[]) {
+function formatAccounts(ctx: F3Context, accounts: AccountRead[]) {
   const log = debug.extend('formatAccounts')
   if (accounts.length === 0) return ctx.i18n.t('accounts.list.noAccounts')
 

@@ -4,14 +4,14 @@ import { Composer, InlineKeyboard } from 'grammy'
 import { Router } from "@grammyjs/router"
 import { ParseMode } from '@grammyjs/types'
 
-import type { MyContext } from '../types/MyContext'
-import i18n, { getLanguageIcon } from '../lib/i18n';
-import { command } from '../lib/constants'
+import type { F3Context } from '../types/F3Context'
+import i18n, { getLanguageIcon } from '../libs/i18n';
+import { command } from '../libs/constants'
 import { createMainKeyboard, generateWelcomeMessage } from './helpers'
-import { getUserStorage } from '../lib/storage'
-import firefly from '../lib/firefly'
-import { AccountTypeFilter } from '../lib/firefly/model/account-type-filter'
-import { AccountRead } from '../lib/firefly/model/account-read'
+import { getUserStorage } from '../libs/storage'
+import firefly from '../libs/firefly'
+import { AccountTypeFilter } from '../libs/firefly/model/account-type-filter'
+import { AccountRead } from '../libs/firefly/model/account-read'
 
 export enum Route {
   FIREFLY_URL          = 'SETTINGS|FIREFLY_URL',
@@ -28,8 +28,8 @@ const SELECT_DEFAULT_ASSET_ACCOUNT = 'SELECT_DEFAULT_ASSET_ACCOUNT'
 const SWITCH_LANGUAGE              = /^SWITCH_LANGUAGE=(.+)$/
 const TEST_CONNECTION              = 'TEST_CONNECTION'
 
-const bot = new Composer<MyContext>()
-const router = new Router<MyContext>((ctx) => ctx.session.step)
+const bot = new Composer<F3Context>()
+const router = new Router<F3Context>((ctx) => ctx.session.step)
 
 bot.command(command.SETTINGS, settingsCommandHandler)
 bot.hears(i18n.t('en', 'labels.SETTINGS'), settingsCommandHandler)
@@ -53,7 +53,7 @@ bot.use(router)
 
 export default bot
 
-function settingsText(ctx: MyContext) {
+function settingsText(ctx: F3Context) {
   const userId = ctx.from!.id
   const {
     fireflyUrl,
@@ -73,7 +73,7 @@ function settingsText(ctx: MyContext) {
   })
 }
 
-function settingsInlineKeyboard(ctx: MyContext) {
+function settingsInlineKeyboard(ctx: F3Context) {
   const inlineKeyboard = new InlineKeyboard()
     .text(ctx.i18n.t('labels.FIREFLY_URL_BUTTON'), INPUT_FIREFLY_URL).row()
     .text(ctx.i18n.t('labels.FIREFLY_ACCESS_TOKEN_BUTTON'), INPUT_FIREFLY_ACCESS_TOKEN).row()
@@ -89,7 +89,7 @@ function settingsInlineKeyboard(ctx: MyContext) {
   }
 }
 
-function settingsCommandHandler(ctx: MyContext) {
+function settingsCommandHandler(ctx: F3Context) {
   const log = rootLog.extend('settingsCommandHandler')
   log('Entered the settingsCommandHandler...')
   return ctx.reply(
@@ -98,12 +98,12 @@ function settingsCommandHandler(ctx: MyContext) {
   )
 }
 
-async function doneCbQH(ctx: MyContext) {
+async function doneCbQH(ctx: F3Context) {
   ctx.session.step = 'IDLE'
   return ctx.deleteMessage()
 }
 
-async function fireflyAccessTokenRouteHandler(ctx: MyContext) {
+async function fireflyAccessTokenRouteHandler(ctx: F3Context) {
   const log = rootLog.extend('fireflyAccessTokenRouteHandler')
   log('Entered fireflyAccessTokenRouteHandler...')
   try {
@@ -132,7 +132,7 @@ async function fireflyAccessTokenRouteHandler(ctx: MyContext) {
     console.error(err)
   }
 }
-async function fireflyUrlRouteHandler(ctx: MyContext) {
+async function fireflyUrlRouteHandler(ctx: F3Context) {
   const log = rootLog.extend('fireflyUrlRouteHandler')
   log('Entered fireflyUrlRouteHandler...')
   try {
@@ -165,7 +165,7 @@ async function fireflyUrlRouteHandler(ctx: MyContext) {
   }
 }
 
-async function inputFireflyUrlCbQH(ctx: MyContext) {
+async function inputFireflyUrlCbQH(ctx: F3Context) {
   const log = rootLog.extend('inputFireflyUrlCbQH')
   log(`Entered the ${INPUT_FIREFLY_URL} action handler`)
 
@@ -181,7 +181,7 @@ async function inputFireflyUrlCbQH(ctx: MyContext) {
   }
 }
 
-async function inputFireflyAccessTokenCbQH(ctx: MyContext) {
+async function inputFireflyAccessTokenCbQH(ctx: F3Context) {
   const log = rootLog.extend('inputFireflyAccessTokenCbQH')
   log(`Entered the ${INPUT_FIREFLY_ACCESS_TOKEN} action handler`)
   try {
@@ -195,7 +195,7 @@ async function inputFireflyAccessTokenCbQH(ctx: MyContext) {
   }
 }
 
-async function selectDefaultAssetAccountCbQH(ctx: MyContext) {
+async function selectDefaultAssetAccountCbQH(ctx: F3Context) {
   const log = rootLog.extend('selectDefaultAssetAccountCbQH')
   log(`Entered the ${SELECT_DEFAULT_ASSET_ACCOUNT} callback query handler`)
   try {
@@ -243,7 +243,7 @@ async function selectDefaultAssetAccountCbQH(ctx: MyContext) {
   }
 }
 
-async function defaultAccountCbQH(ctx: MyContext) {
+async function defaultAccountCbQH(ctx: F3Context) {
   const log = rootLog.extend('defaultAccountCbQH')
   log(`Entered the ${SELECT_DEFAULT_ASSET_ACCOUNT} query handler`)
   try {
@@ -270,7 +270,7 @@ async function defaultAccountCbQH(ctx: MyContext) {
   }
 }
 
-async function cancelCbQH(ctx: MyContext) {
+async function cancelCbQH(ctx: F3Context) {
   const log = rootLog.extend('cancelCbQH')
   try {
     log('Cancelling...: ')
@@ -289,7 +289,7 @@ async function cancelCbQH(ctx: MyContext) {
   }
 }
 
-async function testConnectionCbQH(ctx: MyContext) {
+async function testConnectionCbQH(ctx: F3Context) {
   const log = rootLog.extend('testConnectionCbQH')
   log('Entered testConnectionCbQH action handler')
   log('ctx: %O', ctx)
@@ -332,7 +332,7 @@ async function testConnectionCbQH(ctx: MyContext) {
   }
 }
 
-async function switchLanguageCbQH(ctx: MyContext) {
+async function switchLanguageCbQH(ctx: F3Context) {
   const log = rootLog.extend('switchLanguageCbQH')
   log(`Entered the switch language query handler`)
   try {

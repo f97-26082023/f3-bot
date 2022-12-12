@@ -2,19 +2,19 @@ import QuickChart from 'quickchart-js';
 import Debug from 'debug'
 import { Composer, InputFile } from 'grammy'
 
-import firefly from '../lib/firefly'
-import type { MyContext } from '../types/MyContext'
-import i18n from '../lib/i18n'
+import firefly from '../libs/firefly'
+import type { F3Context } from '../types/F3Context'
+import i18n from '../libs/i18n'
 import moment from 'moment';
 
 const debug = Debug(`bot:reports`)
 
-const bot = new Composer<MyContext>()
+const bot = new Composer<F3Context>()
 
 bot.hears(i18n.t('en', 'labels.REPORTS'), showReportCurrentMonth)
 bot.hears(i18n.t('vi', 'labels.REPORTS'), showReportCurrentMonth)
 
-async function showReportCurrentMonth(ctx: MyContext) {
+async function showReportCurrentMonth(ctx: F3Context) {
   const log = debug.extend('showReportCurrentMonth')
   log(`Entered showReport callback handler...`)
   
