@@ -36,6 +36,10 @@ labels:
   YES: ✅ Yes
   SWITCH_TO_ENGLISH: 🇬🇧 Switch to English
   SWITCH_TO_VIETNAMESE: 🇻🇳 Switch to Vietnamese
+  TODAY: 📅 Today
+  YESTERDAY: 📆 Yesterday
+  THIS_MONTH: 📅 This Month
+  LAST_MONTH: 📅 Last Month
 
 welcome: >
   👋 Hi! This bot helps to quickly add transactions in Firefly III.
@@ -254,3 +258,6 @@ categories:
     ──────────────────
     
     SUM: ${sums ? sums : '0'}</pre>
+
+reports:
+  message:  Today is ${day}

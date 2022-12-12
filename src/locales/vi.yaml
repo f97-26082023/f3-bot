@@ -20,7 +20,7 @@ labels:
   DECLINE_CATEGORIES_LIST: ✏️ Không, thử lại
   DEFAULT_ASSET_ACCOUNT_BUTTON: 💳 Tài khoản mặc định
   DELETE: ❌ Xóa
-  DONE: ✅ OK
+  DONE: ✅ Xong
   EDIT_TRANSACTION: ✏️ Chỉnh sửa
   FIREFLY_ACCESS_TOKEN_BUTTON: 🔑 Access Token
   FIREFLY_URL_BUTTON: 🔗 Firefly URL
@@ -36,7 +36,11 @@ labels:
   YES: ✅ Đúng
   SWITCH_TO_ENGLISH: 🇬🇧 Đổi sang tiếng Anh
   SWITCH_TO_VIETNAMESE: 🇻🇳 Đổi sang tiếng Việt
-
+  TODAY: 📅 Hôm Nay
+  YESTERDAY: 📆 Hôm Qua
+  THIS_MONTH: 📅 Tháng Này
+  LAST_MONTH: 📅 Tháng Trước
+  
 welcome: >
   👋 Xin chào! Tôi là bot và tôi sẽ giúp nhanh chóng thêm các giao dịch trong Firefly III.
 
@@ -254,3 +258,7 @@ categories:
     ──────────────────
     
     TỔNG: ${sums ? sums : '0'}</pre>
+
+reports:
+  message:  Hôm nay là ${day}
+

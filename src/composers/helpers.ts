@@ -20,6 +20,7 @@ export {
   listTransactionsMapper,
   addTransactionsMapper,
   editTransactionsMapper,
+  reportsMapper,
   parseAmountInput,
   formatTransaction,
   formatTransactionUpdate,
@@ -74,6 +75,14 @@ const editTransactionsMapper = {
   setSourceAccount: new Mapper('SET_SOURCE_ASSET_ACCOUNT_ID=${accountId}'),
   editDestinationAccount: new Mapper('CHANGE_DESTINATION_ASSET_ACCOUNT_ID=${trId}'),
   setDestinationAccount: new Mapper('SET_DESTINATION_ASSET_ACCOUNT_ID=${accountId}'),
+}
+
+const reportsMapper = {
+  lastMonth: new Mapper('REPORTS|LAST_MONTH'),
+  thisMonth: new Mapper('REPORTS|THIS_MONTH'),
+  yesterday: new Mapper('REPORTS|YESTERDAY'),
+  today: new Mapper('REPORTS|TODAY'),
+  close: new Mapper('REPORTS|DONE'),
 }
 
 function unabbreviateNumber(num: string, symbols = ["", "K", "M", "G", "T", "P", "E"]): number | null {

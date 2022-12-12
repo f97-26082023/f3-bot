@@ -21,7 +21,7 @@ export default function firefly(userId: number) {
     return response;
   }, function (err) {
     log('Error response: %O', err)
-    return Promise.reject(err.response.data);
+    return Promise.reject(err?.response?.data);
   })
 
   return {
