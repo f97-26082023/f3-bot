@@ -22,7 +22,6 @@ const bot = new Composer<MyContext>()
 // List transactions
 bot.hears(i18n.t('en', 'labels.TRANSACTIONS'), showTransactions)
 bot.hears(i18n.t('vi', 'labels.TRANSACTIONS'), showTransactions)
-bot.hears(i18n.t('ru', 'labels.TRANSACTIONS'), showTransactions)
 bot.callbackQuery(mapper.list.regex(), showTransactions)
 bot.callbackQuery(mapper.close.regex(), closeHandler)
 

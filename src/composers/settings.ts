@@ -34,7 +34,6 @@ const router = new Router<MyContext>((ctx) => ctx.session.step)
 bot.command(command.SETTINGS, settingsCommandHandler)
 bot.hears(i18n.t('en', 'labels.SETTINGS'), settingsCommandHandler)
 bot.hears(i18n.t('vi', 'labels.SETTINGS'), settingsCommandHandler)
-bot.hears(i18n.t('ru', 'labels.SETTINGS'), settingsCommandHandler)
 bot.callbackQuery(INPUT_FIREFLY_URL, inputFireflyUrlCbQH)
 bot.callbackQuery(INPUT_FIREFLY_ACCESS_TOKEN, inputFireflyAccessTokenCbQH)
 bot.callbackQuery(TEST_CONNECTION, testConnectionCbQH)
@@ -82,7 +81,6 @@ function settingsInlineKeyboard(ctx: MyContext) {
     .text(ctx.i18n.t('labels.DEFAULT_ASSET_ACCOUNT_BUTTON'), SELECT_DEFAULT_ASSET_ACCOUNT).row()
     .text(ctx.i18n.t('labels.SWITCH_TO_ENGLISH'), 'SWITCH_LANGUAGE=en').row()
     .text(ctx.i18n.t('labels.SWITCH_TO_VIETNAMESE'), 'SWITCH_LANGUAGE=vi').row()
-    .text(ctx.i18n.t('labels.SWITCH_TO_RUSSIAN'), 'SWITCH_LANGUAGE=ru').row()
     .text(ctx.i18n.t('labels.DONE'), DONE)
 
   return {

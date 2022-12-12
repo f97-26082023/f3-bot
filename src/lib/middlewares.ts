@@ -28,11 +28,6 @@ export function cleanup() {
       i18n.t('vi', 'labels.ACCOUNTS'),
       i18n.t('vi', 'labels.REPORTS'),
       i18n.t('vi', 'labels.CATEGORIES'),
-      i18n.t('ru', 'labels.SETTINGS'),
-      i18n.t('ru', 'labels.TRANSACTIONS'),
-      i18n.t('ru', 'labels.ACCOUNTS'),
-      i18n.t('ru', 'labels.REPORTS'),
-      i18n.t('ru', 'labels.CATEGORIES'),
     ]
     log('keyboardCommandList: %O', keyboardCommandList)
     log('keyboardCommandList.includes(text): %O', keyboardCommandList.includes(text))
@@ -67,7 +62,6 @@ export function requireSettings() {
       // We allow only the commands routes to enter if Firefly URL or Firefly
       // Token are not set
       const whiteList = [
-        i18n.t('ru', 'labels.SETTINGS'),
         i18n.t('en', 'labels.SETTINGS'),
         i18n.t('vi', 'labels.SETTINGS'),
         ...Object.values(command)

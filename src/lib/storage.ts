@@ -2,7 +2,7 @@ import config from '../config'
 import debug from 'debug'
 
 const rootLog = debug(`bot:storage`)
-const allowedLanguages = ['en', 'vi', 'ru']
+const allowedLanguages = ['en', 'vi']
 
 class UserSettings {
   _fireflyUrl = ''
@@ -30,7 +30,7 @@ class UserSettings {
 
   get language() { return this._language }
   set language(val: string) {
-    if (allowedLanguages.includes(val as 'en' | 'vi' | 'ru')) this._language = val
+    if (allowedLanguages.includes(val as 'en' | 'vi')) this._language = val
   }
 }
 

@@ -24,7 +24,6 @@ export function getLanguageIcon(language: string) {
   const lang2icons = {
     en: '🇬🇧',
     vi: '🇻🇳',
-    ru: '🇷🇺',
   }
 
   return lang2icons[language]

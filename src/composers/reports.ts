@@ -13,7 +13,6 @@ const bot = new Composer<MyContext>()
 
 bot.hears(i18n.t('en', 'labels.REPORTS'), showReportCurrentMonth)
 bot.hears(i18n.t('vi', 'labels.REPORTS'), showReportCurrentMonth)
-bot.hears(i18n.t('ru', 'labels.REPORTS'), showReportCurrentMonth)
 
 async function showReportCurrentMonth(ctx: MyContext) {
   const log = debug.extend('showReportCurrentMonth')
