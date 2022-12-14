@@ -49,11 +49,14 @@ function createReportsKeyboard(ctx: F3Context): InlineKeyboard {
 
 async function reportsThisMonth(ctx: F3Context) {
   const log = debug.extend('reportsThisMonth')
+  log(`Entered reportsThisMonth callback handler...`)
+
   try {
     const start = moment().format('YYYY-MM-01')
     const end = moment().format('YYYY-MM-DD')
     log('start: %O', start)
     log('end: %O', end)
+
     return reportsCharts(ctx, start, end)
   } catch (err) {
     console.error(err)
@@ -62,6 +65,7 @@ async function reportsThisMonth(ctx: F3Context) {
 
 async function reportsLastMonth(ctx: F3Context) {
   const log = debug.extend('reportsLastMonth')
+  log(`Entered reportsLastMonth callback handler...`)
 
   try {
     const start = moment().subtract(1, 'months').startOf("month").format('YYYY-MM-DD')
