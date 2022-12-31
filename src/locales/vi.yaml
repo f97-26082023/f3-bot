@@ -105,7 +105,7 @@ settings:
   connectionSuccess: >
     Kết nối thành công!
 
-    Chào, ${email}!
+    Xin chào, email của bạn là ${email}!
   badAccessToken: Thứ bạn đã nhập vào không phải Access Token. Xin vui lòng thử lại.
   badUrl: >
     Thứ bạn đã nhập vào không phải địa chỉ URL. Xin vui lòng thử lại.

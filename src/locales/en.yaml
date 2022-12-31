@@ -105,7 +105,7 @@ settings:
   connectionSuccess: >
     Connection established!
 
-    Hi, ${email}!
+    Hello, your email is: ${email}!
   badAccessToken: Entered text does not look like an Access Token. Try again, please.
   badUrl: >
     Entered text does not look like a URL address. Try again, please.

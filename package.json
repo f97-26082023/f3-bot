@@ -1,12 +1,12 @@
 {
-  "name": "f3bot",
+  "name": "f3-bot",
   "description": "A Telegram bot with Firefly III ",
   "version": "0.1.1",
-  "homepage": "https://github.com/f97/f3bot#readme",
+  "homepage": "https://github.com/f97/f3-bot#readme",
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "https://github.com/f97/f3bot.git"
+    "url": "https://github.com/f97/f3-bot.git"
   },
   "author": {
     "name": "f97",
@@ -28,21 +28,21 @@
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
     "@types/debug": "^4.1.7",
-    "@types/node": "^18.11.11",
-    "@typescript-eslint/eslint-plugin": "^5.45.1",
-    "@typescript-eslint/parser": "^5.45.1",
-    "eslint": "^8.29.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.31.0",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
     "@grammyjs/i18n": "0.5.1",
     "@grammyjs/router": "^2.0.0",
-    "axios": "^1.2.1",
+    "axios": "^1.2.2",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
-    "grammy": "^1.12.0",
+    "grammy": "^1.13.0",
     "moment": "^2.29.4",
     "quickchart-js": "^3.1.1",
     "table": "^6.8.1"
