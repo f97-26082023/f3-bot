@@ -9,7 +9,7 @@ class UserSettings {
   _fireflyAccessToken = ''
   _defaultAssetAccount = ''
   _defaultAssetAccountId = 0
-  _language = 'en'
+  _language = 'vi'
 
   constructor(fireflyUrl = '', fireflyAccessToken = '') {
     this._fireflyUrl = fireflyUrl
@@ -48,7 +48,7 @@ function bootstrapUserStorage(userId: number): UserSettings {
   const log = rootLog.extend('bootstrapUserStorage')
   log('userId: %O', userId)
   const userSettings = new UserSettings(config.fireflyUrl, config.fireflyAccessToken)
-
+  
   userStorage[userId] = userSettings
   return userStorage[userId]
 }

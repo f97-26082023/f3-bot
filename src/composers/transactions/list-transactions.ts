@@ -6,6 +6,7 @@ import { table, getBorderCharacters } from 'table'
 import type { F3Context } from '../../types/F3Context'
 import i18n from '../../libs/i18n'
 import {
+  convertNumberToCurrency,
   listTransactionsMapper as mapper
 } from '../helpers'
 
@@ -124,10 +125,10 @@ function formatTransactions(ctx: F3Context, transactions: TransactionRead[]) {
       log('typeIcon: %O', typeIcon)
 
       const date = moment(tr.date?.slice(0, -6)).format('HH:mm')
-      const amount =  new Intl.NumberFormat(language, { maximumSignificantDigits: 3 }).format(Number.parseFloat(tr.amount))
+      const amount =  convertNumberToCurrency(tr.amount, language)
       const currency = tr.currency_symbol
       const desc = tr.description
-      return [ typeIcon, `${date}`, desc, `${amount} ${currency}` ]
+      return [ typeIcon, `${date}`, desc, `${amount}${currency}` ]
     })
   ].reverse()
 
@@ -199,6 +200,7 @@ function formatTransactionMessage(
   ctx: F3Context, day: string, trType: TransactionTypeFilter, transactions: TransactionRead[]
 ) {
   const log = debug.extend('formatTransactionMessage')
+  const { language } = getUserStorage(ctx.from!.id)
   const sumsObject = transactions.reduce((res, t) => {
     const trSplit = t.attributes.transactions[0]
     const currency = trSplit.currency_symbol || '💲'
@@ -212,7 +214,7 @@ function formatTransactionMessage(
 
   const sums = Object.entries(sumsObject).map(entry => {
     const [currency, sum] = entry
-    return `${Math.abs(sum)} ${currency}`
+    return `${convertNumberToCurrency(Math.abs(sum), language)} ${currency}`
   }).join('\n       ').replace(/\n$/, '')
 
   return ctx.i18n.t(`transactions.list.${trType}`, {

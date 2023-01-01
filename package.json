@@ -1,7 +1,7 @@
 {
   "name": "f3-bot",
   "description": "A Telegram bot with Firefly III ",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/f97/f3-bot#readme",
   "license": "GPL-3.0-or-later",
   "repository": {

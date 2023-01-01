@@ -8,13 +8,15 @@ import type { F3Context } from '../types/F3Context'
 import i18n from '../libs/i18n'
 import {
   listAccountsMapper as mapper,
-  createAccountsMenuKeyboard
+  createAccountsMenuKeyboard,
+  convertNumberToCurrency
 } from './helpers'
 
 import firefly from '../libs/firefly'
 import { AccountTypeFilter } from '../libs/firefly/model/account-type-filter'
 import { AccountRead } from '../libs/firefly/model/account-read'
 import { ShortAccountTypeProperty } from '../libs/firefly/model'
+import { getUserStorage } from '../libs/storage'
 
 const debug = Debug(`bot:accounts`)
 
@@ -101,10 +103,10 @@ function formatAccountsMessage(
     return res
   }, {} as { [key: string]: number })
   log('sumsObject: %O', sumsObject)
-
+  const { language } = getUserStorage(ctx.from!.id)
   const sums = Object.entries(sumsObject).map(entry => {
     const [currency, sum] = entry
-    return `${sum} ${currency}`
+    return `${convertNumberToCurrency(sum, language)} ${currency}`
   }).join('\n       ').replace(/\n$/, '')
 
   return ctx.i18n.t(`accounts.list.${accType}`, {
@@ -116,11 +118,10 @@ function formatAccountsMessage(
 function formatAccounts(ctx: F3Context, accounts: AccountRead[]) {
   const log = debug.extend('formatAccounts')
   if (accounts.length === 0) return ctx.i18n.t('accounts.list.noAccounts')
-
+  const { language } = getUserStorage(ctx.from!.id)
   const data = [
     ...accounts.map(acc => {
-      const balance = parseFloat(acc.attributes.current_balance || '')
-        .toFixed(acc.attributes.currency_decimal_places)
+      const balance = convertNumberToCurrency(parseFloat(acc.attributes.current_balance || '').toFixed(acc.attributes.currency_decimal_places), language)
       const currency = acc.attributes.currency_symbol
       const name = acc.attributes.name
       return [ name, balance, currency ]
@@ -137,7 +138,7 @@ function formatAccounts(ctx: F3Context, accounts: AccountRead[]) {
     columns: [
       { alignment: 'left' as Alignment },
       { alignment: 'right' as Alignment },
-      { paddingLeft: 1, alignment: 'left' as Alignment }
+      { paddingLeft: 0, alignment: 'left' as Alignment }
     ]
   }
 

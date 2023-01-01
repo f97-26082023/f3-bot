@@ -1,7 +1,7 @@
 import path from 'path'
 import { I18n, pluralize } from '@grammyjs/i18n';
 
-const defaultLanguage = 'en'
+const defaultLanguage = 'vi'
 
 const params = {
   directory: path.resolve(__dirname, '../locales'),

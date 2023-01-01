@@ -10,6 +10,7 @@ import i18n from '../libs/i18n';
 import firefly from '../libs/firefly'
 import { TransactionRead } from '../libs/firefly/model/transaction-read'
 import { getUserStorage } from '../libs/storage'
+import { convertNumberToCurrency } from './helpers'
 
 export enum Route {
   IDLE            = 'IDLE',
@@ -344,7 +345,8 @@ async function showCategoryDetails(ctx: F3Context) {
     const inlineKeyboard = createSingleCategoryKeyboard(
       ctx, startDate, categoryId
     )
-    const sums = sumsObjects.map((sum: any) => `${Math.abs(sum.value)} ${sum.currency}`)
+    const { language } = getUserStorage(ctx.from!.id)
+    const sums = sumsObjects.map((sum: any) => `${convertNumberToCurrency(Math.abs(Math.abs(sum.value)), language)} ${sum.currency}`)
       .join('\n       ').replace(/\n$/, '')
 
     const text = ctx.i18n.t('categories.transactionsList', {
@@ -375,7 +377,7 @@ function formatTransactions(ctx: F3Context, transactions: TransactionRead[]) {
       const tr = item.attributes.transactions[0]
       if (!tr) return []
       const date = moment(tr.date?.slice(0, -6)).format('DD MMM')
-      const amount =  new Intl.NumberFormat(language, { maximumSignificantDigits: 3 }).format(Number.parseFloat(tr.amount))
+      const amount =  convertNumberToCurrency(tr.amount, language)
       const currency = tr.currency_symbol
       const desc = tr.description
       return [ `${date}:`, desc, `${amount} ${currency}` ]

@@ -20,6 +20,7 @@ import reports from './composers/reports'
 
 import type { F3Context } from './types/F3Context'
 import type { SessionData } from './types/SessionData'
+import { getUserStorage } from './libs/storage';
 
 export const Route = {
   idle: 'IDLE'
@@ -64,6 +65,9 @@ bot.catch(errorHandler)
 async function startHandler(ctx: F3Context) {
   const log = rootLog.extend('startHandler')
   log('start: %O', ctx.message)
+
+  const { language } = getUserStorage(ctx.from!.id)
+  if (language) ctx.i18n.locale(language)
 
   await setBotCommands(ctx)
 

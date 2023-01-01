@@ -92,6 +92,9 @@ function settingsInlineKeyboard(ctx: F3Context) {
 function settingsCommandHandler(ctx: F3Context) {
   const log = rootLog.extend('settingsCommandHandler')
   log('Entered the settingsCommandHandler...')
+  const { language } = getUserStorage(ctx.from!.id)
+  if (language) ctx.i18n.locale(language)
+
   return ctx.reply(
     settingsText(ctx),
     settingsInlineKeyboard(ctx)

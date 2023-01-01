@@ -428,3 +428,8 @@ function createMainKeyboard(ctx: F3Context) {
     .text(ctx.i18n.t('labels.CATEGORIES')).row()
     .text(ctx.i18n.t('labels.SETTINGS'))
 }
+
+export function convertNumberToCurrency(money: number | string, language: string) {
+  const number:number = typeof money === 'string' ? Number.parseFloat(money) :  money;
+  return new Intl.NumberFormat(language, { maximumSignificantDigits: 3 }).format(number)
+}
