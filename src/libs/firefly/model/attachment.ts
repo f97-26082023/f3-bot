@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AttachableType } from './attachable-type';
 
 /**
@@ -26,73 +28,72 @@ export interface Attachment {
      * @type {string}
      * @memberof Attachment
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {AttachableType}
      * @memberof Attachment
      */
-    attachable_type: AttachableType;
+    'attachable_type': AttachableType;
     /**
      * ID of the model this attachment is linked to.
      * @type {string}
      * @memberof Attachment
      */
-    attachable_id: string;
+    'attachable_id': string;
     /**
      * MD5 hash of the file for basic duplicate detection.
      * @type {string}
      * @memberof Attachment
      */
-    md5?: string;
+    'md5'?: string;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    filename: string;
+    'filename': string;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    download_url?: string;
+    'download_url'?: string;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    upload_url?: string;
+    'upload_url'?: string;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    title?: string;
+    'title'?: string;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof Attachment
      */
-    mime?: string;
+    'mime'?: string;
     /**
      * 
      * @type {number}
      * @memberof Attachment
      */
-    size?: number;
+    'size'?: number;
 }
-
 

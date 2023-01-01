@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectGroupRead } from './object-group-read';
 
 /**
@@ -26,7 +28,6 @@ export interface ObjectGroupSingle {
      * @type {ObjectGroupRead}
      * @memberof ObjectGroupSingle
      */
-    data: ObjectGroupRead;
+    'data': ObjectGroupRead;
 }
-
 

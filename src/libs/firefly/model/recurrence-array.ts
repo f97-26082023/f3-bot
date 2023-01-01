@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceRead } from './recurrence-read';
 
 /**
@@ -28,19 +34,18 @@ export interface RecurrenceArray {
      * @type {Array<RecurrenceRead>}
      * @memberof RecurrenceArray
      */
-    data: Array<RecurrenceRead>;
+    'data': Array<RecurrenceRead>;
     /**
      * 
      * @type {Meta}
      * @memberof RecurrenceArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof RecurrenceArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

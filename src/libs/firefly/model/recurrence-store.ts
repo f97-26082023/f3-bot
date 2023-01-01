@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceRepetitionStore } from './recurrence-repetition-store';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceTransactionStore } from './recurrence-transaction-store';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceTransactionType } from './recurrence-transaction-type';
 
 /**
@@ -28,67 +34,66 @@ export interface RecurrenceStore {
      * @type {RecurrenceTransactionType}
      * @memberof RecurrenceStore
      */
-    type: RecurrenceTransactionType;
+    'type': RecurrenceTransactionType;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceStore
      */
-    title: string;
+    'title': string;
     /**
      * Not to be confused with the description of the actual transaction(s) being created.
      * @type {string}
      * @memberof RecurrenceStore
      */
-    description?: string;
+    'description'?: string;
     /**
      * First time the recurring transaction will fire. Must be after today.
      * @type {string}
      * @memberof RecurrenceStore
      */
-    first_date: string;
+    'first_date': string;
     /**
      * Date until the recurring transaction can fire. Use either this field or repetitions.
      * @type {string}
      * @memberof RecurrenceStore
      */
-    repeat_until: string | null;
+    'repeat_until': string | null;
     /**
      * Max number of created transactions. Use either this field or repeat_until.
      * @type {number}
      * @memberof RecurrenceStore
      */
-    nr_of_repetitions?: number | null;
+    'nr_of_repetitions'?: number | null;
     /**
      * Whether or not to fire the rules after the creation of a transaction.
      * @type {boolean}
      * @memberof RecurrenceStore
      */
-    apply_rules?: boolean;
+    'apply_rules'?: boolean;
     /**
      * If the recurrence is even active.
      * @type {boolean}
      * @memberof RecurrenceStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {Array<RecurrenceRepetitionStore>}
      * @memberof RecurrenceStore
      */
-    repetitions: Array<RecurrenceRepetitionStore>;
+    'repetitions': Array<RecurrenceRepetitionStore>;
     /**
      * 
      * @type {Array<RecurrenceTransactionStore>}
      * @memberof RecurrenceStore
      */
-    transactions: Array<RecurrenceTransactionStore>;
+    'transactions': Array<RecurrenceTransactionStore>;
 }
-
 

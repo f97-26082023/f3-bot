@@ -25,25 +25,24 @@ export interface LinkType {
      * @type {string}
      * @memberof LinkType
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof LinkType
      */
-    inward: string;
+    'inward': string;
     /**
      * 
      * @type {string}
      * @memberof LinkType
      */
-    outward: string;
+    'outward': string;
     /**
      * 
      * @type {boolean}
      * @memberof LinkType
      */
-    editable?: boolean;
+    'editable'?: boolean;
 }
-
 

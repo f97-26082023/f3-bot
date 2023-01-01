@@ -25,25 +25,24 @@ export interface RuleGroupUpdate {
      * @type {string}
      * @memberof RuleGroupUpdate
      */
-    title?: string;
+    'title'?: string;
     /**
      * 
      * @type {string}
      * @memberof RuleGroupUpdate
      */
-    description?: string | null;
+    'description'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof RuleGroupUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof RuleGroupUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
 }
-
 

@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PiggyBankRead } from './piggy-bank-read';
 
 /**
@@ -28,19 +34,18 @@ export interface PiggyBankArray {
      * @type {Array<PiggyBankRead>}
      * @memberof PiggyBankArray
      */
-    data: Array<PiggyBankRead>;
+    'data': Array<PiggyBankRead>;
     /**
      * 
      * @type {Meta}
      * @memberof PiggyBankArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof PiggyBankArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

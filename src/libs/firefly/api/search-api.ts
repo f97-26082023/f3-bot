@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -44,7 +44,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchAccounts: async (query: string, field: AccountSearchFieldFilter, page?: number, type?: AccountTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        searchAccounts: async (query: string, field: AccountSearchFieldFilter, page?: number, type?: AccountTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'query' is not null or undefined
             assertParamExists('searchAccounts', 'query', query)
             // verify required parameter 'field' is not null or undefined
@@ -83,7 +83,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -100,7 +100,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        searchTransactions: async (query: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        searchTransactions: async (query: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'query' is not null or undefined
             assertParamExists('searchTransactions', 'query', query)
             const localVarPath = `/api/v1/search/transactions`;
@@ -129,7 +129,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -158,7 +158,7 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchAccounts(query: string, field: AccountSearchFieldFilter, page?: number, type?: AccountTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountArray>> {
+        async searchAccounts(query: string, field: AccountSearchFieldFilter, page?: number, type?: AccountTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchAccounts(query, field, page, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -170,7 +170,7 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async searchTransactions(query: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async searchTransactions(query: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.searchTransactions(query, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -282,7 +282,7 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public searchAccounts(requestParameters: SearchApiSearchAccountsRequest, options?: any) {
+    public searchAccounts(requestParameters: SearchApiSearchAccountsRequest, options?: AxiosRequestConfig) {
         return SearchApiFp(this.configuration).searchAccounts(requestParameters.query, requestParameters.field, requestParameters.page, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -294,7 +294,7 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public searchTransactions(requestParameters: SearchApiSearchTransactionsRequest, options?: any) {
+    public searchTransactions(requestParameters: SearchApiSearchTransactionsRequest, options?: AxiosRequestConfig) {
         return SearchApiFp(this.configuration).searchTransactions(requestParameters.query, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 }

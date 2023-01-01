@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BudgetLimitRead } from './budget-limit-read';
 
 /**
@@ -26,7 +28,6 @@ export interface BudgetLimitSingle {
      * @type {BudgetLimitRead}
      * @memberof BudgetLimitSingle
      */
-    data: BudgetLimitRead;
+    'data': BudgetLimitRead;
 }
-
 

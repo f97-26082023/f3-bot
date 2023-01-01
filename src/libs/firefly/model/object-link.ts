@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink0 } from './object-link0';
 
 /**
@@ -26,13 +28,12 @@ export interface ObjectLink {
      * @type {ObjectLink0}
      * @memberof ObjectLink
      */
-    _0?: ObjectLink0;
+    '0'?: ObjectLink0;
     /**
      * 
      * @type {string}
      * @memberof ObjectLink
      */
-    self?: string;
+    'self'?: string;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BudgetSpent } from './budget-spent';
 
 /**
@@ -26,67 +28,66 @@ export interface AvailableBudget {
      * @type {string}
      * @memberof AvailableBudget
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof AvailableBudget
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * Use either currency_id or currency_code.
      * @type {string}
      * @memberof AvailableBudget
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Use either currency_id or currency_code.
      * @type {string}
      * @memberof AvailableBudget
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof AvailableBudget
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * 
      * @type {number}
      * @memberof AvailableBudget
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * 
      * @type {string}
      * @memberof AvailableBudget
      */
-    amount: string;
+    'amount': string;
     /**
      * Start date of the available budget.
      * @type {string}
      * @memberof AvailableBudget
      */
-    start: string;
+    'start': string;
     /**
      * End date of the available budget.
      * @type {string}
      * @memberof AvailableBudget
      */
-    end: string;
+    'end': string;
     /**
      * 
      * @type {Array<BudgetSpent>}
      * @memberof AvailableBudget
      */
-    spent_in_budgets?: Array<BudgetSpent>;
+    'spent_in_budgets'?: Array<BudgetSpent>;
     /**
      * 
      * @type {Array<BudgetSpent>}
      * @memberof AvailableBudget
      */
-    spent_outside_budget?: Array<BudgetSpent>;
+    'spent_outside_budget'?: Array<BudgetSpent>;
 }
-
 

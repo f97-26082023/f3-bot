@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteObjectGroup } from './autocomplete-object-group';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteObjectGroup } from './autocomplete-object-group';
  */
 export interface AutocompleteObjectGroupArray extends Array<AutocompleteObjectGroup> {
 }
-
 

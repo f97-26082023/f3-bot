@@ -59,7 +59,7 @@ export * from './basic-summary';
 export * from './basic-summary-entry';
 export * from './bill';
 export * from './bill-array';
-export * from './bill-paid-dates';
+export * from './bill-paid-dates-inner';
 export * from './bill-read';
 export * from './bill-repeat-frequency';
 export * from './bill-single';

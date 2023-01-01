@@ -20,15 +20,17 @@
  * @enum {string}
  */
 
-export enum AutoBudgetPeriod {
-    Daily = 'daily',
-    Weekly = 'weekly',
-    Monthly = 'monthly',
-    Quarterly = 'quarterly',
-    HalfYear = 'half-year',
-    Yearly = 'yearly',
-    Null = 'null'
-}
+export const AutoBudgetPeriod = {
+    Daily: 'daily',
+    Weekly: 'weekly',
+    Monthly: 'monthly',
+    Quarterly: 'quarterly',
+    HalfYear: 'half-year',
+    Yearly: 'yearly',
+    Null: 'null'
+} as const;
+
+export type AutoBudgetPeriod = typeof AutoBudgetPeriod[keyof typeof AutoBudgetPeriod];
 
 
 

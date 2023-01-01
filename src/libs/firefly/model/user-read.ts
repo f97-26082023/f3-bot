@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { User } from './user';
 
 /**
@@ -27,25 +31,24 @@ export interface UserRead {
      * @type {string}
      * @memberof UserRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof UserRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {User}
      * @memberof UserRead
      */
-    attributes: User;
+    'attributes': User;
     /**
      * 
      * @type {ObjectLink}
      * @memberof UserRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteTag } from './autocomplete-tag';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteTag } from './autocomplete-tag';
  */
 export interface AutocompleteTagArray extends Array<AutocompleteTag> {
 }
-
 

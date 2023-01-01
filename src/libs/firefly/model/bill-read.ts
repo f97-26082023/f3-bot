@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Bill } from './bill';
 
 /**
@@ -26,19 +28,18 @@ export interface BillRead {
      * @type {string}
      * @memberof BillRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof BillRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Bill}
      * @memberof BillRead
      */
-    attributes: Bill;
+    'attributes': Bill;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BasicSummaryEntry } from './basic-summary-entry';
 
 /**
@@ -22,5 +24,4 @@ import { BasicSummaryEntry } from './basic-summary-entry';
  */
 export interface BasicSummary extends Array<BasicSummaryEntry> {
 }
-
 

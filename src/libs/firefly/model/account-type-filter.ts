@@ -20,29 +20,31 @@
  * @enum {string}
  */
 
-export enum AccountTypeFilter {
-    All = 'all',
-    Asset = 'asset',
-    Cash = 'cash',
-    Expense = 'expense',
-    Revenue = 'revenue',
-    Special = 'special',
-    Hidden = 'hidden',
-    Liability = 'liability',
-    Liabilities = 'liabilities',
-    DefaultAccount = 'Default account',
-    CashAccount = 'Cash account',
-    AssetAccount = 'Asset account',
-    ExpenseAccount = 'Expense account',
-    RevenueAccount = 'Revenue account',
-    InitialBalanceAccount = 'Initial balance account',
-    BeneficiaryAccount = 'Beneficiary account',
-    ImportAccount = 'Import account',
-    ReconciliationAccount = 'Reconciliation account',
-    Loan = 'Loan',
-    Debt = 'Debt',
-    Mortgage = 'Mortgage'
-}
+export const AccountTypeFilter = {
+    All: 'all',
+    Asset: 'asset',
+    Cash: 'cash',
+    Expense: 'expense',
+    Revenue: 'revenue',
+    Special: 'special',
+    Hidden: 'hidden',
+    Liability: 'liability',
+    Liabilities: 'liabilities',
+    DefaultAccount: 'Default account',
+    CashAccount: 'Cash account',
+    AssetAccount: 'Asset account',
+    ExpenseAccount: 'Expense account',
+    RevenueAccount: 'Revenue account',
+    InitialBalanceAccount: 'Initial balance account',
+    BeneficiaryAccount: 'Beneficiary account',
+    ImportAccount: 'Import account',
+    ReconciliationAccount: 'Reconciliation account',
+    Loan: 'Loan',
+    Debt: 'Debt',
+    Mortgage: 'Mortgage'
+} as const;
+
+export type AccountTypeFilter = typeof AccountTypeFilter[keyof typeof AccountTypeFilter];
 
 
 

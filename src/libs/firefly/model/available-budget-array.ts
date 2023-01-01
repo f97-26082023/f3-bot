@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AvailableBudgetRead } from './available-budget-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface AvailableBudgetArray {
      * @type {Array<AvailableBudgetRead>}
      * @memberof AvailableBudgetArray
      */
-    data: Array<AvailableBudgetRead>;
+    'data': Array<AvailableBudgetRead>;
     /**
      * 
      * @type {Meta}
      * @memberof AvailableBudgetArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

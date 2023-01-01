@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutoBudgetPeriod } from './auto-budget-period';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutoBudgetType } from './auto-budget-type';
 
 /**
@@ -27,55 +31,54 @@ export interface BudgetUpdate {
      * @type {string}
      * @memberof BudgetUpdate
      */
-    name?: string;
+    'name'?: string;
     /**
      * 
      * @type {boolean}
      * @memberof BudgetUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {number}
      * @memberof BudgetUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {string}
      * @memberof BudgetUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {AutoBudgetType}
      * @memberof BudgetUpdate
      */
-    auto_budget_type?: AutoBudgetType | null;
+    'auto_budget_type'?: AutoBudgetType | null;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof BudgetUpdate
      */
-    auto_budget_currency_id?: string | null;
+    'auto_budget_currency_id'?: string | null;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof BudgetUpdate
      */
-    auto_budget_currency_code?: string | null;
+    'auto_budget_currency_code'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof BudgetUpdate
      */
-    auto_budget_amount?: string | null;
+    'auto_budget_amount'?: string | null;
     /**
      * 
      * @type {AutoBudgetPeriod}
      * @memberof BudgetUpdate
      */
-    auto_budget_period?: AutoBudgetPeriod | null;
+    'auto_budget_period'?: AutoBudgetPeriod | null;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { PolymorphicProperty } from './polymorphic-property';
 
 /**
@@ -26,25 +28,24 @@ export interface Preference {
      * @type {string}
      * @memberof Preference
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Preference
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Preference
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {PolymorphicProperty}
      * @memberof Preference
      */
-    data: PolymorphicProperty;
+    'data': PolymorphicProperty;
 }
-
 

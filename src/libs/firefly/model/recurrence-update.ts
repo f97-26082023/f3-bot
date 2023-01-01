@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceRepetitionUpdate } from './recurrence-repetition-update';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceTransactionUpdate } from './recurrence-transaction-update';
 
 /**
@@ -27,61 +31,60 @@ export interface RecurrenceUpdate {
      * @type {string}
      * @memberof RecurrenceUpdate
      */
-    title?: string;
+    'title'?: string;
     /**
      * Not to be confused with the description of the actual transaction(s) being created.
      * @type {string}
      * @memberof RecurrenceUpdate
      */
-    description?: string;
+    'description'?: string;
     /**
      * First time the recurring transaction will fire.
      * @type {string}
      * @memberof RecurrenceUpdate
      */
-    first_date?: string;
+    'first_date'?: string;
     /**
      * Date until the recurring transaction can fire. After that date, it\'s basically inactive. Use either this field or repetitions.
      * @type {string}
      * @memberof RecurrenceUpdate
      */
-    repeat_until?: string | null;
+    'repeat_until'?: string | null;
     /**
      * Max number of created transactions. Use either this field or repeat_until.
      * @type {number}
      * @memberof RecurrenceUpdate
      */
-    nr_of_repetitions?: number | null;
+    'nr_of_repetitions'?: number | null;
     /**
      * Whether or not to fire the rules after the creation of a transaction.
      * @type {boolean}
      * @memberof RecurrenceUpdate
      */
-    apply_rules?: boolean;
+    'apply_rules'?: boolean;
     /**
      * If the recurrence is even active.
      * @type {boolean}
      * @memberof RecurrenceUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {Array<RecurrenceRepetitionUpdate>}
      * @memberof RecurrenceUpdate
      */
-    repetitions?: Array<RecurrenceRepetitionUpdate>;
+    'repetitions'?: Array<RecurrenceRepetitionUpdate>;
     /**
      * 
      * @type {Array<RecurrenceTransactionUpdate>}
      * @memberof RecurrenceUpdate
      */
-    transactions?: Array<RecurrenceTransactionUpdate>;
+    'transactions'?: Array<RecurrenceTransactionUpdate>;
 }
-
 

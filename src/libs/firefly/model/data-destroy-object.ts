@@ -20,25 +20,27 @@
  * @enum {string}
  */
 
-export enum DataDestroyObject {
-    Budgets = 'budgets',
-    Bills = 'bills',
-    PiggyBanks = 'piggy_banks',
-    Rules = 'rules',
-    Recurring = 'recurring',
-    Categories = 'categories',
-    Tags = 'tags',
-    ObjectGroups = 'object_groups',
-    Accounts = 'accounts',
-    AssetAccounts = 'asset_accounts',
-    ExpenseAccounts = 'expense_accounts',
-    RevenueAccounts = 'revenue_accounts',
-    Liabilities = 'liabilities',
-    Transactions = 'transactions',
-    Withdrawals = 'withdrawals',
-    Deposits = 'deposits',
-    Transfers = 'transfers'
-}
+export const DataDestroyObject = {
+    Budgets: 'budgets',
+    Bills: 'bills',
+    PiggyBanks: 'piggy_banks',
+    Rules: 'rules',
+    Recurring: 'recurring',
+    Categories: 'categories',
+    Tags: 'tags',
+    ObjectGroups: 'object_groups',
+    Accounts: 'accounts',
+    AssetAccounts: 'asset_accounts',
+    ExpenseAccounts: 'expense_accounts',
+    RevenueAccounts: 'revenue_accounts',
+    Liabilities: 'liabilities',
+    Transactions: 'transactions',
+    Withdrawals: 'withdrawals',
+    Deposits: 'deposits',
+    Transfers: 'transfers'
+} as const;
+
+export type DataDestroyObject = typeof DataDestroyObject[keyof typeof DataDestroyObject];
 
 
 

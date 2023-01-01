@@ -20,13 +20,15 @@
  * @enum {string}
  */
 
-export enum AccountSearchFieldFilter {
-    All = 'all',
-    Iban = 'iban',
-    Name = 'name',
-    Number = 'number',
-    Id = 'id'
-}
+export const AccountSearchFieldFilter = {
+    All: 'all',
+    Iban: 'iban',
+    Name: 'name',
+    Number: 'number',
+    Id: 'id'
+} as const;
+
+export type AccountSearchFieldFilter = typeof AccountSearchFieldFilter[keyof typeof AccountSearchFieldFilter];
 
 
 

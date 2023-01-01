@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Rule } from './rule';
 
 /**
@@ -27,25 +31,24 @@ export interface RuleRead {
      * @type {string}
      * @memberof RuleRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof RuleRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Rule}
      * @memberof RuleRead
      */
-    attributes: Rule;
+    'attributes': Rule;
     /**
      * 
      * @type {ObjectLink}
      * @memberof RuleRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

@@ -25,25 +25,24 @@ export interface RuleGroupStore {
      * @type {string}
      * @memberof RuleGroupStore
      */
-    title: string;
+    'title': string;
     /**
      * 
      * @type {string}
      * @memberof RuleGroupStore
      */
-    description?: string | null;
+    'description'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof RuleGroupStore
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof RuleGroupStore
      */
-    active?: boolean;
+    'active'?: boolean;
 }
-
 

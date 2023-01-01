@@ -25,37 +25,36 @@ export interface TagModelStore {
      * @type {string}
      * @memberof TagModelStore
      */
-    tag: string;
+    'tag': string;
     /**
      * The date to which the tag is applicable.
      * @type {string}
      * @memberof TagModelStore
      */
-    date?: string | null;
+    'date'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof TagModelStore
      */
-    description?: string | null;
+    'description'?: string | null;
     /**
      * Latitude of the tag\'s location, if applicable. Can be used to draw a map.
      * @type {number}
      * @memberof TagModelStore
      */
-    latitude?: number | null;
+    'latitude'?: number | null;
     /**
      * Latitude of the tag\'s location, if applicable. Can be used to draw a map.
      * @type {number}
      * @memberof TagModelStore
      */
-    longitude?: number | null;
+    'longitude'?: number | null;
     /**
      * Zoom level for the map, if drawn. This to set the box right. Unfortunately this is a proprietary value because each map provider has different zoom levels.
      * @type {number}
      * @memberof TagModelStore
      */
-    zoom_level?: number | null;
+    'zoom_level'?: number | null;
 }
-
 

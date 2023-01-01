@@ -25,49 +25,48 @@ export interface TagModel {
      * @type {string}
      * @memberof TagModel
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof TagModel
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * The tag
      * @type {string}
      * @memberof TagModel
      */
-    tag: string;
+    'tag': string;
     /**
      * The date to which the tag is applicable.
      * @type {string}
      * @memberof TagModel
      */
-    date?: string | null;
+    'date'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof TagModel
      */
-    description?: string | null;
+    'description'?: string | null;
     /**
      * Latitude of the tag\'s location, if applicable. Can be used to draw a map.
      * @type {number}
      * @memberof TagModel
      */
-    latitude?: number | null;
+    'latitude'?: number | null;
     /**
      * Latitude of the tag\'s location, if applicable. Can be used to draw a map.
      * @type {number}
      * @memberof TagModel
      */
-    longitude?: number | null;
+    'longitude'?: number | null;
     /**
      * Zoom level for the map, if drawn. This to set the box right. Unfortunately this is a proprietary value because each map provider has different zoom levels.
      * @type {number}
      * @memberof TagModel
      */
-    zoom_level?: number | null;
+    'zoom_level'?: number | null;
 }
-
 

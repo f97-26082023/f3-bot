@@ -25,25 +25,24 @@ export interface AutocompleteTransaction {
      * @type {string}
      * @memberof AutocompleteTransaction
      */
-    id: string;
+    'id': string;
     /**
      * The ID of the underlying transaction group.
      * @type {string}
      * @memberof AutocompleteTransaction
      */
-    transaction_group_id?: string;
+    'transaction_group_id'?: string;
     /**
      * Transaction description
      * @type {string}
      * @memberof AutocompleteTransaction
      */
-    name: string;
+    'name': string;
     /**
      * Transaction description
      * @type {string}
      * @memberof AutocompleteTransaction
      */
-    description: string;
+    'description': string;
 }
-
 

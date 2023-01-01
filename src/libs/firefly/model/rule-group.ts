@@ -25,37 +25,36 @@ export interface RuleGroup {
      * @type {string}
      * @memberof RuleGroup
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof RuleGroup
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof RuleGroup
      */
-    title: string;
+    'title': string;
     /**
      * 
      * @type {string}
      * @memberof RuleGroup
      */
-    description?: string | null;
+    'description'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof RuleGroup
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof RuleGroup
      */
-    active?: boolean;
+    'active'?: boolean;
 }
-
 

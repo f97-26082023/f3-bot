@@ -25,79 +25,78 @@ export interface PiggyBankUpdate {
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    name?: string;
+    'name'?: string;
     /**
      * The ID of the asset account this piggy bank is connected to.
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    account_id?: string;
+    'account_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    target_amount?: string | null;
+    'target_amount'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    current_amount?: string;
+    'current_amount'?: string;
     /**
      * The date you started with this piggy bank.
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    start_date?: string;
+    'start_date'?: string;
     /**
      * The date you intend to finish saving money.
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    target_date?: string | null;
+    'target_date'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof PiggyBankUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof PiggyBankUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * The group ID of the group this object is part of. NULL if no group.
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    object_group_id?: string | null;
+    'object_group_id'?: string | null;
     /**
      * The name of the group. NULL if no group.
      * @type {string}
      * @memberof PiggyBankUpdate
      */
-    object_group_title?: string | null;
+    'object_group_title'?: string | null;
 }
-
 

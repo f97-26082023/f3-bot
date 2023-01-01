@@ -20,12 +20,14 @@
  * @enum {string}
  */
 
-export enum AutoBudgetType {
-    Reset = 'reset',
-    Rollover = 'rollover',
-    None = 'none',
-    Null = 'null'
-}
+export const AutoBudgetType = {
+    Reset: 'reset',
+    Rollover: 'rollover',
+    None: 'none',
+    Null: 'null'
+} as const;
+
+export type AutoBudgetType = typeof AutoBudgetType[keyof typeof AutoBudgetType];
 
 
 

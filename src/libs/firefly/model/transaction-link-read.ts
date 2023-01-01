@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransactionLink } from './transaction-link';
 
 /**
@@ -27,25 +31,24 @@ export interface TransactionLinkRead {
      * @type {string}
      * @memberof TransactionLinkRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof TransactionLinkRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {TransactionLink}
      * @memberof TransactionLinkRead
      */
-    attributes: TransactionLink;
+    'attributes': TransactionLink;
     /**
      * 
      * @type {ObjectLink}
      * @memberof TransactionLinkRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

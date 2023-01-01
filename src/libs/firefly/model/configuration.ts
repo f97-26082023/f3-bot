@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ConfigValueFilter } from './config-value-filter';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PolymorphicProperty } from './polymorphic-property';
 
 /**
@@ -27,19 +31,18 @@ export interface Configuration {
      * @type {ConfigValueFilter}
      * @memberof Configuration
      */
-    title: ConfigValueFilter;
+    'title': ConfigValueFilter;
     /**
      * 
      * @type {PolymorphicProperty}
      * @memberof Configuration
      */
-    value: PolymorphicProperty;
+    'value': PolymorphicProperty;
     /**
      * If this config variable can be edited by the user
      * @type {boolean}
      * @memberof Configuration
      */
-    editable: boolean;
+    'editable': boolean;
 }
-
 

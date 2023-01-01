@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutoBudgetPeriod } from './auto-budget-period';
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutoBudgetType } from './auto-budget-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { BudgetSpent } from './budget-spent';
 
 /**
@@ -28,73 +34,72 @@ export interface Budget {
      * @type {string}
      * @memberof Budget
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Budget
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Budget
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {boolean}
      * @memberof Budget
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof Budget
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof Budget
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {AutoBudgetType}
      * @memberof Budget
      */
-    auto_budget_type?: AutoBudgetType | null;
+    'auto_budget_type'?: AutoBudgetType | null;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof Budget
      */
-    auto_budget_currency_id?: string | null;
+    'auto_budget_currency_id'?: string | null;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof Budget
      */
-    auto_budget_currency_code?: string | null;
+    'auto_budget_currency_code'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof Budget
      */
-    auto_budget_amount?: string | null;
+    'auto_budget_amount'?: string | null;
     /**
      * 
      * @type {AutoBudgetPeriod}
      * @memberof Budget
      */
-    auto_budget_period?: AutoBudgetPeriod | null;
+    'auto_budget_period'?: AutoBudgetPeriod | null;
     /**
      * Information on how much was spent in this budget. Is only filled in when the start and end date are submitted.
      * @type {Array<BudgetSpent>}
      * @memberof Budget
      */
-    spent?: Array<BudgetSpent>;
+    'spent'?: Array<BudgetSpent>;
 }
-
 

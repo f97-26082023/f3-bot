@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteBudget } from './autocomplete-budget';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteBudget } from './autocomplete-budget';
  */
 export interface AutocompleteBudgetArray extends Array<AutocompleteBudget> {
 }
-
 

@@ -20,10 +20,12 @@
  * @enum {string}
  */
 
-export enum RuleTriggerType {
-    StoreJournal = 'store-journal',
-    UpdateJournal = 'update-journal'
-}
+export const RuleTriggerType = {
+    StoreJournal: 'store-journal',
+    UpdateJournal: 'update-journal'
+} as const;
+
+export type RuleTriggerType = typeof RuleTriggerType[keyof typeof RuleTriggerType];
 
 
 

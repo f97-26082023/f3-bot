@@ -25,19 +25,18 @@ export interface AutocompleteObjectGroup {
      * @type {string}
      * @memberof AutocompleteObjectGroup
      */
-    id: string;
+    'id': string;
     /**
      * Title of the object group found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteObjectGroup
      */
-    title: string;
+    'title': string;
     /**
      * Title of the object group found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteObjectGroup
      */
-    name: string;
+    'name': string;
 }
-
 

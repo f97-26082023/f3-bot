@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ChartDataPoint } from './chart-data-point';
 
 /**
@@ -26,61 +28,60 @@ export interface ChartDataSet {
      * @type {string}
      * @memberof ChartDataSet
      */
-    label?: string;
+    'label'?: string;
     /**
      * The currency ID of the currency associated to the data in the entries.
      * @type {string}
      * @memberof ChartDataSet
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof ChartDataSet
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof ChartDataSet
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals for the currency associated to the data in the entries.
      * @type {number}
      * @memberof ChartDataSet
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * 
      * @type {string}
      * @memberof ChartDataSet
      */
-    start_date?: string;
+    'start_date'?: string;
     /**
      * 
      * @type {string}
      * @memberof ChartDataSet
      */
-    end_date?: string;
+    'end_date'?: string;
     /**
      * Indicated the type of chart that is expected to be rendered. You can safely ignore this if you want.
      * @type {string}
      * @memberof ChartDataSet
      */
-    type?: string;
+    'type'?: string;
     /**
      * Used to indicate the Y axis for this data set. Is usually between 0 and 1 (left and right side of the chart).
      * @type {number}
      * @memberof ChartDataSet
      */
-    yAxisID?: number;
+    'yAxisID'?: number;
     /**
      * The actual entries for this data set. They \'key\' value is the label for the data point. The value is the actual (numerical) value.
      * @type {Array<ChartDataPoint>}
      * @memberof ChartDataSet
      */
-    entries?: Array<ChartDataPoint>;
+    'entries'?: Array<ChartDataPoint>;
 }
-
 

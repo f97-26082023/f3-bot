@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -49,7 +49,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCategory: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteCategory: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteCategory', 'id', id)
             const localVarPath = `/api/v1/categories/{id}`
@@ -71,7 +71,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -89,7 +89,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCategory: async (id: string, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        getCategory: async (id: string, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getCategory', 'id', id)
             const localVarPath = `/api/v1/categories/{id}`
@@ -123,7 +123,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -140,7 +140,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachmentByCategory: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachmentByCategory: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listAttachmentByCategory', 'id', id)
             const localVarPath = `/api/v1/categories/{id}/attachments`
@@ -166,7 +166,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -182,7 +182,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listCategory: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listCategory: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/categories`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -205,7 +205,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -225,7 +225,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByCategory: async (id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByCategory: async (id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByCategory', 'id', id)
             const localVarPath = `/api/v1/categories/{id}/transactions`
@@ -267,7 +267,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -287,7 +287,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionWithoutCategory: async (limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionWithoutCategory: async (limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/categories/transactions-without-category`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -330,7 +330,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -346,7 +346,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeCategory: async (category: Category, options: any = {}): Promise<RequestArgs> => {
+        storeCategory: async (category: Category, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'category' is not null or undefined
             assertParamExists('storeCategory', 'category', category)
             const localVarPath = `/api/v1/categories`;
@@ -369,7 +369,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(category, localVarRequestOptions, configuration)
@@ -387,7 +387,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateCategory: async (id: string, categoryUpdate: CategoryUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateCategory: async (id: string, categoryUpdate: CategoryUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateCategory', 'id', id)
             // verify required parameter 'categoryUpdate' is not null or undefined
@@ -413,7 +413,7 @@ export const CategoriesApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(categoryUpdate, localVarRequestOptions, configuration)
@@ -440,7 +440,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteCategory(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteCategory(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCategory(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -453,7 +453,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCategory(id: string, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorySingle>> {
+        async getCategory(id: string, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCategory(id, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -465,7 +465,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachmentByCategory(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachmentByCategory(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachmentByCategory(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -476,7 +476,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listCategory(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategoryArray>> {
+        async listCategory(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategoryArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listCategory(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -491,7 +491,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByCategory(id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByCategory(id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByCategory(id, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -506,7 +506,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionWithoutCategory(limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionWithoutCategory(limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionWithoutCategory(limit, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -517,7 +517,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeCategory(category: Category, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorySingle>> {
+        async storeCategory(category: Category, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeCategory(category, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -529,7 +529,7 @@ export const CategoriesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateCategory(id: string, categoryUpdate: CategoryUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorySingle>> {
+        async updateCategory(id: string, categoryUpdate: CategoryUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CategorySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateCategory(id, categoryUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -849,7 +849,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public deleteCategory(requestParameters: CategoriesApiDeleteCategoryRequest, options?: any) {
+    public deleteCategory(requestParameters: CategoriesApiDeleteCategoryRequest, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).deleteCategory(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -861,7 +861,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public getCategory(requestParameters: CategoriesApiGetCategoryRequest, options?: any) {
+    public getCategory(requestParameters: CategoriesApiGetCategoryRequest, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).getCategory(requestParameters.id, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -873,7 +873,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public listAttachmentByCategory(requestParameters: CategoriesApiListAttachmentByCategoryRequest, options?: any) {
+    public listAttachmentByCategory(requestParameters: CategoriesApiListAttachmentByCategoryRequest, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).listAttachmentByCategory(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -885,7 +885,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public listCategory(requestParameters: CategoriesApiListCategoryRequest = {}, options?: any) {
+    public listCategory(requestParameters: CategoriesApiListCategoryRequest = {}, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).listCategory(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -897,7 +897,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public listTransactionByCategory(requestParameters: CategoriesApiListTransactionByCategoryRequest, options?: any) {
+    public listTransactionByCategory(requestParameters: CategoriesApiListTransactionByCategoryRequest, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).listTransactionByCategory(requestParameters.id, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -909,7 +909,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public listTransactionWithoutCategory(requestParameters: CategoriesApiListTransactionWithoutCategoryRequest = {}, options?: any) {
+    public listTransactionWithoutCategory(requestParameters: CategoriesApiListTransactionWithoutCategoryRequest = {}, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).listTransactionWithoutCategory(requestParameters.limit, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -921,7 +921,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public storeCategory(requestParameters: CategoriesApiStoreCategoryRequest, options?: any) {
+    public storeCategory(requestParameters: CategoriesApiStoreCategoryRequest, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).storeCategory(requestParameters.category, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -933,7 +933,7 @@ export class CategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CategoriesApi
      */
-    public updateCategory(requestParameters: CategoriesApiUpdateCategoryRequest, options?: any) {
+    public updateCategory(requestParameters: CategoriesApiUpdateCategoryRequest, options?: AxiosRequestConfig) {
         return CategoriesApiFp(this.configuration).updateCategory(requestParameters.id, requestParameters.categoryUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

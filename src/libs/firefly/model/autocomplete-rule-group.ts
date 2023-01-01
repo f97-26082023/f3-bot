@@ -25,19 +25,18 @@ export interface AutocompleteRuleGroup {
      * @type {string}
      * @memberof AutocompleteRuleGroup
      */
-    id: string;
+    'id': string;
     /**
      * Name of the rule group found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteRuleGroup
      */
-    name: string;
+    'name': string;
     /**
      * Description of the rule group found by auto-complete.
      * @type {string}
      * @memberof AutocompleteRuleGroup
      */
-    description?: string;
+    'description'?: string;
 }
-
 

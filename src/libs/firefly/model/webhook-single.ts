@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookRead } from './webhook-read';
 
 /**
@@ -26,7 +28,6 @@ export interface WebhookSingle {
      * @type {WebhookRead}
      * @memberof WebhookSingle
      */
-    data: WebhookRead;
+    'data': WebhookRead;
 }
-
 

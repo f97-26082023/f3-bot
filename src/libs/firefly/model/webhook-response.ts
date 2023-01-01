@@ -20,11 +20,13 @@
  * @enum {string}
  */
 
-export enum WebhookResponse {
-    Transactions = 'RESPONSE_TRANSACTIONS',
-    Accounts = 'RESPONSE_ACCOUNTS',
-    None = 'RESPONSE_NONE'
-}
+export const WebhookResponse = {
+    Transactions: 'RESPONSE_TRANSACTIONS',
+    Accounts: 'RESPONSE_ACCOUNTS',
+    None: 'RESPONSE_NONE'
+} as const;
+
+export type WebhookResponse = typeof WebhookResponse[keyof typeof WebhookResponse];
 
 
 

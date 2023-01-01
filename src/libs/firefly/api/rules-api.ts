@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -45,7 +45,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteRule: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteRule: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteRule', 'id', id)
             const localVarPath = `/api/v1/rules/{id}`
@@ -67,7 +67,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -86,7 +86,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        fireRule: async (id: string, start?: string, end?: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        fireRule: async (id: string, start?: string, end?: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('fireRule', 'id', id)
             const localVarPath = `/api/v1/rules/{id}/trigger`
@@ -124,7 +124,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -140,7 +140,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRule: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getRule: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getRule', 'id', id)
             const localVarPath = `/api/v1/rules/{id}`
@@ -162,7 +162,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -178,7 +178,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRule: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listRule: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/rules`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -201,7 +201,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -217,7 +217,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeRule: async (ruleStore: RuleStore, options: any = {}): Promise<RequestArgs> => {
+        storeRule: async (ruleStore: RuleStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ruleStore' is not null or undefined
             assertParamExists('storeRule', 'ruleStore', ruleStore)
             const localVarPath = `/api/v1/rules`;
@@ -240,7 +240,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ruleStore, localVarRequestOptions, configuration)
@@ -260,7 +260,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        testRule: async (id: string, start?: string, end?: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        testRule: async (id: string, start?: string, end?: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('testRule', 'id', id)
             const localVarPath = `/api/v1/rules/{id}/test`
@@ -298,7 +298,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -315,7 +315,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateRule: async (id: string, ruleUpdate: RuleUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateRule: async (id: string, ruleUpdate: RuleUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateRule', 'id', id)
             // verify required parameter 'ruleUpdate' is not null or undefined
@@ -341,7 +341,7 @@ export const RulesApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ruleUpdate, localVarRequestOptions, configuration)
@@ -368,7 +368,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteRule(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteRule(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteRule(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -382,7 +382,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async fireRule(id: string, start?: string, end?: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async fireRule(id: string, start?: string, end?: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.fireRule(id, start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -393,7 +393,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRule(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleSingle>> {
+        async getRule(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRule(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -404,7 +404,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRule(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
+        async listRule(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRule(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -415,7 +415,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeRule(ruleStore: RuleStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleSingle>> {
+        async storeRule(ruleStore: RuleStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeRule(ruleStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -429,7 +429,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async testRule(id: string, start?: string, end?: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async testRule(id: string, start?: string, end?: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.testRule(id, start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -441,7 +441,7 @@ export const RulesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateRule(id: string, ruleUpdate: RuleUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleSingle>> {
+        async updateRule(id: string, ruleUpdate: RuleUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateRule(id, ruleUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -697,7 +697,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public deleteRule(requestParameters: RulesApiDeleteRuleRequest, options?: any) {
+    public deleteRule(requestParameters: RulesApiDeleteRuleRequest, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).deleteRule(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -709,7 +709,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public fireRule(requestParameters: RulesApiFireRuleRequest, options?: any) {
+    public fireRule(requestParameters: RulesApiFireRuleRequest, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).fireRule(requestParameters.id, requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -721,7 +721,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public getRule(requestParameters: RulesApiGetRuleRequest, options?: any) {
+    public getRule(requestParameters: RulesApiGetRuleRequest, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).getRule(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -733,7 +733,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public listRule(requestParameters: RulesApiListRuleRequest = {}, options?: any) {
+    public listRule(requestParameters: RulesApiListRuleRequest = {}, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).listRule(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -745,7 +745,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public storeRule(requestParameters: RulesApiStoreRuleRequest, options?: any) {
+    public storeRule(requestParameters: RulesApiStoreRuleRequest, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).storeRule(requestParameters.ruleStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -757,7 +757,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public testRule(requestParameters: RulesApiTestRuleRequest, options?: any) {
+    public testRule(requestParameters: RulesApiTestRuleRequest, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).testRule(requestParameters.id, requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -769,7 +769,7 @@ export class RulesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RulesApi
      */
-    public updateRule(requestParameters: RulesApiUpdateRuleRequest, options?: any) {
+    public updateRule(requestParameters: RulesApiUpdateRuleRequest, options?: AxiosRequestConfig) {
         return RulesApiFp(this.configuration).updateRule(requestParameters.id, requestParameters.ruleUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

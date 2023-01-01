@@ -20,11 +20,13 @@
  * @enum {string}
  */
 
-export enum WebhookTrigger {
-    StoreTransaction = 'TRIGGER_STORE_TRANSACTION',
-    UpdateTransaction = 'TRIGGER_UPDATE_TRANSACTION',
-    DestroyTransaction = 'TRIGGER_DESTROY_TRANSACTION'
-}
+export const WebhookTrigger = {
+    StoreTransaction: 'TRIGGER_STORE_TRANSACTION',
+    UpdateTransaction: 'TRIGGER_UPDATE_TRANSACTION',
+    DestroyTransaction: 'TRIGGER_DESTROY_TRANSACTION'
+} as const;
+
+export type WebhookTrigger = typeof WebhookTrigger[keyof typeof WebhookTrigger];
 
 
 

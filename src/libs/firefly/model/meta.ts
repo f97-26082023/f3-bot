@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { MetaPagination } from './meta-pagination';
 
 /**
@@ -26,7 +28,6 @@ export interface Meta {
      * @type {MetaPagination}
      * @memberof Meta
      */
-    pagination?: MetaPagination;
+    'pagination'?: MetaPagination;
 }
-
 

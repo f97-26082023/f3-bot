@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteCurrency } from './autocomplete-currency';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteCurrency } from './autocomplete-currency';
  */
 export interface AutocompleteCurrencyArray extends Array<AutocompleteCurrency> {
 }
-
 

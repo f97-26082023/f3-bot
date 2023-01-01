@@ -20,27 +20,29 @@
  * @enum {string}
  */
 
-export enum ConfigValueFilter {
-    ConfigurationIsDemoSite = 'configuration.is_demo_site',
-    ConfigurationPermissionUpdateCheck = 'configuration.permission_update_check',
-    ConfigurationLastUpdateCheck = 'configuration.last_update_check',
-    ConfigurationSingleUserMode = 'configuration.single_user_mode',
-    FireflyVersion = 'firefly.version',
-    FireflyApiVersion = 'firefly.api_version',
-    FireflyDefaultLocation = 'firefly.default_location',
-    FireflyAccountToTransaction = 'firefly.account_to_transaction',
-    FireflyAllowedOpposingTypes = 'firefly.allowed_opposing_types',
-    FireflyAccountRoles = 'firefly.accountRoles',
-    FireflyValidLiabilities = 'firefly.valid_liabilities',
-    FireflyInterestPeriods = 'firefly.interest_periods',
-    FireflyEnableExternalMap = 'firefly.enable_external_map',
-    FireflyExpectedSourceTypes = 'firefly.expected_source_types',
-    AppTimezone = 'app.timezone',
-    FireflyBillPeriods = 'firefly.bill_periods',
-    FireflyCreditCardTypes = 'firefly.credit_card_types',
-    FireflyLanguages = 'firefly.languages',
-    FireflyValidViewRanges = 'firefly.valid_view_ranges'
-}
+export const ConfigValueFilter = {
+    ConfigurationIsDemoSite: 'configuration.is_demo_site',
+    ConfigurationPermissionUpdateCheck: 'configuration.permission_update_check',
+    ConfigurationLastUpdateCheck: 'configuration.last_update_check',
+    ConfigurationSingleUserMode: 'configuration.single_user_mode',
+    FireflyVersion: 'firefly.version',
+    FireflyApiVersion: 'firefly.api_version',
+    FireflyDefaultLocation: 'firefly.default_location',
+    FireflyAccountToTransaction: 'firefly.account_to_transaction',
+    FireflyAllowedOpposingTypes: 'firefly.allowed_opposing_types',
+    FireflyAccountRoles: 'firefly.accountRoles',
+    FireflyValidLiabilities: 'firefly.valid_liabilities',
+    FireflyInterestPeriods: 'firefly.interest_periods',
+    FireflyEnableExternalMap: 'firefly.enable_external_map',
+    FireflyExpectedSourceTypes: 'firefly.expected_source_types',
+    AppTimezone: 'app.timezone',
+    FireflyBillPeriods: 'firefly.bill_periods',
+    FireflyCreditCardTypes: 'firefly.credit_card_types',
+    FireflyLanguages: 'firefly.languages',
+    FireflyValidViewRanges: 'firefly.valid_view_ranges'
+} as const;
+
+export type ConfigValueFilter = typeof ConfigValueFilter[keyof typeof ConfigValueFilter];
 
 
 

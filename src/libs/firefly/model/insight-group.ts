@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { InsightGroupEntry } from './insight-group-entry';
 
 /**
@@ -22,5 +24,4 @@ import { InsightGroupEntry } from './insight-group-entry';
  */
 export interface InsightGroup extends Array<InsightGroupEntry> {
 }
-
 

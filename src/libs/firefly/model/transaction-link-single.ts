@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransactionLinkRead } from './transaction-link-read';
 
 /**
@@ -26,7 +28,6 @@ export interface TransactionLinkSingle {
      * @type {TransactionLinkRead}
      * @memberof TransactionLinkSingle
      */
-    data: TransactionLinkRead;
+    'data': TransactionLinkRead;
 }
-
 

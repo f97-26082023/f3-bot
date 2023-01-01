@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -55,7 +55,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteLinkType: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteLinkType: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteLinkType', 'id', id)
             const localVarPath = `/api/v1/link_types/{id}`
@@ -77,7 +77,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -93,7 +93,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTransactionLink: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteTransactionLink: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteTransactionLink', 'id', id)
             const localVarPath = `/api/v1/transaction_links/{id}`
@@ -115,7 +115,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -131,7 +131,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getLinkType: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getLinkType: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getLinkType', 'id', id)
             const localVarPath = `/api/v1/link_types/{id}`
@@ -153,7 +153,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -169,7 +169,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionLink: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getTransactionLink: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getTransactionLink', 'id', id)
             const localVarPath = `/api/v1/transaction_links/{id}`
@@ -191,7 +191,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -207,7 +207,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listLinkType: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listLinkType: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/link_types`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -230,7 +230,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -250,7 +250,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByLinkType: async (id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByLinkType: async (id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByLinkType', 'id', id)
             const localVarPath = `/api/v1/link_types/{id}/transactions`
@@ -292,7 +292,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -308,7 +308,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionLink: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listTransactionLink: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/transaction_links`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -331,7 +331,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -347,7 +347,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeLinkType: async (linkType: LinkType, options: any = {}): Promise<RequestArgs> => {
+        storeLinkType: async (linkType: LinkType, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'linkType' is not null or undefined
             assertParamExists('storeLinkType', 'linkType', linkType)
             const localVarPath = `/api/v1/link_types`;
@@ -370,7 +370,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(linkType, localVarRequestOptions, configuration)
@@ -387,7 +387,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeTransactionLink: async (transactionLinkStore: TransactionLinkStore, options: any = {}): Promise<RequestArgs> => {
+        storeTransactionLink: async (transactionLinkStore: TransactionLinkStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionLinkStore' is not null or undefined
             assertParamExists('storeTransactionLink', 'transactionLinkStore', transactionLinkStore)
             const localVarPath = `/api/v1/transaction_links`;
@@ -410,7 +410,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(transactionLinkStore, localVarRequestOptions, configuration)
@@ -428,7 +428,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateLinkType: async (id: string, linkTypeUpdate: LinkTypeUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateLinkType: async (id: string, linkTypeUpdate: LinkTypeUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateLinkType', 'id', id)
             // verify required parameter 'linkTypeUpdate' is not null or undefined
@@ -454,7 +454,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(linkTypeUpdate, localVarRequestOptions, configuration)
@@ -472,7 +472,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateTransactionLink: async (id: string, transactionLinkUpdate: TransactionLinkUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateTransactionLink: async (id: string, transactionLinkUpdate: TransactionLinkUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateTransactionLink', 'id', id)
             // verify required parameter 'transactionLinkUpdate' is not null or undefined
@@ -498,7 +498,7 @@ export const LinksApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(transactionLinkUpdate, localVarRequestOptions, configuration)
@@ -525,7 +525,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteLinkType(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteLinkType(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteLinkType(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -536,7 +536,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteTransactionLink(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteTransactionLink(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTransactionLink(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -547,7 +547,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getLinkType(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeSingle>> {
+        async getLinkType(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getLinkType(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -558,7 +558,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransactionLink(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkSingle>> {
+        async getTransactionLink(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionLink(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -569,7 +569,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listLinkType(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeArray>> {
+        async listLinkType(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listLinkType(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -584,7 +584,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByLinkType(id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByLinkType(id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByLinkType(id, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -595,7 +595,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionLink(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkArray>> {
+        async listTransactionLink(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionLink(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -606,7 +606,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeLinkType(linkType: LinkType, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeSingle>> {
+        async storeLinkType(linkType: LinkType, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeLinkType(linkType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -617,7 +617,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeTransactionLink(transactionLinkStore: TransactionLinkStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkSingle>> {
+        async storeTransactionLink(transactionLinkStore: TransactionLinkStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeTransactionLink(transactionLinkStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -629,7 +629,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateLinkType(id: string, linkTypeUpdate: LinkTypeUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeSingle>> {
+        async updateLinkType(id: string, linkTypeUpdate: LinkTypeUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LinkTypeSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateLinkType(id, linkTypeUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -641,7 +641,7 @@ export const LinksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateTransactionLink(id: string, transactionLinkUpdate: TransactionLinkUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkSingle>> {
+        async updateTransactionLink(id: string, transactionLinkUpdate: TransactionLinkUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateTransactionLink(id, transactionLinkUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -985,7 +985,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public deleteLinkType(requestParameters: LinksApiDeleteLinkTypeRequest, options?: any) {
+    public deleteLinkType(requestParameters: LinksApiDeleteLinkTypeRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).deleteLinkType(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -997,7 +997,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public deleteTransactionLink(requestParameters: LinksApiDeleteTransactionLinkRequest, options?: any) {
+    public deleteTransactionLink(requestParameters: LinksApiDeleteTransactionLinkRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).deleteTransactionLink(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1009,7 +1009,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public getLinkType(requestParameters: LinksApiGetLinkTypeRequest, options?: any) {
+    public getLinkType(requestParameters: LinksApiGetLinkTypeRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).getLinkType(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1021,7 +1021,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public getTransactionLink(requestParameters: LinksApiGetTransactionLinkRequest, options?: any) {
+    public getTransactionLink(requestParameters: LinksApiGetTransactionLinkRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).getTransactionLink(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1033,7 +1033,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public listLinkType(requestParameters: LinksApiListLinkTypeRequest = {}, options?: any) {
+    public listLinkType(requestParameters: LinksApiListLinkTypeRequest = {}, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).listLinkType(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1045,7 +1045,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public listTransactionByLinkType(requestParameters: LinksApiListTransactionByLinkTypeRequest, options?: any) {
+    public listTransactionByLinkType(requestParameters: LinksApiListTransactionByLinkTypeRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).listTransactionByLinkType(requestParameters.id, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1057,7 +1057,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public listTransactionLink(requestParameters: LinksApiListTransactionLinkRequest = {}, options?: any) {
+    public listTransactionLink(requestParameters: LinksApiListTransactionLinkRequest = {}, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).listTransactionLink(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1069,7 +1069,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public storeLinkType(requestParameters: LinksApiStoreLinkTypeRequest, options?: any) {
+    public storeLinkType(requestParameters: LinksApiStoreLinkTypeRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).storeLinkType(requestParameters.linkType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1081,7 +1081,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public storeTransactionLink(requestParameters: LinksApiStoreTransactionLinkRequest, options?: any) {
+    public storeTransactionLink(requestParameters: LinksApiStoreTransactionLinkRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).storeTransactionLink(requestParameters.transactionLinkStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1093,7 +1093,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public updateLinkType(requestParameters: LinksApiUpdateLinkTypeRequest, options?: any) {
+    public updateLinkType(requestParameters: LinksApiUpdateLinkTypeRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).updateLinkType(requestParameters.id, requestParameters.linkTypeUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1105,7 +1105,7 @@ export class LinksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof LinksApi
      */
-    public updateTransactionLink(requestParameters: LinksApiUpdateTransactionLinkRequest, options?: any) {
+    public updateTransactionLink(requestParameters: LinksApiUpdateTransactionLinkRequest, options?: AxiosRequestConfig) {
         return LinksApiFp(this.configuration).updateTransactionLink(requestParameters.id, requestParameters.transactionLinkUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

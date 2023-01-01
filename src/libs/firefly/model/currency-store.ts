@@ -25,37 +25,36 @@ export interface CurrencyStore {
      * @type {boolean}
      * @memberof CurrencyStore
      */
-    enabled?: boolean;
+    'enabled'?: boolean;
     /**
      * Make this currency the default currency.
      * @type {boolean}
      * @memberof CurrencyStore
      */
-    _default?: boolean;
+    'default'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof CurrencyStore
      */
-    code: string;
+    'code': string;
     /**
      * 
      * @type {string}
      * @memberof CurrencyStore
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof CurrencyStore
      */
-    symbol: string;
+    'symbol': string;
     /**
      * Supports 0-16 decimals.
      * @type {number}
      * @memberof CurrencyStore
      */
-    decimal_places?: number;
+    'decimal_places'?: number;
 }
-
 

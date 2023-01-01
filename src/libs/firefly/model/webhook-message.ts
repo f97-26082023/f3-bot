@@ -25,43 +25,42 @@ export interface WebhookMessage {
      * @type {string}
      * @memberof WebhookMessage
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof WebhookMessage
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * If this message is sent yet.
      * @type {boolean}
      * @memberof WebhookMessage
      */
-    sent?: boolean;
+    'sent'?: boolean;
     /**
      * If this message has errored out.
      * @type {boolean}
      * @memberof WebhookMessage
      */
-    errored?: boolean;
+    'errored'?: boolean;
     /**
      * The ID of the webhook this message belongs to.
      * @type {string}
      * @memberof WebhookMessage
      */
-    webhook_id?: string;
+    'webhook_id'?: string;
     /**
      * Long UUID string for identification of this webhook message.
      * @type {string}
      * @memberof WebhookMessage
      */
-    uuid?: string;
+    'uuid'?: string;
     /**
      * The actual message that is sent or will be sent as JSON string.
      * @type {string}
      * @memberof WebhookMessage
      */
-    string?: string | null;
+    'string'?: string | null;
 }
-
 

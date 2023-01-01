@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Recurrence } from './recurrence';
 
 /**
@@ -27,25 +31,24 @@ export interface RecurrenceRead {
      * @type {string}
      * @memberof RecurrenceRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Recurrence}
      * @memberof RecurrenceRead
      */
-    attributes: Recurrence;
+    'attributes': Recurrence;
     /**
      * 
      * @type {ObjectLink}
      * @memberof RecurrenceRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

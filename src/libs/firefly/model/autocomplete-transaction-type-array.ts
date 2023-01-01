@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteTransactionType } from './autocomplete-transaction-type';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteTransactionType } from './autocomplete-transaction-type';
  */
 export interface AutocompleteTransactionTypeArray extends Array<AutocompleteTransactionType> {
 }
-
 

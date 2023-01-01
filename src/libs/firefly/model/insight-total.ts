@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { InsightTotalEntry } from './insight-total-entry';
 
 /**
@@ -22,5 +24,4 @@ import { InsightTotalEntry } from './insight-total-entry';
  */
 export interface InsightTotal extends Array<InsightTotalEntry> {
 }
-
 

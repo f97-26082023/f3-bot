@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CurrencyRead } from './currency-read';
 
 /**
@@ -26,7 +28,6 @@ export interface CurrencySingle {
      * @type {CurrencyRead}
      * @memberof CurrencySingle
      */
-    data: CurrencyRead;
+    'data': CurrencyRead;
 }
-
 

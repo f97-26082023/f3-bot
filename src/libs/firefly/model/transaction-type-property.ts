@@ -20,13 +20,15 @@
  * @enum {string}
  */
 
-export enum TransactionTypeProperty {
-    Withdrawal = 'withdrawal',
-    Deposit = 'deposit',
-    Transfer = 'transfer',
-    Reconciliation = 'reconciliation',
-    OpeningBalance = 'opening balance'
-}
+export const TransactionTypeProperty = {
+    Withdrawal: 'withdrawal',
+    Deposit: 'deposit',
+    Transfer: 'transfer',
+    Reconciliation: 'reconciliation',
+    OpeningBalance: 'opening balance'
+} as const;
+
+export type TransactionTypeProperty = typeof TransactionTypeProperty[keyof typeof TransactionTypeProperty];
 
 
 

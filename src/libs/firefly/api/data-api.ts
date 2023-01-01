@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -37,7 +37,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateTransactions: async (query: string, options: any = {}): Promise<RequestArgs> => {
+        bulkUpdateTransactions: async (query: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'query' is not null or undefined
             assertParamExists('bulkUpdateTransactions', 'query', query)
             const localVarPath = `/api/v1/data/bulk/transactions`;
@@ -62,7 +62,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -78,7 +78,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        destroyData: async (objects: DataDestroyObject, options: any = {}): Promise<RequestArgs> => {
+        destroyData: async (objects: DataDestroyObject, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'objects' is not null or undefined
             assertParamExists('destroyData', 'objects', objects)
             const localVarPath = `/api/v1/data/destroy`;
@@ -103,7 +103,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -119,7 +119,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportAccounts: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportAccounts: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/accounts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -142,7 +142,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -158,7 +158,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportBills: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportBills: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/bills`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -181,7 +181,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -197,7 +197,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportBudgets: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportBudgets: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/budgets`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -220,7 +220,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -236,7 +236,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportCategories: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportCategories: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/categories`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -259,7 +259,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -275,7 +275,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportPiggies: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportPiggies: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/piggy-banks`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -298,7 +298,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -314,7 +314,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportRecurring: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportRecurring: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/recurring`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -337,7 +337,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -353,7 +353,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportRules: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportRules: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/rules`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -376,7 +376,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -392,7 +392,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportTags: async (type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportTags: async (type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/data/export/tags`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -415,7 +415,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -434,7 +434,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportTransactions: async (start: string, end: string, accounts?: string, type?: ExportFileFilter, options: any = {}): Promise<RequestArgs> => {
+        exportTransactions: async (start: string, end: string, accounts?: string, type?: ExportFileFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('exportTransactions', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -477,7 +477,7 @@ export const DataApiAxiosParamCreator = function (configuration?: Configuration)
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -503,7 +503,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async bulkUpdateTransactions(query: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async bulkUpdateTransactions(query: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateTransactions(query, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -514,7 +514,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async destroyData(objects: DataDestroyObject, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async destroyData(objects: DataDestroyObject, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.destroyData(objects, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -525,7 +525,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportAccounts(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportAccounts(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportAccounts(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -536,7 +536,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportBills(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportBills(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportBills(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -547,7 +547,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportBudgets(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportBudgets(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportBudgets(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -558,7 +558,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportCategories(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportCategories(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportCategories(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -569,7 +569,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportPiggies(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportPiggies(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportPiggies(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -580,7 +580,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportRecurring(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportRecurring(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportRecurring(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -591,7 +591,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportRules(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportRules(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportRules(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -602,7 +602,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportTags(type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportTags(type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportTags(type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -616,7 +616,7 @@ export const DataApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async exportTransactions(start: string, end: string, accounts?: string, type?: ExportFileFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async exportTransactions(start: string, end: string, accounts?: string, type?: ExportFileFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.exportTransactions(start, end, accounts, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -657,7 +657,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportAccounts(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportAccounts(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportAccounts(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -667,7 +667,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportBills(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportBills(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportBills(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -677,7 +677,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportBudgets(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportBudgets(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportBudgets(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -687,7 +687,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportCategories(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportCategories(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportCategories(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -697,7 +697,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportPiggies(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportPiggies(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportPiggies(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -707,7 +707,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportRecurring(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportRecurring(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportRecurring(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -717,7 +717,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportRules(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportRules(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportRules(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -727,7 +727,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportTags(type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportTags(type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportTags(type, options).then((request) => request(axios, basePath));
         },
         /**
@@ -740,7 +740,7 @@ export const DataApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        exportTransactions(start: string, end: string, accounts?: string, type?: ExportFileFilter, options?: any): AxiosPromise<any> {
+        exportTransactions(start: string, end: string, accounts?: string, type?: ExportFileFilter, options?: any): AxiosPromise<File> {
             return localVarFp.exportTransactions(start, end, accounts, type, options).then((request) => request(axios, basePath));
         },
     };
@@ -936,7 +936,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public bulkUpdateTransactions(requestParameters: DataApiBulkUpdateTransactionsRequest, options?: any) {
+    public bulkUpdateTransactions(requestParameters: DataApiBulkUpdateTransactionsRequest, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).bulkUpdateTransactions(requestParameters.query, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -948,7 +948,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public destroyData(requestParameters: DataApiDestroyDataRequest, options?: any) {
+    public destroyData(requestParameters: DataApiDestroyDataRequest, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).destroyData(requestParameters.objects, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -960,7 +960,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportAccounts(requestParameters: DataApiExportAccountsRequest = {}, options?: any) {
+    public exportAccounts(requestParameters: DataApiExportAccountsRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportAccounts(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -972,7 +972,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportBills(requestParameters: DataApiExportBillsRequest = {}, options?: any) {
+    public exportBills(requestParameters: DataApiExportBillsRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportBills(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -984,7 +984,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportBudgets(requestParameters: DataApiExportBudgetsRequest = {}, options?: any) {
+    public exportBudgets(requestParameters: DataApiExportBudgetsRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportBudgets(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -996,7 +996,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportCategories(requestParameters: DataApiExportCategoriesRequest = {}, options?: any) {
+    public exportCategories(requestParameters: DataApiExportCategoriesRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportCategories(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1008,7 +1008,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportPiggies(requestParameters: DataApiExportPiggiesRequest = {}, options?: any) {
+    public exportPiggies(requestParameters: DataApiExportPiggiesRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportPiggies(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1020,7 +1020,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportRecurring(requestParameters: DataApiExportRecurringRequest = {}, options?: any) {
+    public exportRecurring(requestParameters: DataApiExportRecurringRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportRecurring(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1032,7 +1032,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportRules(requestParameters: DataApiExportRulesRequest = {}, options?: any) {
+    public exportRules(requestParameters: DataApiExportRulesRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportRules(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1044,7 +1044,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportTags(requestParameters: DataApiExportTagsRequest = {}, options?: any) {
+    public exportTags(requestParameters: DataApiExportTagsRequest = {}, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportTags(requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1056,7 +1056,7 @@ export class DataApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataApi
      */
-    public exportTransactions(requestParameters: DataApiExportTransactionsRequest, options?: any) {
+    public exportTransactions(requestParameters: DataApiExportTransactionsRequest, options?: AxiosRequestConfig) {
         return DataApiFp(this.configuration).exportTransactions(requestParameters.start, requestParameters.end, requestParameters.accounts, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 }

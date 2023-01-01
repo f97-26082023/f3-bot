@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectGroup } from './object-group';
 
 /**
@@ -26,19 +28,18 @@ export interface ObjectGroupRead {
      * @type {string}
      * @memberof ObjectGroupRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof ObjectGroupRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {ObjectGroup}
      * @memberof ObjectGroupRead
      */
-    attributes: ObjectGroup;
+    'attributes': ObjectGroup;
 }
-
 

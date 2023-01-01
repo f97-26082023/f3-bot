@@ -25,25 +25,24 @@ export interface CronResultRow {
      * @type {boolean}
      * @memberof CronResultRow
      */
-    job_fired?: boolean | null;
+    'job_fired'?: boolean | null;
     /**
      * This value tells you if this specific cron job actually did something. The job may fire but not change anything. 
      * @type {boolean}
      * @memberof CronResultRow
      */
-    job_succeeded?: boolean | null;
+    'job_succeeded'?: boolean | null;
     /**
      * If the cron job ran into some kind of an error, this value will be true.
      * @type {boolean}
      * @memberof CronResultRow
      */
-    job_errored?: boolean | null;
+    'job_errored'?: boolean | null;
     /**
      * If the cron job ran into some kind of an error, this value will be the error message. The success message if the job actually ran OK. 
      * @type {string}
      * @memberof CronResultRow
      */
-    message?: string | null;
+    'message'?: string | null;
 }
-
 

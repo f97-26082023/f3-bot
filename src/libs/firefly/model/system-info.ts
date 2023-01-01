@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { SystemInfoData } from './system-info-data';
 
 /**
@@ -26,7 +28,6 @@ export interface SystemInfo {
      * @type {SystemInfoData}
      * @memberof SystemInfo
      */
-    data: SystemInfoData;
+    'data': SystemInfoData;
 }
-
 

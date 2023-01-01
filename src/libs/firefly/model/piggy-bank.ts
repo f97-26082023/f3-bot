@@ -25,133 +25,132 @@ export interface PiggyBank {
      * @type {string}
      * @memberof PiggyBank
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * The ID of the asset account this piggy bank is connected to.
      * @type {string}
      * @memberof PiggyBank
      */
-    account_id: string;
+    'account_id': string;
     /**
      * The name of the asset account this piggy bank is connected to.
      * @type {string}
      * @memberof PiggyBank
      */
-    account_name?: string;
+    'account_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals supported by the currency
      * @type {number}
      * @memberof PiggyBank
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    target_amount: string | null;
+    'target_amount': string | null;
     /**
      * 
      * @type {number}
      * @memberof PiggyBank
      */
-    percentage?: number | null;
+    'percentage'?: number | null;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    current_amount?: string;
+    'current_amount'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    left_to_save?: string | null;
+    'left_to_save'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    save_per_month?: string | null;
+    'save_per_month'?: string | null;
     /**
      * The date you started with this piggy bank.
      * @type {string}
      * @memberof PiggyBank
      */
-    start_date?: string;
+    'start_date'?: string;
     /**
      * The date you intend to finish saving money.
      * @type {string}
      * @memberof PiggyBank
      */
-    target_date?: string | null;
+    'target_date'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof PiggyBank
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof PiggyBank
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof PiggyBank
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * The group ID of the group this object is part of. NULL if no group.
      * @type {string}
      * @memberof PiggyBank
      */
-    object_group_id?: string | null;
+    'object_group_id'?: string | null;
     /**
      * The order of the group. At least 1, for the highest sorting.
      * @type {number}
      * @memberof PiggyBank
      */
-    object_group_order?: number | null;
+    'object_group_order'?: number | null;
     /**
      * The name of the group. NULL if no group.
      * @type {string}
      * @memberof PiggyBank
      */
-    object_group_title?: string | null;
+    'object_group_title'?: string | null;
 }
-
 

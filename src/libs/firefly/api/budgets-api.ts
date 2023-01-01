@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -57,7 +57,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteBudget: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteBudget: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteBudget', 'id', id)
             const localVarPath = `/api/v1/budgets/{id}`
@@ -79,7 +79,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -96,7 +96,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteBudgetLimit: async (id: string, limitId: string, options: any = {}): Promise<RequestArgs> => {
+        deleteBudgetLimit: async (id: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteBudgetLimit', 'id', id)
             // verify required parameter 'limitId' is not null or undefined
@@ -121,7 +121,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -139,7 +139,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBudget: async (id: string, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        getBudget: async (id: string, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getBudget', 'id', id)
             const localVarPath = `/api/v1/budgets/{id}`
@@ -173,7 +173,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -190,7 +190,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBudgetLimit: async (id: string, limitId: number, options: any = {}): Promise<RequestArgs> => {
+        getBudgetLimit: async (id: string, limitId: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getBudgetLimit', 'id', id)
             // verify required parameter 'limitId' is not null or undefined
@@ -215,7 +215,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -232,7 +232,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachmentByBudget: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachmentByBudget: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listAttachmentByBudget', 'id', id)
             const localVarPath = `/api/v1/budgets/{id}/attachments`
@@ -258,7 +258,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -276,7 +276,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBudget: async (page?: number, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        listBudget: async (page?: number, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/budgets`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -311,7 +311,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -328,7 +328,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBudgetLimit: async (start: string, end: string, options: any = {}): Promise<RequestArgs> => {
+        listBudgetLimit: async (start: string, end: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('listBudgetLimit', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -363,7 +363,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -381,7 +381,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBudgetLimitByBudget: async (id: string, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        listBudgetLimitByBudget: async (id: string, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listBudgetLimitByBudget', 'id', id)
             const localVarPath = `/api/v1/budgets/{id}/limits`
@@ -415,7 +415,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -436,7 +436,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByBudget: async (id: string, limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByBudget: async (id: string, limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByBudget', 'id', id)
             const localVarPath = `/api/v1/budgets/{id}/transactions`
@@ -482,7 +482,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -501,7 +501,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByBudgetLimit: async (id: string, limitId: string, page?: number, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByBudgetLimit: async (id: string, limitId: string, page?: number, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByBudgetLimit', 'id', id)
             // verify required parameter 'limitId' is not null or undefined
@@ -534,7 +534,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -554,7 +554,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionWithoutBudget: async (limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionWithoutBudget: async (limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/budgets/transactions-without-budget`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -597,7 +597,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -613,7 +613,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeBudget: async (budgetStore: BudgetStore, options: any = {}): Promise<RequestArgs> => {
+        storeBudget: async (budgetStore: BudgetStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'budgetStore' is not null or undefined
             assertParamExists('storeBudget', 'budgetStore', budgetStore)
             const localVarPath = `/api/v1/budgets`;
@@ -636,7 +636,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(budgetStore, localVarRequestOptions, configuration)
@@ -654,7 +654,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeBudgetLimit: async (id: string, budgetLimitStore: BudgetLimitStore, options: any = {}): Promise<RequestArgs> => {
+        storeBudgetLimit: async (id: string, budgetLimitStore: BudgetLimitStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('storeBudgetLimit', 'id', id)
             // verify required parameter 'budgetLimitStore' is not null or undefined
@@ -680,7 +680,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(budgetLimitStore, localVarRequestOptions, configuration)
@@ -698,7 +698,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateBudget: async (id: string, budgetUpdate: BudgetUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateBudget: async (id: string, budgetUpdate: BudgetUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateBudget', 'id', id)
             // verify required parameter 'budgetUpdate' is not null or undefined
@@ -724,7 +724,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(budgetUpdate, localVarRequestOptions, configuration)
@@ -743,7 +743,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateBudgetLimit: async (id: string, limitId: string, budgetLimit: BudgetLimit, options: any = {}): Promise<RequestArgs> => {
+        updateBudgetLimit: async (id: string, limitId: string, budgetLimit: BudgetLimit, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateBudgetLimit', 'id', id)
             // verify required parameter 'limitId' is not null or undefined
@@ -772,7 +772,7 @@ export const BudgetsApiAxiosParamCreator = function (configuration?: Configurati
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(budgetLimit, localVarRequestOptions, configuration)
@@ -799,7 +799,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteBudget(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteBudget(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteBudget(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -811,7 +811,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteBudgetLimit(id: string, limitId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteBudgetLimit(id: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteBudgetLimit(id, limitId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -824,7 +824,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBudget(id: string, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetSingle>> {
+        async getBudget(id: string, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBudget(id, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -836,7 +836,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBudgetLimit(id: string, limitId: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitSingle>> {
+        async getBudgetLimit(id: string, limitId: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBudgetLimit(id, limitId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -848,7 +848,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachmentByBudget(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachmentByBudget(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachmentByBudget(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -861,7 +861,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBudget(page?: number, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetArray>> {
+        async listBudget(page?: number, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBudget(page, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -873,7 +873,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBudgetLimit(start: string, end: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitArray>> {
+        async listBudgetLimit(start: string, end: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBudgetLimit(start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -886,7 +886,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBudgetLimitByBudget(id: string, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitArray>> {
+        async listBudgetLimitByBudget(id: string, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBudgetLimitByBudget(id, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -902,7 +902,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByBudget(id: string, limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByBudget(id: string, limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByBudget(id, limit, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -916,7 +916,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByBudgetLimit(id: string, limitId: string, page?: number, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByBudgetLimit(id: string, limitId: string, page?: number, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByBudgetLimit(id, limitId, page, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -931,7 +931,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionWithoutBudget(limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionWithoutBudget(limit?: number, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionWithoutBudget(limit, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -942,7 +942,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeBudget(budgetStore: BudgetStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetSingle>> {
+        async storeBudget(budgetStore: BudgetStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeBudget(budgetStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -954,7 +954,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeBudgetLimit(id: string, budgetLimitStore: BudgetLimitStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitSingle>> {
+        async storeBudgetLimit(id: string, budgetLimitStore: BudgetLimitStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeBudgetLimit(id, budgetLimitStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -966,7 +966,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateBudget(id: string, budgetUpdate: BudgetUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetSingle>> {
+        async updateBudget(id: string, budgetUpdate: BudgetUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateBudget(id, budgetUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -979,7 +979,7 @@ export const BudgetsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateBudgetLimit(id: string, limitId: string, budgetLimit: BudgetLimit, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitSingle>> {
+        async updateBudgetLimit(id: string, limitId: string, budgetLimit: BudgetLimit, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateBudgetLimit(id, limitId, budgetLimit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1579,7 +1579,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public deleteBudget(requestParameters: BudgetsApiDeleteBudgetRequest, options?: any) {
+    public deleteBudget(requestParameters: BudgetsApiDeleteBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).deleteBudget(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1591,7 +1591,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public deleteBudgetLimit(requestParameters: BudgetsApiDeleteBudgetLimitRequest, options?: any) {
+    public deleteBudgetLimit(requestParameters: BudgetsApiDeleteBudgetLimitRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).deleteBudgetLimit(requestParameters.id, requestParameters.limitId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1603,7 +1603,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public getBudget(requestParameters: BudgetsApiGetBudgetRequest, options?: any) {
+    public getBudget(requestParameters: BudgetsApiGetBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).getBudget(requestParameters.id, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1615,7 +1615,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public getBudgetLimit(requestParameters: BudgetsApiGetBudgetLimitRequest, options?: any) {
+    public getBudgetLimit(requestParameters: BudgetsApiGetBudgetLimitRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).getBudgetLimit(requestParameters.id, requestParameters.limitId, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1627,7 +1627,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listAttachmentByBudget(requestParameters: BudgetsApiListAttachmentByBudgetRequest, options?: any) {
+    public listAttachmentByBudget(requestParameters: BudgetsApiListAttachmentByBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listAttachmentByBudget(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1639,7 +1639,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listBudget(requestParameters: BudgetsApiListBudgetRequest = {}, options?: any) {
+    public listBudget(requestParameters: BudgetsApiListBudgetRequest = {}, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listBudget(requestParameters.page, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1651,7 +1651,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listBudgetLimit(requestParameters: BudgetsApiListBudgetLimitRequest, options?: any) {
+    public listBudgetLimit(requestParameters: BudgetsApiListBudgetLimitRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listBudgetLimit(requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1663,7 +1663,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listBudgetLimitByBudget(requestParameters: BudgetsApiListBudgetLimitByBudgetRequest, options?: any) {
+    public listBudgetLimitByBudget(requestParameters: BudgetsApiListBudgetLimitByBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listBudgetLimitByBudget(requestParameters.id, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1675,7 +1675,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listTransactionByBudget(requestParameters: BudgetsApiListTransactionByBudgetRequest, options?: any) {
+    public listTransactionByBudget(requestParameters: BudgetsApiListTransactionByBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listTransactionByBudget(requestParameters.id, requestParameters.limit, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1687,7 +1687,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listTransactionByBudgetLimit(requestParameters: BudgetsApiListTransactionByBudgetLimitRequest, options?: any) {
+    public listTransactionByBudgetLimit(requestParameters: BudgetsApiListTransactionByBudgetLimitRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listTransactionByBudgetLimit(requestParameters.id, requestParameters.limitId, requestParameters.page, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1699,7 +1699,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public listTransactionWithoutBudget(requestParameters: BudgetsApiListTransactionWithoutBudgetRequest = {}, options?: any) {
+    public listTransactionWithoutBudget(requestParameters: BudgetsApiListTransactionWithoutBudgetRequest = {}, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).listTransactionWithoutBudget(requestParameters.limit, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1711,7 +1711,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public storeBudget(requestParameters: BudgetsApiStoreBudgetRequest, options?: any) {
+    public storeBudget(requestParameters: BudgetsApiStoreBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).storeBudget(requestParameters.budgetStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1723,7 +1723,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public storeBudgetLimit(requestParameters: BudgetsApiStoreBudgetLimitRequest, options?: any) {
+    public storeBudgetLimit(requestParameters: BudgetsApiStoreBudgetLimitRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).storeBudgetLimit(requestParameters.id, requestParameters.budgetLimitStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1735,7 +1735,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public updateBudget(requestParameters: BudgetsApiUpdateBudgetRequest, options?: any) {
+    public updateBudget(requestParameters: BudgetsApiUpdateBudgetRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).updateBudget(requestParameters.id, requestParameters.budgetUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1747,7 +1747,7 @@ export class BudgetsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BudgetsApi
      */
-    public updateBudgetLimit(requestParameters: BudgetsApiUpdateBudgetLimitRequest, options?: any) {
+    public updateBudgetLimit(requestParameters: BudgetsApiUpdateBudgetLimitRequest, options?: AxiosRequestConfig) {
         return BudgetsApiFp(this.configuration).updateBudgetLimit(requestParameters.id, requestParameters.limitId, requestParameters.budgetLimit, options).then((request) => request(this.axios, this.basePath));
     }
 }

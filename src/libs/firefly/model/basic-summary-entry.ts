@@ -25,61 +25,60 @@ export interface BasicSummaryEntry {
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    key?: string;
+    'key'?: string;
     /**
      * A translated title for the information shared.
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    title?: string;
+    'title'?: string;
     /**
      * The amount as a float.
      * @type {number}
      * @memberof BasicSummaryEntry
      */
-    monetary_value?: number;
+    'monetary_value'?: number;
     /**
      * The currency ID of the associated currency.
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals for the associated currency.
      * @type {number}
      * @memberof BasicSummaryEntry
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * The amount formatted according to the users locale
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    value_parsed?: string;
+    'value_parsed'?: string;
     /**
      * Reference to a font-awesome icon without the fa- part.
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    local_icon?: string;
+    'local_icon'?: string;
     /**
      * A short explanation of the amounts origin. Already formatted according to the locale of the user or translated, if relevant.
      * @type {string}
      * @memberof BasicSummaryEntry
      */
-    sub_title?: string;
+    'sub_title'?: string;
 }
-
 

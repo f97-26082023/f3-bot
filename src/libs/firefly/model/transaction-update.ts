@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransactionSplitUpdate } from './transaction-split-update';
 
 /**
@@ -26,25 +28,24 @@ export interface TransactionUpdate {
      * @type {boolean}
      * @memberof TransactionUpdate
      */
-    apply_rules?: boolean;
+    'apply_rules'?: boolean;
     /**
      * Whether or not to fire the webhooks that are related to this event.
      * @type {boolean}
      * @memberof TransactionUpdate
      */
-    fire_webhooks?: boolean;
+    'fire_webhooks'?: boolean;
     /**
      * Title of the transaction if it has been split in more than one piece. Empty otherwise.
      * @type {string}
      * @memberof TransactionUpdate
      */
-    group_title?: string | null;
+    'group_title'?: string | null;
     /**
      * 
      * @type {Array<TransactionSplitUpdate>}
      * @memberof TransactionUpdate
      */
-    transactions?: Array<TransactionSplitUpdate>;
+    'transactions'?: Array<TransactionSplitUpdate>;
 }
-
 

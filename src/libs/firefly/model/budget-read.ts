@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Budget } from './budget';
 
 /**
@@ -26,19 +28,18 @@ export interface BudgetRead {
      * @type {string}
      * @memberof BudgetRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof BudgetRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Budget}
      * @memberof BudgetRead
      */
-    attributes: Budget;
+    'attributes': Budget;
 }
-
 

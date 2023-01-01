@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteBill } from './autocomplete-bill';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteBill } from './autocomplete-bill';
  */
 export interface AutocompleteBillArray extends Array<AutocompleteBill> {
 }
-
 

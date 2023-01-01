@@ -25,13 +25,12 @@ export interface ObjectLink0 {
      * @type {string}
      * @memberof ObjectLink0
      */
-    rel?: string;
+    'rel'?: string;
     /**
      * 
      * @type {string}
      * @memberof ObjectLink0
      */
-    uri?: string;
+    'uri'?: string;
 }
-
 

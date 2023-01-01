@@ -20,9 +20,11 @@
  * @enum {string}
  */
 
-export enum WebhookDelivery {
-    DeliveryJson = 'DELIVERY_JSON'
-}
+export const WebhookDelivery = {
+    DeliveryJson: 'DELIVERY_JSON'
+} as const;
+
+export type WebhookDelivery = typeof WebhookDelivery[keyof typeof WebhookDelivery];
 
 
 

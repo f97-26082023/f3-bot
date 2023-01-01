@@ -20,20 +20,22 @@
  * @enum {string}
  */
 
-export enum AccountTypeProperty {
-    DefaultAccount = 'Default account',
-    CashAccount = 'Cash account',
-    AssetAccount = 'Asset account',
-    ExpenseAccount = 'Expense account',
-    RevenueAccount = 'Revenue account',
-    InitialBalanceAccount = 'Initial balance account',
-    BeneficiaryAccount = 'Beneficiary account',
-    ImportAccount = 'Import account',
-    ReconciliationAccount = 'Reconciliation account',
-    Loan = 'Loan',
-    Debt = 'Debt',
-    Mortgage = 'Mortgage'
-}
+export const AccountTypeProperty = {
+    DefaultAccount: 'Default account',
+    CashAccount: 'Cash account',
+    AssetAccount: 'Asset account',
+    ExpenseAccount: 'Expense account',
+    RevenueAccount: 'Revenue account',
+    InitialBalanceAccount: 'Initial balance account',
+    BeneficiaryAccount: 'Beneficiary account',
+    ImportAccount: 'Import account',
+    ReconciliationAccount: 'Reconciliation account',
+    Loan: 'Loan',
+    Debt: 'Debt',
+    Mortgage: 'Mortgage'
+} as const;
+
+export type AccountTypeProperty = typeof AccountTypeProperty[keyof typeof AccountTypeProperty];
 
 
 

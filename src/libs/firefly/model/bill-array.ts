@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BillRead } from './bill-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface BillArray {
      * @type {Array<BillRead>}
      * @memberof BillArray
      */
-    data: Array<BillRead>;
+    'data': Array<BillRead>;
     /**
      * 
      * @type {Meta}
      * @memberof BillArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

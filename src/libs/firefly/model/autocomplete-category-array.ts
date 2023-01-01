@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteCategory } from './autocomplete-category';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteCategory } from './autocomplete-category';
  */
 export interface AutocompleteCategoryArray extends Array<AutocompleteCategory> {
 }
-
 

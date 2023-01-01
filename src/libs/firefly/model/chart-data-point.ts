@@ -25,7 +25,6 @@ export interface ChartDataPoint {
      * @type {string}
      * @memberof ChartDataPoint
      */
-    key?: string;
+    'key'?: string;
 }
-
 

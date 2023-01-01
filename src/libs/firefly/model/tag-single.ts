@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { TagRead } from './tag-read';
 
 /**
@@ -26,7 +28,6 @@ export interface TagSingle {
      * @type {TagRead}
      * @memberof TagSingle
      */
-    data: TagRead;
+    'data': TagRead;
 }
-
 

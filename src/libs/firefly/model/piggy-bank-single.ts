@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { PiggyBankRead } from './piggy-bank-read';
 
 /**
@@ -26,7 +28,6 @@ export interface PiggyBankSingle {
      * @type {PiggyBankRead}
      * @memberof PiggyBankSingle
      */
-    data: PiggyBankRead;
+    'data': PiggyBankRead;
 }
-
 

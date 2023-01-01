@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Webhook } from './webhook';
 
 /**
@@ -27,25 +31,24 @@ export interface WebhookRead {
      * @type {string}
      * @memberof WebhookRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof WebhookRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Webhook}
      * @memberof WebhookRead
      */
-    attributes: Webhook;
+    'attributes': Webhook;
     /**
      * 
      * @type {ObjectLink}
      * @memberof WebhookRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

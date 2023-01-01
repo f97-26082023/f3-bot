@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ValidationErrorErrors } from './validation-error-errors';
 
 /**
@@ -26,13 +28,12 @@ export interface ValidationError {
      * @type {string}
      * @memberof ValidationError
      */
-    message?: string;
+    'message'?: string;
     /**
      * 
      * @type {ValidationErrorErrors}
      * @memberof ValidationError
      */
-    errors?: ValidationErrorErrors;
+    'errors'?: ValidationErrorErrors;
 }
-
 

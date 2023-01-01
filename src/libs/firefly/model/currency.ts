@@ -25,49 +25,48 @@ export interface Currency {
      * @type {string}
      * @memberof Currency
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Currency
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * Defaults to true
      * @type {boolean}
      * @memberof Currency
      */
-    enabled?: boolean;
+    'enabled'?: boolean;
     /**
      * Make this currency the default currency.
      * @type {boolean}
      * @memberof Currency
      */
-    _default?: boolean;
+    'default'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof Currency
      */
-    code: string;
+    'code': string;
     /**
      * 
      * @type {string}
      * @memberof Currency
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof Currency
      */
-    symbol: string;
+    'symbol': string;
     /**
      * Supports 0-16 decimals.
      * @type {number}
      * @memberof Currency
      */
-    decimal_places?: number;
+    'decimal_places'?: number;
 }
-
 

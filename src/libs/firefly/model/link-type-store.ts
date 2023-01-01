@@ -25,19 +25,18 @@ export interface LinkTypeStore {
      * @type {string}
      * @memberof LinkTypeStore
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof LinkTypeStore
      */
-    inward: string;
+    'inward': string;
     /**
      * 
      * @type {string}
      * @memberof LinkTypeStore
      */
-    outward: string;
+    'outward': string;
 }
-
 

@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleGroupRead } from './rule-group-read';
 
 /**
@@ -28,19 +34,18 @@ export interface RuleGroupArray {
      * @type {Array<RuleGroupRead>}
      * @memberof RuleGroupArray
      */
-    data: Array<RuleGroupRead>;
+    'data': Array<RuleGroupRead>;
     /**
      * 
      * @type {Meta}
      * @memberof RuleGroupArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof RuleGroupArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

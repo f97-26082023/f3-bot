@@ -25,55 +25,54 @@ export interface PiggyBankEvent {
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * 
      * @type {number}
      * @memberof PiggyBankEvent
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    amount?: string;
+    'amount'?: string;
     /**
      * The journal associated with the event.
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    transaction_journal_id?: string;
+    'transaction_journal_id'?: string;
     /**
      * The transaction group associated with the event.
      * @type {string}
      * @memberof PiggyBankEvent
      */
-    transaction_group_id?: string;
+    'transaction_group_id'?: string;
 }
-
 

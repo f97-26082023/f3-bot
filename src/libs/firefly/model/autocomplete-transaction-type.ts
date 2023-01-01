@@ -25,19 +25,18 @@ export interface AutocompleteTransactionType {
      * @type {string}
      * @memberof AutocompleteTransactionType
      */
-    id: string;
+    'id': string;
     /**
      * Type of the object found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteTransactionType
      */
-    name: string;
+    'name': string;
     /**
      * Name of the object found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteTransactionType
      */
-    type: string;
+    'type': string;
 }
-
 

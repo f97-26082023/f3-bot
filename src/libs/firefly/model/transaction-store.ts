@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransactionSplitStore } from './transaction-split-store';
 
 /**
@@ -26,31 +28,30 @@ export interface TransactionStore {
      * @type {boolean}
      * @memberof TransactionStore
      */
-    error_if_duplicate_hash?: boolean;
+    'error_if_duplicate_hash'?: boolean;
     /**
      * Whether or not to apply rules when submitting transaction.
      * @type {boolean}
      * @memberof TransactionStore
      */
-    apply_rules?: boolean;
+    'apply_rules'?: boolean;
     /**
      * Whether or not to fire the webhooks that are related to this event.
      * @type {boolean}
      * @memberof TransactionStore
      */
-    fire_webhooks?: boolean;
+    'fire_webhooks'?: boolean;
     /**
      * Title of the transaction if it has been split in more than one piece. Empty otherwise.
      * @type {string}
      * @memberof TransactionStore
      */
-    group_title?: string | null;
+    'group_title'?: string | null;
     /**
      * 
      * @type {Array<TransactionSplitStore>}
      * @memberof TransactionStore
      */
-    transactions: Array<TransactionSplitStore>;
+    'transactions': Array<TransactionSplitStore>;
 }
-
 

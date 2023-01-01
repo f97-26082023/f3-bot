@@ -25,31 +25,30 @@ export interface SystemInfoData {
      * @type {string}
      * @memberof SystemInfoData
      */
-    version: string;
+    'version': string;
     /**
      * 
      * @type {string}
      * @memberof SystemInfoData
      */
-    api_version: string;
+    'api_version': string;
     /**
      * 
      * @type {string}
      * @memberof SystemInfoData
      */
-    php_version: string;
+    'php_version': string;
     /**
      * 
      * @type {string}
      * @memberof SystemInfoData
      */
-    os: string;
+    'os': string;
     /**
      * 
      * @type {string}
      * @memberof SystemInfoData
      */
-    driver: string;
+    'driver': string;
 }
-
 

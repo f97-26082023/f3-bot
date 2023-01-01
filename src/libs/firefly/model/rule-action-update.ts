@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleActionKeyword } from './rule-action-keyword';
 
 /**
@@ -26,31 +28,30 @@ export interface RuleActionUpdate {
      * @type {RuleActionKeyword}
      * @memberof RuleActionUpdate
      */
-    type?: RuleActionKeyword;
+    'type'?: RuleActionKeyword;
     /**
      * The accompanying value the action will set, change or update. Can be empty, but for some types this value is mandatory.
      * @type {string}
      * @memberof RuleActionUpdate
      */
-    value?: string | null;
+    'value'?: string | null;
     /**
      * Order of the action
      * @type {number}
      * @memberof RuleActionUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * If the action is active.
      * @type {boolean}
      * @memberof RuleActionUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * When true, other actions will not be fired after this action has fired.
      * @type {boolean}
      * @memberof RuleActionUpdate
      */
-    stop_processing?: boolean;
+    'stop_processing'?: boolean;
 }
-
 

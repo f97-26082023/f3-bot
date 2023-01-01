@@ -20,14 +20,16 @@
  * @enum {string}
  */
 
-export enum InterestPeriod {
-    Weekly = 'weekly',
-    Monthly = 'monthly',
-    Quarterly = 'quarterly',
-    HalfYear = 'half-year',
-    Yearly = 'yearly',
-    Null = 'null'
-}
+export const InterestPeriod = {
+    Weekly: 'weekly',
+    Monthly: 'monthly',
+    Quarterly: 'quarterly',
+    HalfYear: 'half-year',
+    Yearly: 'yearly',
+    Null: 'null'
+} as const;
+
+export type InterestPeriod = typeof InterestPeriod[keyof typeof InterestPeriod];
 
 
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTriggerKeyword } from './rule-trigger-keyword';
 
 /**
@@ -26,31 +28,30 @@ export interface RuleTriggerUpdate {
      * @type {RuleTriggerKeyword}
      * @memberof RuleTriggerUpdate
      */
-    type?: RuleTriggerKeyword;
+    'type'?: RuleTriggerKeyword;
     /**
      * The accompanying value the trigger responds to. This value is often mandatory, but this depends on the trigger.
      * @type {string}
      * @memberof RuleTriggerUpdate
      */
-    value?: string;
+    'value'?: string;
     /**
      * Order of the trigger
      * @type {number}
      * @memberof RuleTriggerUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * If the trigger is active.
      * @type {boolean}
      * @memberof RuleTriggerUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * When true, other triggers will not be checked if this trigger was triggered.
      * @type {boolean}
      * @memberof RuleTriggerUpdate
      */
-    stop_processing?: boolean;
+    'stop_processing'?: boolean;
 }
-
 

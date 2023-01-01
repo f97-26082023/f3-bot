@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PiggyBank } from './piggy-bank';
 
 /**
@@ -27,25 +31,24 @@ export interface PiggyBankRead {
      * @type {string}
      * @memberof PiggyBankRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {PiggyBank}
      * @memberof PiggyBankRead
      */
-    attributes: PiggyBank;
+    'attributes': PiggyBank;
     /**
      * 
      * @type {ObjectLink}
      * @memberof PiggyBankRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

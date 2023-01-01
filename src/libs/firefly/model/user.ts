@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { UserBlockedCodeProperty } from './user-blocked-code-property';
+// May contain unused imports in some cases
+// @ts-ignore
 import { UserRoleProperty } from './user-role-property';
 
 /**
@@ -27,37 +31,36 @@ export interface User {
      * @type {string}
      * @memberof User
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof User
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * The new users email address.
      * @type {string}
      * @memberof User
      */
-    email: string;
+    'email': string;
     /**
      * Boolean to indicate if the user is blocked.
      * @type {boolean}
      * @memberof User
      */
-    blocked?: boolean;
+    'blocked'?: boolean;
     /**
      * 
      * @type {UserBlockedCodeProperty}
      * @memberof User
      */
-    blocked_code?: UserBlockedCodeProperty | null;
+    'blocked_code'?: UserBlockedCodeProperty | null;
     /**
      * 
      * @type {UserRoleProperty}
      * @memberof User
      */
-    role?: UserRoleProperty | null;
+    'role'?: UserRoleProperty | null;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BillRepeatFrequency } from './bill-repeat-frequency';
 
 /**
@@ -26,85 +28,84 @@ export interface BillStore {
      * @type {string}
      * @memberof BillStore
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Use either currency_id or currency_code
      * @type {string}
      * @memberof BillStore
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof BillStore
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof BillStore
      */
-    amount_min: string;
+    'amount_min': string;
     /**
      * 
      * @type {string}
      * @memberof BillStore
      */
-    amount_max: string;
+    'amount_max': string;
     /**
      * 
      * @type {string}
      * @memberof BillStore
      */
-    date: string;
+    'date': string;
     /**
      * The date after which this bill is no longer valid or applicable
      * @type {string}
      * @memberof BillStore
      */
-    end_date?: string;
+    'end_date'?: string;
     /**
      * The date before which the bill must be renewed (or cancelled)
      * @type {string}
      * @memberof BillStore
      */
-    extension_date?: string;
+    'extension_date'?: string;
     /**
      * 
      * @type {BillRepeatFrequency}
      * @memberof BillStore
      */
-    repeat_freq: BillRepeatFrequency;
+    'repeat_freq': BillRepeatFrequency;
     /**
      * How often the bill must be skipped. 1 means a bi-monthly bill.
      * @type {number}
      * @memberof BillStore
      */
-    skip?: number;
+    'skip'?: number;
     /**
      * If the bill is active.
      * @type {boolean}
      * @memberof BillStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof BillStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * The group ID of the group this object is part of. NULL if no group.
      * @type {string}
      * @memberof BillStore
      */
-    object_group_id?: string | null;
+    'object_group_id'?: string | null;
     /**
      * The name of the group. NULL if no group.
      * @type {string}
      * @memberof BillStore
      */
-    object_group_title?: string | null;
+    'object_group_title'?: string | null;
 }
-
 

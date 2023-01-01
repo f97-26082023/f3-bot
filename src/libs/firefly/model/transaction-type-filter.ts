@@ -20,22 +20,24 @@
  * @enum {string}
  */
 
-export enum TransactionTypeFilter {
-    All = 'all',
-    Withdrawal = 'withdrawal',
-    Withdrawals = 'withdrawals',
-    Expense = 'expense',
-    Deposit = 'deposit',
-    Deposits = 'deposits',
-    Income = 'income',
-    Transfer = 'transfer',
-    Transfers = 'transfers',
-    OpeningBalance = 'opening_balance',
-    Reconciliation = 'reconciliation',
-    Special = 'special',
-    Specials = 'specials',
-    Default = 'default'
-}
+export const TransactionTypeFilter = {
+    All: 'all',
+    Withdrawal: 'withdrawal',
+    Withdrawals: 'withdrawals',
+    Expense: 'expense',
+    Deposit: 'deposit',
+    Deposits: 'deposits',
+    Income: 'income',
+    Transfer: 'transfer',
+    Transfers: 'transfers',
+    OpeningBalance: 'opening_balance',
+    Reconciliation: 'reconciliation',
+    Special: 'special',
+    Specials: 'specials',
+    Default: 'default'
+} as const;
+
+export type TransactionTypeFilter = typeof TransactionTypeFilter[keyof typeof TransactionTypeFilter];
 
 
 

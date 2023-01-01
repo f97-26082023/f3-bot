@@ -25,13 +25,12 @@ export interface AutocompleteBill {
      * @type {string}
      * @memberof AutocompleteBill
      */
-    id: string;
+    'id': string;
     /**
      * Name of the bill found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteBill
      */
-    name: string;
+    'name': string;
 }
-
 

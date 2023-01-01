@@ -20,17 +20,19 @@
  * @enum {string}
  */
 
-export enum ShortAccountTypeProperty {
-    Asset = 'asset',
-    Expense = 'expense',
-    Import = 'import',
-    Revenue = 'revenue',
-    Cash = 'cash',
-    Liability = 'liability',
-    Liabilities = 'liabilities',
-    InitialBalance = 'initial-balance',
-    Reconciliation = 'reconciliation'
-}
+export const ShortAccountTypeProperty = {
+    Asset: 'asset',
+    Expense: 'expense',
+    Import: 'import',
+    Revenue: 'revenue',
+    Cash: 'cash',
+    Liability: 'liability',
+    Liabilities: 'liabilities',
+    InitialBalance: 'initial-balance',
+    Reconciliation: 'reconciliation'
+} as const;
+
+export type ShortAccountTypeProperty = typeof ShortAccountTypeProperty[keyof typeof ShortAccountTypeProperty];
 
 
 

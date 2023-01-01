@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleActionStore } from './rule-action-store';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTriggerStore } from './rule-trigger-store';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTriggerType } from './rule-trigger-type';
 
 /**
@@ -28,67 +34,66 @@ export interface RuleStore {
      * @type {string}
      * @memberof RuleStore
      */
-    title: string;
+    'title': string;
     /**
      * 
      * @type {string}
      * @memberof RuleStore
      */
-    description?: string;
+    'description'?: string;
     /**
      * ID of the rule group under which the rule must be stored. Either this field or rule_group_title is mandatory.
      * @type {string}
      * @memberof RuleStore
      */
-    rule_group_id: string;
+    'rule_group_id': string;
     /**
      * Title of the rule group under which the rule must be stored. Either this field or rule_group_id is mandatory.
      * @type {string}
      * @memberof RuleStore
      */
-    rule_group_title?: string;
+    'rule_group_title'?: string;
     /**
      * 
      * @type {number}
      * @memberof RuleStore
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {RuleTriggerType}
      * @memberof RuleStore
      */
-    trigger: RuleTriggerType;
+    'trigger': RuleTriggerType;
     /**
      * Whether or not the rule is even active. Default is true.
      * @type {boolean}
      * @memberof RuleStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * If the rule is set to be strict, ALL triggers must hit in order for the rule to fire. Otherwise, just one is enough. Default value is true.
      * @type {boolean}
      * @memberof RuleStore
      */
-    strict?: boolean;
+    'strict'?: boolean;
     /**
      * If this value is true and the rule is triggered, other rules  after this one in the group will be skipped. Default value is false.
      * @type {boolean}
      * @memberof RuleStore
      */
-    stop_processing?: boolean;
+    'stop_processing'?: boolean;
     /**
      * 
      * @type {Array<RuleTriggerStore>}
      * @memberof RuleStore
      */
-    triggers: Array<RuleTriggerStore>;
+    'triggers': Array<RuleTriggerStore>;
     /**
      * 
      * @type {Array<RuleActionStore>}
      * @memberof RuleStore
      */
-    actions: Array<RuleActionStore>;
+    'actions': Array<RuleActionStore>;
 }
-
 

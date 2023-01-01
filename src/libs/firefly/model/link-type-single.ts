@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { LinkTypeRead } from './link-type-read';
 
 /**
@@ -26,7 +28,6 @@ export interface LinkTypeSingle {
      * @type {LinkTypeRead}
      * @memberof LinkTypeSingle
      */
-    data: LinkTypeRead;
+    'data': LinkTypeRead;
 }
-
 

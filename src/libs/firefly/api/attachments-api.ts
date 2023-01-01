@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -43,7 +43,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteAttachment: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteAttachment: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteAttachment', 'id', id)
             const localVarPath = `/api/v1/attachments/{id}`
@@ -65,7 +65,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -81,7 +81,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        downloadAttachment: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        downloadAttachment: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('downloadAttachment', 'id', id)
             const localVarPath = `/api/v1/attachments/{id}/download`
@@ -103,7 +103,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -119,7 +119,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAttachment: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getAttachment: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getAttachment', 'id', id)
             const localVarPath = `/api/v1/attachments/{id}`
@@ -141,7 +141,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -157,7 +157,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachment: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachment: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/attachments`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -180,7 +180,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -196,7 +196,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeAttachment: async (attachmentStore: AttachmentStore, options: any = {}): Promise<RequestArgs> => {
+        storeAttachment: async (attachmentStore: AttachmentStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'attachmentStore' is not null or undefined
             assertParamExists('storeAttachment', 'attachmentStore', attachmentStore)
             const localVarPath = `/api/v1/attachments`;
@@ -219,7 +219,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(attachmentStore, localVarRequestOptions, configuration)
@@ -237,7 +237,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateAttachment: async (id: string, attachmentUpdate: AttachmentUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateAttachment: async (id: string, attachmentUpdate: AttachmentUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateAttachment', 'id', id)
             // verify required parameter 'attachmentUpdate' is not null or undefined
@@ -263,7 +263,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(attachmentUpdate, localVarRequestOptions, configuration)
@@ -277,11 +277,11 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
          * Use this endpoint to upload (and possible overwrite) the file contents of an attachment. Simply put the entire file in the body as binary data. 
          * @summary Upload an attachment.
          * @param {string} id The ID of the attachment.
-         * @param {any} [body] 
+         * @param {File} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadAttachment: async (id: string, body?: any, options: any = {}): Promise<RequestArgs> => {
+        uploadAttachment: async (id: string, body?: File, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('uploadAttachment', 'id', id)
             const localVarPath = `/api/v1/attachments/{id}/upload`
@@ -305,7 +305,7 @@ export const AttachmentsApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/octet-stream';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
@@ -332,7 +332,7 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteAttachment(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteAttachment(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAttachment(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -343,7 +343,7 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async downloadAttachment(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async downloadAttachment(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.downloadAttachment(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -354,7 +354,7 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAttachment(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSingle>> {
+        async getAttachment(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAttachment(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -365,7 +365,7 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachment(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachment(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachment(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -376,7 +376,7 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeAttachment(attachmentStore: AttachmentStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSingle>> {
+        async storeAttachment(attachmentStore: AttachmentStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeAttachment(attachmentStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -388,7 +388,7 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateAttachment(id: string, attachmentUpdate: AttachmentUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSingle>> {
+        async updateAttachment(id: string, attachmentUpdate: AttachmentUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateAttachment(id, attachmentUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -396,11 +396,11 @@ export const AttachmentsApiFp = function(configuration?: Configuration) {
          * Use this endpoint to upload (and possible overwrite) the file contents of an attachment. Simply put the entire file in the body as binary data. 
          * @summary Upload an attachment.
          * @param {string} id The ID of the attachment.
-         * @param {any} [body] 
+         * @param {File} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadAttachment(id: string, body?: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async uploadAttachment(id: string, body?: File, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadAttachment(id, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -431,7 +431,7 @@ export const AttachmentsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        downloadAttachment(id: string, options?: any): AxiosPromise<any> {
+        downloadAttachment(id: string, options?: any): AxiosPromise<File> {
             return localVarFp.downloadAttachment(id, options).then((request) => request(axios, basePath));
         },
         /**
@@ -479,11 +479,11 @@ export const AttachmentsApiFactory = function (configuration?: Configuration, ba
          * Use this endpoint to upload (and possible overwrite) the file contents of an attachment. Simply put the entire file in the body as binary data. 
          * @summary Upload an attachment.
          * @param {string} id The ID of the attachment.
-         * @param {any} [body] 
+         * @param {File} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadAttachment(id: string, body?: any, options?: any): AxiosPromise<void> {
+        uploadAttachment(id: string, body?: File, options?: any): AxiosPromise<void> {
             return localVarFp.uploadAttachment(id, body, options).then((request) => request(axios, basePath));
         },
     };
@@ -595,10 +595,10 @@ export interface AttachmentsApiUploadAttachmentRequest {
 
     /**
      * 
-     * @type {any}
+     * @type {File}
      * @memberof AttachmentsApiUploadAttachment
      */
-    readonly body?: any
+    readonly body?: File
 }
 
 /**
@@ -616,7 +616,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public deleteAttachment(requestParameters: AttachmentsApiDeleteAttachmentRequest, options?: any) {
+    public deleteAttachment(requestParameters: AttachmentsApiDeleteAttachmentRequest, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).deleteAttachment(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -628,7 +628,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public downloadAttachment(requestParameters: AttachmentsApiDownloadAttachmentRequest, options?: any) {
+    public downloadAttachment(requestParameters: AttachmentsApiDownloadAttachmentRequest, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).downloadAttachment(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -640,7 +640,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public getAttachment(requestParameters: AttachmentsApiGetAttachmentRequest, options?: any) {
+    public getAttachment(requestParameters: AttachmentsApiGetAttachmentRequest, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).getAttachment(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -652,7 +652,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public listAttachment(requestParameters: AttachmentsApiListAttachmentRequest = {}, options?: any) {
+    public listAttachment(requestParameters: AttachmentsApiListAttachmentRequest = {}, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).listAttachment(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -664,7 +664,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public storeAttachment(requestParameters: AttachmentsApiStoreAttachmentRequest, options?: any) {
+    public storeAttachment(requestParameters: AttachmentsApiStoreAttachmentRequest, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).storeAttachment(requestParameters.attachmentStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -676,7 +676,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public updateAttachment(requestParameters: AttachmentsApiUpdateAttachmentRequest, options?: any) {
+    public updateAttachment(requestParameters: AttachmentsApiUpdateAttachmentRequest, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).updateAttachment(requestParameters.id, requestParameters.attachmentUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -688,7 +688,7 @@ export class AttachmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AttachmentsApi
      */
-    public uploadAttachment(requestParameters: AttachmentsApiUploadAttachmentRequest, options?: any) {
+    public uploadAttachment(requestParameters: AttachmentsApiUploadAttachmentRequest, options?: AxiosRequestConfig) {
         return AttachmentsApiFp(this.configuration).uploadAttachment(requestParameters.id, requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

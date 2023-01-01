@@ -20,13 +20,15 @@
  * @enum {string}
  */
 
-export enum BillRepeatFrequency {
-    Weekly = 'weekly',
-    Monthly = 'monthly',
-    Quarterly = 'quarterly',
-    HalfYear = 'half-year',
-    Yearly = 'yearly'
-}
+export const BillRepeatFrequency = {
+    Weekly: 'weekly',
+    Monthly: 'monthly',
+    Quarterly: 'quarterly',
+    HalfYear: 'half-year',
+    Yearly: 'yearly'
+} as const;
+
+export type BillRepeatFrequency = typeof BillRepeatFrequency[keyof typeof BillRepeatFrequency];
 
 
 

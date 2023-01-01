@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Configuration } from './configuration';
 
 /**
@@ -26,7 +28,6 @@ export interface ConfigurationSingle {
      * @type {Configuration}
      * @memberof ConfigurationSingle
      */
-    data: Configuration;
+    'data': Configuration;
 }
-
 

@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookRead } from './webhook-read';
 
 /**
@@ -28,19 +34,18 @@ export interface WebhookArray {
      * @type {Array<WebhookRead>}
      * @memberof WebhookArray
      */
-    data: Array<WebhookRead>;
+    'data': Array<WebhookRead>;
     /**
      * 
      * @type {Meta}
      * @memberof WebhookArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof WebhookArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

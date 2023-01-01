@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Configuration } from './configuration';
 
 /**
@@ -22,5 +24,4 @@ import { Configuration } from './configuration';
  */
 export interface ConfigurationArray extends Array<Configuration> {
 }
-
 

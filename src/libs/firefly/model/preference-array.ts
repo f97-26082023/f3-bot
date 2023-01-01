@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PreferenceRead } from './preference-read';
 
 /**
@@ -28,19 +34,18 @@ export interface PreferenceArray {
      * @type {Array<PreferenceRead>}
      * @memberof PreferenceArray
      */
-    data: Array<PreferenceRead>;
+    'data': Array<PreferenceRead>;
     /**
      * 
      * @type {Meta}
      * @memberof PreferenceArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof PreferenceArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

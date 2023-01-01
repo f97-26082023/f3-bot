@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CategoryEarned } from './category-earned';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CategorySpent } from './category-spent';
 
 /**
@@ -27,37 +31,36 @@ export interface Category {
      * @type {string}
      * @memberof Category
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Category
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Category
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof Category
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {Array<CategorySpent>}
      * @memberof Category
      */
-    spent?: Array<CategorySpent>;
+    'spent'?: Array<CategorySpent>;
     /**
      * 
      * @type {Array<CategoryEarned>}
      * @memberof Category
      */
-    earned?: Array<CategoryEarned>;
+    'earned'?: Array<CategoryEarned>;
 }
-
 

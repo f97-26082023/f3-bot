@@ -20,10 +20,12 @@
  * @enum {string}
  */
 
-export enum CreditCardType {
-    MonthlyFull = 'monthlyFull',
-    Null = 'null'
-}
+export const CreditCardType = {
+    MonthlyFull: 'monthlyFull',
+    Null: 'null'
+} as const;
+
+export type CreditCardType = typeof CreditCardType[keyof typeof CreditCardType];
 
 
 

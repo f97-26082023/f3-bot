@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -47,7 +47,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteRecurrence: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteRecurrence: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteRecurrence', 'id', id)
             const localVarPath = `/api/v1/recurrences/{id}`
@@ -69,7 +69,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -85,7 +85,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRecurrence: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getRecurrence: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getRecurrence', 'id', id)
             const localVarPath = `/api/v1/recurrences/{id}`
@@ -107,7 +107,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -123,7 +123,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRecurrence: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listRecurrence: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/recurrences`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -146,7 +146,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -166,7 +166,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByRecurrence: async (id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByRecurrence: async (id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByRecurrence', 'id', id)
             const localVarPath = `/api/v1/recurrences/{id}/transactions`
@@ -208,7 +208,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -224,7 +224,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeRecurrence: async (recurrenceStore: RecurrenceStore, options: any = {}): Promise<RequestArgs> => {
+        storeRecurrence: async (recurrenceStore: RecurrenceStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'recurrenceStore' is not null or undefined
             assertParamExists('storeRecurrence', 'recurrenceStore', recurrenceStore)
             const localVarPath = `/api/v1/recurrences`;
@@ -247,7 +247,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(recurrenceStore, localVarRequestOptions, configuration)
@@ -265,7 +265,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateRecurrence: async (id: string, recurrenceUpdate: RecurrenceUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateRecurrence: async (id: string, recurrenceUpdate: RecurrenceUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateRecurrence', 'id', id)
             // verify required parameter 'recurrenceUpdate' is not null or undefined
@@ -291,7 +291,7 @@ export const RecurrencesApiAxiosParamCreator = function (configuration?: Configu
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(recurrenceUpdate, localVarRequestOptions, configuration)
@@ -318,7 +318,7 @@ export const RecurrencesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteRecurrence(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteRecurrence(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteRecurrence(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -329,7 +329,7 @@ export const RecurrencesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRecurrence(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceSingle>> {
+        async getRecurrence(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRecurrence(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -340,7 +340,7 @@ export const RecurrencesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRecurrence(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceArray>> {
+        async listRecurrence(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRecurrence(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -355,7 +355,7 @@ export const RecurrencesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByRecurrence(id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByRecurrence(id: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByRecurrence(id, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -366,7 +366,7 @@ export const RecurrencesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeRecurrence(recurrenceStore: RecurrenceStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceSingle>> {
+        async storeRecurrence(recurrenceStore: RecurrenceStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeRecurrence(recurrenceStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -378,7 +378,7 @@ export const RecurrencesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateRecurrence(id: string, recurrenceUpdate: RecurrenceUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceSingle>> {
+        async updateRecurrence(id: string, recurrenceUpdate: RecurrenceUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateRecurrence(id, recurrenceUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -594,7 +594,7 @@ export class RecurrencesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RecurrencesApi
      */
-    public deleteRecurrence(requestParameters: RecurrencesApiDeleteRecurrenceRequest, options?: any) {
+    public deleteRecurrence(requestParameters: RecurrencesApiDeleteRecurrenceRequest, options?: AxiosRequestConfig) {
         return RecurrencesApiFp(this.configuration).deleteRecurrence(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -606,7 +606,7 @@ export class RecurrencesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RecurrencesApi
      */
-    public getRecurrence(requestParameters: RecurrencesApiGetRecurrenceRequest, options?: any) {
+    public getRecurrence(requestParameters: RecurrencesApiGetRecurrenceRequest, options?: AxiosRequestConfig) {
         return RecurrencesApiFp(this.configuration).getRecurrence(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -618,7 +618,7 @@ export class RecurrencesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RecurrencesApi
      */
-    public listRecurrence(requestParameters: RecurrencesApiListRecurrenceRequest = {}, options?: any) {
+    public listRecurrence(requestParameters: RecurrencesApiListRecurrenceRequest = {}, options?: AxiosRequestConfig) {
         return RecurrencesApiFp(this.configuration).listRecurrence(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -630,7 +630,7 @@ export class RecurrencesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RecurrencesApi
      */
-    public listTransactionByRecurrence(requestParameters: RecurrencesApiListTransactionByRecurrenceRequest, options?: any) {
+    public listTransactionByRecurrence(requestParameters: RecurrencesApiListTransactionByRecurrenceRequest, options?: AxiosRequestConfig) {
         return RecurrencesApiFp(this.configuration).listTransactionByRecurrence(requestParameters.id, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -642,7 +642,7 @@ export class RecurrencesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RecurrencesApi
      */
-    public storeRecurrence(requestParameters: RecurrencesApiStoreRecurrenceRequest, options?: any) {
+    public storeRecurrence(requestParameters: RecurrencesApiStoreRecurrenceRequest, options?: AxiosRequestConfig) {
         return RecurrencesApiFp(this.configuration).storeRecurrence(requestParameters.recurrenceStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -654,7 +654,7 @@ export class RecurrencesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RecurrencesApi
      */
-    public updateRecurrence(requestParameters: RecurrencesApiUpdateRecurrenceRequest, options?: any) {
+    public updateRecurrence(requestParameters: RecurrencesApiUpdateRecurrenceRequest, options?: AxiosRequestConfig) {
         return RecurrencesApiFp(this.configuration).updateRecurrence(requestParameters.id, requestParameters.recurrenceUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

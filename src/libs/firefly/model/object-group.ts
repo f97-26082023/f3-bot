@@ -25,25 +25,24 @@ export interface ObjectGroup {
      * @type {string}
      * @memberof ObjectGroup
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof ObjectGroup
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof ObjectGroup
      */
-    title: string;
+    'title': string;
     /**
      * Order of the object group
      * @type {number}
      * @memberof ObjectGroup
      */
-    order: number;
+    'order': number;
 }
-
 

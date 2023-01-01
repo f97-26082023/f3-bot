@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CategoryRead } from './category-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface CategoryArray {
      * @type {Array<CategoryRead>}
      * @memberof CategoryArray
      */
-    data: Array<CategoryRead>;
+    'data': Array<CategoryRead>;
     /**
      * 
      * @type {Meta}
      * @memberof CategoryArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

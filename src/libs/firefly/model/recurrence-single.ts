@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceRead } from './recurrence-read';
 
 /**
@@ -26,7 +28,6 @@ export interface RecurrenceSingle {
      * @type {RecurrenceRead}
      * @memberof RecurrenceSingle
      */
-    data: RecurrenceRead;
+    'data': RecurrenceRead;
 }
-
 

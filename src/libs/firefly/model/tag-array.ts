@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TagRead } from './tag-read';
 
 /**
@@ -28,19 +34,18 @@ export interface TagArray {
      * @type {Array<TagRead>}
      * @memberof TagArray
      */
-    data: Array<TagRead>;
+    'data': Array<TagRead>;
     /**
      * 
      * @type {Meta}
      * @memberof TagArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof TagArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ChartDataSet } from './chart-data-set';
 
 /**
@@ -22,5 +24,4 @@ import { ChartDataSet } from './chart-data-set';
  */
 export interface ChartLine extends Array<ChartDataSet> {
 }
-
 

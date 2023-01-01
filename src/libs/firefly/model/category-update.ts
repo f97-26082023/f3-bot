@@ -25,13 +25,12 @@ export interface CategoryUpdate {
      * @type {string}
      * @memberof CategoryUpdate
      */
-    name?: string;
+    'name'?: string;
     /**
      * 
      * @type {string}
      * @memberof CategoryUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 

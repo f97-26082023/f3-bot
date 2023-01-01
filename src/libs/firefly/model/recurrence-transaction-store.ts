@@ -25,79 +25,78 @@ export interface RecurrenceTransactionStore {
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    description: string;
+    'description': string;
     /**
      * Amount of the transaction.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    amount: string;
+    'amount': string;
     /**
      * Foreign amount of the transaction.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    foreign_amount?: string | null;
+    'foreign_amount'?: string | null;
     /**
      * Submit either a currency_id or a currency_code.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Submit either a currency_id or a currency_code.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * Submit either a foreign_currency_id or a foreign_currency_code, or neither.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    foreign_currency_id?: string | null;
+    'foreign_currency_id'?: string | null;
     /**
      * Submit either a foreign_currency_id or a foreign_currency_code, or neither.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    foreign_currency_code?: string | null;
+    'foreign_currency_code'?: string | null;
     /**
      * The budget ID for this transaction.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    budget_id?: string;
+    'budget_id'?: string;
     /**
      * Category ID for this transaction.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    category_id?: string;
+    'category_id'?: string;
     /**
      * ID of the source account.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    source_id: string;
+    'source_id': string;
     /**
      * ID of the destination account.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    destination_id: string;
+    'destination_id': string;
     /**
      * Array of tags.
      * @type {Array<string>}
      * @memberof RecurrenceTransactionStore
      */
-    tags?: Array<string> | null;
+    'tags'?: Array<string> | null;
     /**
      * Optional.
      * @type {string}
      * @memberof RecurrenceTransactionStore
      */
-    piggy_bank_id?: string | null;
+    'piggy_bank_id'?: string | null;
 }
-
 

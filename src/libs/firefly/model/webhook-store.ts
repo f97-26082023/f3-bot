@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookDelivery } from './webhook-delivery';
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookResponse } from './webhook-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookTrigger } from './webhook-trigger';
 
 /**
@@ -28,37 +34,36 @@ export interface WebhookStore {
      * @type {boolean}
      * @memberof WebhookStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * A title for the webhook for easy recognition.
      * @type {string}
      * @memberof WebhookStore
      */
-    title: string;
+    'title': string;
     /**
      * 
      * @type {WebhookTrigger}
      * @memberof WebhookStore
      */
-    trigger: WebhookTrigger;
+    'trigger': WebhookTrigger;
     /**
      * 
      * @type {WebhookResponse}
      * @memberof WebhookStore
      */
-    response: WebhookResponse;
+    'response': WebhookResponse;
     /**
      * 
      * @type {WebhookDelivery}
      * @memberof WebhookStore
      */
-    delivery: WebhookDelivery;
+    'delivery': WebhookDelivery;
     /**
      * The URL of the webhook. Has to start with `https`.
      * @type {string}
      * @memberof WebhookStore
      */
-    url: string;
+    'url': string;
 }
-
 

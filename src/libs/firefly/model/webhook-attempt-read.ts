@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookAttempt } from './webhook-attempt';
 
 /**
@@ -26,19 +28,18 @@ export interface WebhookAttemptRead {
      * @type {string}
      * @memberof WebhookAttemptRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof WebhookAttemptRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {WebhookAttempt}
      * @memberof WebhookAttemptRead
      */
-    attributes: WebhookAttempt;
+    'attributes': WebhookAttempt;
 }
-
 

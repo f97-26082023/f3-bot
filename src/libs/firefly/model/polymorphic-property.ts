@@ -21,4 +21,3 @@
 export type PolymorphicProperty = Array<string> | boolean | object | string;
 
 
-

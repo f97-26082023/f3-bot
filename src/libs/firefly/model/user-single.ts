@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { UserRead } from './user-read';
 
 /**
@@ -26,7 +28,6 @@ export interface UserSingle {
      * @type {UserRead}
      * @memberof UserSingle
      */
-    data: UserRead;
+    'data': UserRead;
 }
-
 

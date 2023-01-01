@@ -25,37 +25,36 @@ export interface InsightGroupEntry {
      * @type {string}
      * @memberof InsightGroupEntry
      */
-    id?: string;
+    'id'?: string;
     /**
      * This is the name of the object.
      * @type {string}
      * @memberof InsightGroupEntry
      */
-    name?: string;
+    'name'?: string;
     /**
      * The amount spent or earned between start date and end date, a number defined as a string, for this object and all asset accounts.
      * @type {string}
      * @memberof InsightGroupEntry
      */
-    difference?: string;
+    'difference'?: string;
     /**
      * The amount spent or earned between start date and end date, a number as a float, for this object and all asset accounts. May have rounding errors.
      * @type {number}
      * @memberof InsightGroupEntry
      */
-    difference_float?: number;
+    'difference_float'?: number;
     /**
      * The currency ID of the expenses listed for this account.
      * @type {string}
      * @memberof InsightGroupEntry
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * The currency code of the expenses listed for this account.
      * @type {string}
      * @memberof InsightGroupEntry
      */
-    currency_code?: string;
+    'currency_code'?: string;
 }
-
 

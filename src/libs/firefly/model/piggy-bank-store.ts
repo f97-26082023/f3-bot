@@ -25,67 +25,66 @@ export interface PiggyBankStore {
      * @type {string}
      * @memberof PiggyBankStore
      */
-    name: string;
+    'name': string;
     /**
      * The ID of the asset account this piggy bank is connected to.
      * @type {string}
      * @memberof PiggyBankStore
      */
-    account_id: string;
+    'account_id': string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankStore
      */
-    target_amount: string | null;
+    'target_amount': string | null;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankStore
      */
-    current_amount?: string;
+    'current_amount'?: string;
     /**
      * The date you started with this piggy bank.
      * @type {string}
      * @memberof PiggyBankStore
      */
-    start_date?: string;
+    'start_date'?: string;
     /**
      * The date you intend to finish saving money.
      * @type {string}
      * @memberof PiggyBankStore
      */
-    target_date?: string | null;
+    'target_date'?: string | null;
     /**
      * 
      * @type {number}
      * @memberof PiggyBankStore
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {boolean}
      * @memberof PiggyBankStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * The group ID of the group this object is part of. NULL if no group.
      * @type {string}
      * @memberof PiggyBankStore
      */
-    object_group_id?: string | null;
+    'object_group_id'?: string | null;
     /**
      * The name of the group. NULL if no group.
      * @type {string}
      * @memberof PiggyBankStore
      */
-    object_group_title?: string | null;
+    'object_group_title'?: string | null;
 }
-
 

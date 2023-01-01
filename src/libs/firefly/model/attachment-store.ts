@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AttachableType } from './attachable-type';
 
 /**
@@ -26,31 +28,30 @@ export interface AttachmentStore {
      * @type {string}
      * @memberof AttachmentStore
      */
-    filename: string;
+    'filename': string;
     /**
      * 
      * @type {AttachableType}
      * @memberof AttachmentStore
      */
-    attachable_type: AttachableType;
+    'attachable_type': AttachableType;
     /**
      * ID of the model this attachment is linked to.
      * @type {string}
      * @memberof AttachmentStore
      */
-    attachable_id: string;
+    'attachable_id': string;
     /**
      * 
      * @type {string}
      * @memberof AttachmentStore
      */
-    title?: string;
+    'title'?: string;
     /**
      * 
      * @type {string}
      * @memberof AttachmentStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 

@@ -25,19 +25,18 @@ export interface PageLink {
      * @type {string}
      * @memberof PageLink
      */
-    self?: string;
+    'self'?: string;
     /**
      * 
      * @type {string}
      * @memberof PageLink
      */
-    first?: string;
+    'first'?: string;
     /**
      * 
      * @type {string}
      * @memberof PageLink
      */
-    last?: string;
+    'last'?: string;
 }
-
 

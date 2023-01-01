@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -38,7 +38,7 @@ export const AboutApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAbout: async (options: any = {}): Promise<RequestArgs> => {
+        getAbout: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/about`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -57,7 +57,7 @@ export const AboutApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -75,7 +75,7 @@ export const AboutApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCron: async (cliToken: string, date?: string, force?: boolean, options: any = {}): Promise<RequestArgs> => {
+        getCron: async (cliToken: string, date?: string, force?: boolean, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'cliToken' is not null or undefined
             assertParamExists('getCron', 'cliToken', cliToken)
             const localVarPath = `/api/v1/cron/{cliToken}`
@@ -107,7 +107,7 @@ export const AboutApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -122,7 +122,7 @@ export const AboutApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrentUser: async (options: any = {}): Promise<RequestArgs> => {
+        getCurrentUser: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/about/user`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -141,7 +141,7 @@ export const AboutApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -166,7 +166,7 @@ export const AboutApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAbout(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SystemInfo>> {
+        async getAbout(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SystemInfo>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAbout(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -179,7 +179,7 @@ export const AboutApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCron(cliToken: string, date?: string, force?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CronResult>> {
+        async getCron(cliToken: string, date?: string, force?: boolean, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CronResult>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCron(cliToken, date, force, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -189,7 +189,7 @@ export const AboutApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrentUser(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserSingle>> {
+        async getCurrentUser(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrentUser(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -278,7 +278,7 @@ export class AboutApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AboutApi
      */
-    public getAbout(options?: any) {
+    public getAbout(options?: AxiosRequestConfig) {
         return AboutApiFp(this.configuration).getAbout(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -290,7 +290,7 @@ export class AboutApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AboutApi
      */
-    public getCron(requestParameters: AboutApiGetCronRequest, options?: any) {
+    public getCron(requestParameters: AboutApiGetCronRequest, options?: AxiosRequestConfig) {
         return AboutApiFp(this.configuration).getCron(requestParameters.cliToken, requestParameters.date, requestParameters.force, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -301,7 +301,7 @@ export class AboutApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AboutApi
      */
-    public getCurrentUser(options?: any) {
+    public getCurrentUser(options?: AxiosRequestConfig) {
         return AboutApiFp(this.configuration).getCurrentUser(options).then((request) => request(this.axios, this.basePath));
     }
 }

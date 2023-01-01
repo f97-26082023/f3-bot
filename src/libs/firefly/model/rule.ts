@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleAction } from './rule-action';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTrigger } from './rule-trigger';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTriggerType } from './rule-trigger-type';
 
 /**
@@ -28,79 +34,78 @@ export interface Rule {
      * @type {string}
      * @memberof Rule
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Rule
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Rule
      */
-    title: string;
+    'title': string;
     /**
      * 
      * @type {string}
      * @memberof Rule
      */
-    description?: string;
+    'description'?: string;
     /**
      * ID of the rule group under which the rule must be stored. Either this field or rule_group_title is mandatory.
      * @type {string}
      * @memberof Rule
      */
-    rule_group_id: string;
+    'rule_group_id': string;
     /**
      * Title of the rule group under which the rule must be stored. Either this field or rule_group_id is mandatory.
      * @type {string}
      * @memberof Rule
      */
-    rule_group_title?: string;
+    'rule_group_title'?: string;
     /**
      * 
      * @type {number}
      * @memberof Rule
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {RuleTriggerType}
      * @memberof Rule
      */
-    trigger: RuleTriggerType;
+    'trigger': RuleTriggerType;
     /**
      * Whether or not the rule is even active. Default is true.
      * @type {boolean}
      * @memberof Rule
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * If the rule is set to be strict, ALL triggers must hit in order for the rule to fire. Otherwise, just one is enough. Default value is true.
      * @type {boolean}
      * @memberof Rule
      */
-    strict?: boolean;
+    'strict'?: boolean;
     /**
      * If this value is true and the rule is triggered, other rules  after this one in the group will be skipped. Default value is false.
      * @type {boolean}
      * @memberof Rule
      */
-    stop_processing?: boolean;
+    'stop_processing'?: boolean;
     /**
      * 
      * @type {Array<RuleTrigger>}
      * @memberof Rule
      */
-    triggers: Array<RuleTrigger>;
+    'triggers': Array<RuleTrigger>;
     /**
      * 
      * @type {Array<RuleAction>}
      * @memberof Rule
      */
-    actions: Array<RuleAction>;
+    'actions': Array<RuleAction>;
 }
-
 

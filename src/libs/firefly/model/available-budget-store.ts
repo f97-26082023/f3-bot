@@ -25,31 +25,30 @@ export interface AvailableBudgetStore {
      * @type {string}
      * @memberof AvailableBudgetStore
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Use either currency_id or currency_code.
      * @type {string}
      * @memberof AvailableBudgetStore
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof AvailableBudgetStore
      */
-    amount: string;
+    'amount': string;
     /**
      * Start date of the available budget.
      * @type {string}
      * @memberof AvailableBudgetStore
      */
-    start: string;
+    'start': string;
     /**
      * End date of the available budget.
      * @type {string}
      * @memberof AvailableBudgetStore
      */
-    end: string;
+    'end': string;
 }
-
 

@@ -20,12 +20,14 @@
  * @enum {string}
  */
 
-export enum LiabilityType {
-    Loan = 'loan',
-    Debt = 'debt',
-    Mortgage = 'mortgage',
-    Null = 'null'
-}
+export const LiabilityType = {
+    Loan: 'loan',
+    Debt: 'debt',
+    Mortgage: 'mortgage',
+    Null: 'null'
+} as const;
+
+export type LiabilityType = typeof LiabilityType[keyof typeof LiabilityType];
 
 
 

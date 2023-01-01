@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PiggyBankEvent } from './piggy-bank-event';
 
 /**
@@ -27,25 +31,24 @@ export interface PiggyBankEventRead {
      * @type {string}
      * @memberof PiggyBankEventRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof PiggyBankEventRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {PiggyBankEvent}
      * @memberof PiggyBankEventRead
      */
-    attributes: PiggyBankEvent;
+    'attributes': PiggyBankEvent;
     /**
      * 
      * @type {ObjectLink}
      * @memberof PiggyBankEventRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

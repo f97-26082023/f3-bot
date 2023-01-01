@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleRead } from './rule-read';
 
 /**
@@ -28,19 +34,18 @@ export interface RuleArray {
      * @type {Array<RuleRead>}
      * @memberof RuleArray
      */
-    data: Array<RuleRead>;
+    'data': Array<RuleRead>;
     /**
      * 
      * @type {Meta}
      * @memberof RuleArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof RuleArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

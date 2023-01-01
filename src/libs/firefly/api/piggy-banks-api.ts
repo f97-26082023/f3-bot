@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -47,7 +47,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deletePiggyBank: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deletePiggyBank: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deletePiggyBank', 'id', id)
             const localVarPath = `/api/v1/piggy_banks/{id}`
@@ -69,7 +69,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -85,7 +85,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPiggyBank: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getPiggyBank: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getPiggyBank', 'id', id)
             const localVarPath = `/api/v1/piggy_banks/{id}`
@@ -107,7 +107,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -124,7 +124,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachmentByPiggyBank: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachmentByPiggyBank: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listAttachmentByPiggyBank', 'id', id)
             const localVarPath = `/api/v1/piggy_banks/{id}/attachments`
@@ -150,7 +150,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -167,7 +167,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listEventByPiggyBank: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listEventByPiggyBank: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listEventByPiggyBank', 'id', id)
             const localVarPath = `/api/v1/piggy_banks/{id}/events`
@@ -193,7 +193,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -209,7 +209,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPiggyBank: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listPiggyBank: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/piggy_banks`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -232,7 +232,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -248,7 +248,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storePiggyBank: async (piggyBankStore: PiggyBankStore, options: any = {}): Promise<RequestArgs> => {
+        storePiggyBank: async (piggyBankStore: PiggyBankStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'piggyBankStore' is not null or undefined
             assertParamExists('storePiggyBank', 'piggyBankStore', piggyBankStore)
             const localVarPath = `/api/v1/piggy_banks`;
@@ -271,7 +271,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(piggyBankStore, localVarRequestOptions, configuration)
@@ -289,7 +289,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updatePiggyBank: async (id: string, piggyBankUpdate: PiggyBankUpdate, options: any = {}): Promise<RequestArgs> => {
+        updatePiggyBank: async (id: string, piggyBankUpdate: PiggyBankUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updatePiggyBank', 'id', id)
             // verify required parameter 'piggyBankUpdate' is not null or undefined
@@ -315,7 +315,7 @@ export const PiggyBanksApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(piggyBankUpdate, localVarRequestOptions, configuration)
@@ -342,7 +342,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deletePiggyBank(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deletePiggyBank(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deletePiggyBank(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -353,7 +353,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPiggyBank(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankSingle>> {
+        async getPiggyBank(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPiggyBank(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -365,7 +365,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachmentByPiggyBank(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachmentByPiggyBank(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachmentByPiggyBank(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -377,7 +377,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listEventByPiggyBank(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankEventArray>> {
+        async listEventByPiggyBank(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankEventArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listEventByPiggyBank(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -388,7 +388,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listPiggyBank(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankArray>> {
+        async listPiggyBank(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listPiggyBank(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -399,7 +399,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storePiggyBank(piggyBankStore: PiggyBankStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankSingle>> {
+        async storePiggyBank(piggyBankStore: PiggyBankStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storePiggyBank(piggyBankStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -411,7 +411,7 @@ export const PiggyBanksApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updatePiggyBank(id: string, piggyBankUpdate: PiggyBankUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankSingle>> {
+        async updatePiggyBank(id: string, piggyBankUpdate: PiggyBankUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updatePiggyBank(id, piggyBankUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -635,7 +635,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public deletePiggyBank(requestParameters: PiggyBanksApiDeletePiggyBankRequest, options?: any) {
+    public deletePiggyBank(requestParameters: PiggyBanksApiDeletePiggyBankRequest, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).deletePiggyBank(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -647,7 +647,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public getPiggyBank(requestParameters: PiggyBanksApiGetPiggyBankRequest, options?: any) {
+    public getPiggyBank(requestParameters: PiggyBanksApiGetPiggyBankRequest, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).getPiggyBank(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -659,7 +659,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public listAttachmentByPiggyBank(requestParameters: PiggyBanksApiListAttachmentByPiggyBankRequest, options?: any) {
+    public listAttachmentByPiggyBank(requestParameters: PiggyBanksApiListAttachmentByPiggyBankRequest, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).listAttachmentByPiggyBank(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -671,7 +671,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public listEventByPiggyBank(requestParameters: PiggyBanksApiListEventByPiggyBankRequest, options?: any) {
+    public listEventByPiggyBank(requestParameters: PiggyBanksApiListEventByPiggyBankRequest, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).listEventByPiggyBank(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -683,7 +683,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public listPiggyBank(requestParameters: PiggyBanksApiListPiggyBankRequest = {}, options?: any) {
+    public listPiggyBank(requestParameters: PiggyBanksApiListPiggyBankRequest = {}, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).listPiggyBank(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -695,7 +695,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public storePiggyBank(requestParameters: PiggyBanksApiStorePiggyBankRequest, options?: any) {
+    public storePiggyBank(requestParameters: PiggyBanksApiStorePiggyBankRequest, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).storePiggyBank(requestParameters.piggyBankStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -707,7 +707,7 @@ export class PiggyBanksApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PiggyBanksApi
      */
-    public updatePiggyBank(requestParameters: PiggyBanksApiUpdatePiggyBankRequest, options?: any) {
+    public updatePiggyBank(requestParameters: PiggyBanksApiUpdatePiggyBankRequest, options?: AxiosRequestConfig) {
         return PiggyBanksApiFp(this.configuration).updatePiggyBank(requestParameters.id, requestParameters.piggyBankUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

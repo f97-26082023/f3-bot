@@ -20,11 +20,13 @@
  * @enum {string}
  */
 
-export enum UserRoleProperty {
-    Owner = 'owner',
-    Demo = 'demo',
-    Null = 'null'
-}
+export const UserRoleProperty = {
+    Owner: 'owner',
+    Demo: 'demo',
+    Null: 'null'
+} as const;
+
+export type UserRoleProperty = typeof UserRoleProperty[keyof typeof UserRoleProperty];
 
 
 

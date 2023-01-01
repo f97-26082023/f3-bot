@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleRead } from './rule-read';
 
 /**
@@ -26,7 +28,6 @@ export interface RuleSingle {
      * @type {RuleRead}
      * @memberof RuleSingle
      */
-    data: RuleRead;
+    'data': RuleRead;
 }
-
 

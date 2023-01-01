@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookAttemptRead } from './webhook-attempt-read';
 
 /**
@@ -26,7 +28,6 @@ export interface WebhookAttemptSingle {
      * @type {WebhookAttemptRead}
      * @memberof WebhookAttemptSingle
      */
-    data: WebhookAttemptRead;
+    'data': WebhookAttemptRead;
 }
-
 

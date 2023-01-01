@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -47,7 +47,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteRuleGroup: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteRuleGroup: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteRuleGroup', 'id', id)
             const localVarPath = `/api/v1/rule_groups/{id}`
@@ -69,7 +69,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -88,7 +88,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        fireRuleGroup: async (id: string, start?: string, end?: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        fireRuleGroup: async (id: string, start?: string, end?: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('fireRuleGroup', 'id', id)
             const localVarPath = `/api/v1/rule_groups/{id}/trigger`
@@ -126,7 +126,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -142,7 +142,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRuleGroup: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getRuleGroup: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getRuleGroup', 'id', id)
             const localVarPath = `/api/v1/rule_groups/{id}`
@@ -164,7 +164,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -181,7 +181,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRuleByGroup: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listRuleByGroup: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listRuleByGroup', 'id', id)
             const localVarPath = `/api/v1/rule_groups/{id}/rules`
@@ -207,7 +207,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -223,7 +223,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRuleGroup: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listRuleGroup: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/rule_groups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -246,7 +246,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -262,7 +262,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeRuleGroup: async (ruleGroupStore: RuleGroupStore, options: any = {}): Promise<RequestArgs> => {
+        storeRuleGroup: async (ruleGroupStore: RuleGroupStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ruleGroupStore' is not null or undefined
             assertParamExists('storeRuleGroup', 'ruleGroupStore', ruleGroupStore)
             const localVarPath = `/api/v1/rule_groups`;
@@ -285,7 +285,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ruleGroupStore, localVarRequestOptions, configuration)
@@ -308,7 +308,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        testRuleGroup: async (id: string, page?: number, start?: string, end?: string, searchLimit?: number, triggeredLimit?: number, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        testRuleGroup: async (id: string, page?: number, start?: string, end?: string, searchLimit?: number, triggeredLimit?: number, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('testRuleGroup', 'id', id)
             const localVarPath = `/api/v1/rule_groups/{id}/test`
@@ -358,7 +358,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -375,7 +375,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateRuleGroup: async (id: string, ruleGroupUpdate: RuleGroupUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateRuleGroup: async (id: string, ruleGroupUpdate: RuleGroupUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateRuleGroup', 'id', id)
             // verify required parameter 'ruleGroupUpdate' is not null or undefined
@@ -401,7 +401,7 @@ export const RuleGroupsApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ruleGroupUpdate, localVarRequestOptions, configuration)
@@ -428,7 +428,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteRuleGroup(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteRuleGroup(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteRuleGroup(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -442,7 +442,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async fireRuleGroup(id: string, start?: string, end?: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async fireRuleGroup(id: string, start?: string, end?: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.fireRuleGroup(id, start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -453,7 +453,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRuleGroup(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupSingle>> {
+        async getRuleGroup(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRuleGroup(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -465,7 +465,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRuleByGroup(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
+        async listRuleByGroup(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRuleByGroup(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -476,7 +476,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRuleGroup(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupArray>> {
+        async listRuleGroup(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRuleGroup(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -487,7 +487,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeRuleGroup(ruleGroupStore: RuleGroupStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupSingle>> {
+        async storeRuleGroup(ruleGroupStore: RuleGroupStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeRuleGroup(ruleGroupStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -504,7 +504,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async testRuleGroup(id: string, page?: number, start?: string, end?: string, searchLimit?: number, triggeredLimit?: number, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async testRuleGroup(id: string, page?: number, start?: string, end?: string, searchLimit?: number, triggeredLimit?: number, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.testRuleGroup(id, page, start, end, searchLimit, triggeredLimit, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -516,7 +516,7 @@ export const RuleGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateRuleGroup(id: string, ruleGroupUpdate: RuleGroupUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupSingle>> {
+        async updateRuleGroup(id: string, ruleGroupUpdate: RuleGroupUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleGroupSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateRuleGroup(id, ruleGroupUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -828,7 +828,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public deleteRuleGroup(requestParameters: RuleGroupsApiDeleteRuleGroupRequest, options?: any) {
+    public deleteRuleGroup(requestParameters: RuleGroupsApiDeleteRuleGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).deleteRuleGroup(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -840,7 +840,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public fireRuleGroup(requestParameters: RuleGroupsApiFireRuleGroupRequest, options?: any) {
+    public fireRuleGroup(requestParameters: RuleGroupsApiFireRuleGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).fireRuleGroup(requestParameters.id, requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -852,7 +852,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public getRuleGroup(requestParameters: RuleGroupsApiGetRuleGroupRequest, options?: any) {
+    public getRuleGroup(requestParameters: RuleGroupsApiGetRuleGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).getRuleGroup(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -864,7 +864,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public listRuleByGroup(requestParameters: RuleGroupsApiListRuleByGroupRequest, options?: any) {
+    public listRuleByGroup(requestParameters: RuleGroupsApiListRuleByGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).listRuleByGroup(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -876,7 +876,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public listRuleGroup(requestParameters: RuleGroupsApiListRuleGroupRequest = {}, options?: any) {
+    public listRuleGroup(requestParameters: RuleGroupsApiListRuleGroupRequest = {}, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).listRuleGroup(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -888,7 +888,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public storeRuleGroup(requestParameters: RuleGroupsApiStoreRuleGroupRequest, options?: any) {
+    public storeRuleGroup(requestParameters: RuleGroupsApiStoreRuleGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).storeRuleGroup(requestParameters.ruleGroupStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -900,7 +900,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public testRuleGroup(requestParameters: RuleGroupsApiTestRuleGroupRequest, options?: any) {
+    public testRuleGroup(requestParameters: RuleGroupsApiTestRuleGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).testRuleGroup(requestParameters.id, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.searchLimit, requestParameters.triggeredLimit, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -912,7 +912,7 @@ export class RuleGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof RuleGroupsApi
      */
-    public updateRuleGroup(requestParameters: RuleGroupsApiUpdateRuleGroupRequest, options?: any) {
+    public updateRuleGroup(requestParameters: RuleGroupsApiUpdateRuleGroupRequest, options?: AxiosRequestConfig) {
         return RuleGroupsApiFp(this.configuration).updateRuleGroup(requestParameters.id, requestParameters.ruleGroupUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

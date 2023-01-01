@@ -13,11 +13,23 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AccountRoleProperty } from './account-role-property';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CreditCardType } from './credit-card-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InterestPeriod } from './interest-period';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LiabilityDirection } from './liability-direction';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LiabilityType } from './liability-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ShortAccountTypeProperty } from './short-account-type-property';
 
 /**
@@ -31,145 +43,144 @@ export interface AccountStore {
      * @type {string}
      * @memberof AccountStore
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {ShortAccountTypeProperty}
      * @memberof AccountStore
      */
-    type: ShortAccountTypeProperty;
+    'type': ShortAccountTypeProperty;
     /**
      * 
      * @type {string}
      * @memberof AccountStore
      */
-    iban?: string | null;
+    'iban'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountStore
      */
-    bic?: string | null;
+    'bic'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountStore
      */
-    account_number?: string | null;
+    'account_number'?: string | null;
     /**
      * Represents the opening balance, the initial amount this account holds.
      * @type {string}
      * @memberof AccountStore
      */
-    opening_balance?: string;
+    'opening_balance'?: string;
     /**
      * Represents the date of the opening balance.
      * @type {string}
      * @memberof AccountStore
      */
-    opening_balance_date?: string | null;
+    'opening_balance_date'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountStore
      */
-    virtual_balance?: string;
+    'virtual_balance'?: string;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof AccountStore
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof AccountStore
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * If omitted, defaults to true.
      * @type {boolean}
      * @memberof AccountStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * Order of the account
      * @type {number}
      * @memberof AccountStore
      */
-    order?: number;
+    'order'?: number;
     /**
      * If omitted, defaults to true.
      * @type {boolean}
      * @memberof AccountStore
      */
-    include_net_worth?: boolean;
+    'include_net_worth'?: boolean;
     /**
      * 
      * @type {AccountRoleProperty}
      * @memberof AccountStore
      */
-    account_role?: AccountRoleProperty | null;
+    'account_role'?: AccountRoleProperty | null;
     /**
      * 
      * @type {CreditCardType}
      * @memberof AccountStore
      */
-    credit_card_type?: CreditCardType | null;
+    'credit_card_type'?: CreditCardType | null;
     /**
      * Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank.
      * @type {string}
      * @memberof AccountStore
      */
-    monthly_payment_date?: string | null;
+    'monthly_payment_date'?: string | null;
     /**
      * 
      * @type {LiabilityType}
      * @memberof AccountStore
      */
-    liability_type?: LiabilityType | null;
+    'liability_type'?: LiabilityType | null;
     /**
      * 
      * @type {LiabilityDirection}
      * @memberof AccountStore
      */
-    liability_direction?: LiabilityDirection | null;
+    'liability_direction'?: LiabilityDirection | null;
     /**
      * Mandatory when type is liability. Interest percentage.
      * @type {string}
      * @memberof AccountStore
      */
-    interest?: string | null;
+    'interest'?: string | null;
     /**
      * 
      * @type {InterestPeriod}
      * @memberof AccountStore
      */
-    interest_period?: InterestPeriod | null;
+    'interest_period'?: InterestPeriod | null;
     /**
      * 
      * @type {string}
      * @memberof AccountStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * Latitude of the accounts\'s location, if applicable. Can be used to draw a map.
      * @type {number}
      * @memberof AccountStore
      */
-    latitude?: number | null;
+    'latitude'?: number | null;
     /**
      * Latitude of the accounts\'s location, if applicable. Can be used to draw a map.
      * @type {number}
      * @memberof AccountStore
      */
-    longitude?: number | null;
+    'longitude'?: number | null;
     /**
      * Zoom level for the map, if drawn. This to set the box right. Unfortunately this is a proprietary value because each map provider has different zoom levels.
      * @type {number}
      * @memberof AccountStore
      */
-    zoom_level?: number | null;
+    'zoom_level'?: number | null;
 }
-
 

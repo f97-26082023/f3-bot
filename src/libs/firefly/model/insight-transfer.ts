@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { InsightTransferEntry } from './insight-transfer-entry';
 
 /**
@@ -22,5 +24,4 @@ import { InsightTransferEntry } from './insight-transfer-entry';
  */
 export interface InsightTransfer extends Array<InsightTransferEntry> {
 }
-
 

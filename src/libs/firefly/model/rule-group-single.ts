@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleGroupRead } from './rule-group-read';
 
 /**
@@ -26,7 +28,6 @@ export interface RuleGroupSingle {
      * @type {RuleGroupRead}
      * @memberof RuleGroupSingle
      */
-    data: RuleGroupRead;
+    'data': RuleGroupRead;
 }
-
 

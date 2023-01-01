@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CurrencyRead } from './currency-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
 
 /**
@@ -28,19 +34,18 @@ export interface CurrencyArray {
      * @type {Array<CurrencyRead>}
      * @memberof CurrencyArray
      */
-    data: Array<CurrencyRead>;
+    'data': Array<CurrencyRead>;
     /**
      * 
      * @type {Meta}
      * @memberof CurrencyArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof CurrencyArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

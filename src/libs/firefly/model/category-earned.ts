@@ -25,31 +25,30 @@ export interface CategoryEarned {
      * @type {string}
      * @memberof CategoryEarned
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof CategoryEarned
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof CategoryEarned
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals supported by the currency
      * @type {number}
      * @memberof CategoryEarned
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * The amount earned.
      * @type {string}
      * @memberof CategoryEarned
      */
-    sum?: string;
+    'sum'?: string;
 }
-
 

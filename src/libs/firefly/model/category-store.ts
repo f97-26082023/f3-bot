@@ -25,13 +25,12 @@ export interface CategoryStore {
      * @type {string}
      * @memberof CategoryStore
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof CategoryStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 

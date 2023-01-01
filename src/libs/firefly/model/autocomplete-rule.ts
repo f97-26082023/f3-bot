@@ -25,19 +25,18 @@ export interface AutocompleteRule {
      * @type {string}
      * @memberof AutocompleteRule
      */
-    id: string;
+    'id': string;
     /**
      * Name of the rule found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteRule
      */
-    name: string;
+    'name': string;
     /**
      * Description of the rule found by auto-complete.
      * @type {string}
      * @memberof AutocompleteRule
      */
-    description?: string;
+    'description'?: string;
 }
-
 

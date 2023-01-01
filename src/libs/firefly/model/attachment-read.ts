@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Attachment } from './attachment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
 
 /**
@@ -27,25 +31,24 @@ export interface AttachmentRead {
      * @type {string}
      * @memberof AttachmentRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof AttachmentRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Attachment}
      * @memberof AttachmentRead
      */
-    attributes: Attachment;
+    'attributes': Attachment;
     /**
      * 
      * @type {ObjectLink}
      * @memberof AttachmentRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

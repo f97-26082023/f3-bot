@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -51,7 +51,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteBill: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteBill: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteBill', 'id', id)
             const localVarPath = `/api/v1/bills/{id}`
@@ -73,7 +73,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -91,7 +91,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBill: async (id: string, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        getBill: async (id: string, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getBill', 'id', id)
             const localVarPath = `/api/v1/bills/{id}`
@@ -125,7 +125,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -142,7 +142,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachmentByBill: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachmentByBill: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listAttachmentByBill', 'id', id)
             const localVarPath = `/api/v1/bills/{id}/attachments`
@@ -168,7 +168,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -186,7 +186,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBill: async (page?: number, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        listBill: async (page?: number, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/bills`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -221,7 +221,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -237,7 +237,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRuleByBill: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        listRuleByBill: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listRuleByBill', 'id', id)
             const localVarPath = `/api/v1/bills/{id}/rules`
@@ -259,7 +259,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -278,7 +278,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByBill: async (id: string, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByBill: async (id: string, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByBill', 'id', id)
             const localVarPath = `/api/v1/bills/{id}/transactions`
@@ -316,7 +316,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -332,7 +332,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeBill: async (billStore: BillStore, options: any = {}): Promise<RequestArgs> => {
+        storeBill: async (billStore: BillStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'billStore' is not null or undefined
             assertParamExists('storeBill', 'billStore', billStore)
             const localVarPath = `/api/v1/bills`;
@@ -355,7 +355,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(billStore, localVarRequestOptions, configuration)
@@ -373,7 +373,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateBill: async (id: string, billUpdate: BillUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateBill: async (id: string, billUpdate: BillUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateBill', 'id', id)
             // verify required parameter 'billUpdate' is not null or undefined
@@ -399,7 +399,7 @@ export const BillsApiAxiosParamCreator = function (configuration?: Configuration
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(billUpdate, localVarRequestOptions, configuration)
@@ -426,7 +426,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteBill(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteBill(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteBill(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -439,7 +439,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBill(id: string, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillSingle>> {
+        async getBill(id: string, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBill(id, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -451,7 +451,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachmentByBill(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachmentByBill(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachmentByBill(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -464,7 +464,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBill(page?: number, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillArray>> {
+        async listBill(page?: number, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBill(page, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -475,7 +475,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRuleByBill(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
+        async listRuleByBill(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRuleByBill(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -489,7 +489,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByBill(id: string, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByBill(id: string, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByBill(id, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -500,7 +500,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeBill(billStore: BillStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillSingle>> {
+        async storeBill(billStore: BillStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeBill(billStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -512,7 +512,7 @@ export const BillsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateBill(id: string, billUpdate: BillUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillSingle>> {
+        async updateBill(id: string, billUpdate: BillUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateBill(id, billUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -808,7 +808,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public deleteBill(requestParameters: BillsApiDeleteBillRequest, options?: any) {
+    public deleteBill(requestParameters: BillsApiDeleteBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).deleteBill(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -820,7 +820,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public getBill(requestParameters: BillsApiGetBillRequest, options?: any) {
+    public getBill(requestParameters: BillsApiGetBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).getBill(requestParameters.id, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -832,7 +832,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public listAttachmentByBill(requestParameters: BillsApiListAttachmentByBillRequest, options?: any) {
+    public listAttachmentByBill(requestParameters: BillsApiListAttachmentByBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).listAttachmentByBill(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -844,7 +844,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public listBill(requestParameters: BillsApiListBillRequest = {}, options?: any) {
+    public listBill(requestParameters: BillsApiListBillRequest = {}, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).listBill(requestParameters.page, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -856,7 +856,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public listRuleByBill(requestParameters: BillsApiListRuleByBillRequest, options?: any) {
+    public listRuleByBill(requestParameters: BillsApiListRuleByBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).listRuleByBill(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -868,7 +868,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public listTransactionByBill(requestParameters: BillsApiListTransactionByBillRequest, options?: any) {
+    public listTransactionByBill(requestParameters: BillsApiListTransactionByBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).listTransactionByBill(requestParameters.id, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -880,7 +880,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public storeBill(requestParameters: BillsApiStoreBillRequest, options?: any) {
+    public storeBill(requestParameters: BillsApiStoreBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).storeBill(requestParameters.billStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -892,7 +892,7 @@ export class BillsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BillsApi
      */
-    public updateBill(requestParameters: BillsApiUpdateBillRequest, options?: any) {
+    public updateBill(requestParameters: BillsApiUpdateBillRequest, options?: AxiosRequestConfig) {
         return BillsApiFp(this.configuration).updateBill(requestParameters.id, requestParameters.billUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

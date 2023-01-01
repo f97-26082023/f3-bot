@@ -20,10 +20,12 @@
  * @enum {string}
  */
 
-export enum UserBlockedCodeProperty {
-    EmailChanged = 'email_changed',
-    Null = 'null'
-}
+export const UserBlockedCodeProperty = {
+    EmailChanged: 'email_changed',
+    Null: 'null'
+} as const;
+
+export type UserBlockedCodeProperty = typeof UserBlockedCodeProperty[keyof typeof UserBlockedCodeProperty];
 
 
 

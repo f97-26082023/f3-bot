@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AccountRead } from './account-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface AccountArray {
      * @type {Array<AccountRead>}
      * @memberof AccountArray
      */
-    data: Array<AccountRead>;
+    'data': Array<AccountRead>;
     /**
      * 
      * @type {Meta}
      * @memberof AccountArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

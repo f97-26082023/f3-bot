@@ -25,13 +25,12 @@ export interface AutocompleteCategory {
      * @type {string}
      * @memberof AutocompleteCategory
      */
-    id: string;
+    'id': string;
     /**
      * Name of the category found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteCategory
      */
-    name: string;
+    'name': string;
 }
-
 

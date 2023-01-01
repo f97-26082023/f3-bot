@@ -25,13 +25,12 @@ export interface ObjectGroupUpdate {
      * @type {string}
      * @memberof ObjectGroupUpdate
      */
-    title?: string;
+    'title'?: string;
     /**
      * Order of the object group
      * @type {number}
      * @memberof ObjectGroupUpdate
      */
-    order?: number;
+    'order'?: number;
 }
-
 

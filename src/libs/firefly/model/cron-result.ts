@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CronResultRow } from './cron-result-row';
 
 /**
@@ -26,19 +28,18 @@ export interface CronResult {
      * @type {CronResultRow}
      * @memberof CronResult
      */
-    recurring_transactions?: CronResultRow;
+    'recurring_transactions'?: CronResultRow;
     /**
      * 
      * @type {CronResultRow}
      * @memberof CronResult
      */
-    auto_budgets?: CronResultRow;
+    'auto_budgets'?: CronResultRow;
     /**
      * 
      * @type {CronResultRow}
      * @memberof CronResult
      */
-    telemetry?: CronResultRow;
+    'telemetry'?: CronResultRow;
 }
-
 

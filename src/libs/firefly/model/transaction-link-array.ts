@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransactionLinkRead } from './transaction-link-read';
 
 /**
@@ -28,19 +34,18 @@ export interface TransactionLinkArray {
      * @type {Array<TransactionLinkRead>}
      * @memberof TransactionLinkArray
      */
-    data: Array<TransactionLinkRead>;
+    'data': Array<TransactionLinkRead>;
     /**
      * 
      * @type {Meta}
      * @memberof TransactionLinkArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof TransactionLinkArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

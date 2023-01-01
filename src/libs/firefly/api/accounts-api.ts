@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -53,7 +53,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteAccount: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteAccount: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteAccount', 'id', id)
             const localVarPath = `/api/v1/accounts/{id}`
@@ -75,7 +75,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -92,7 +92,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccount: async (id: string, date?: string, options: any = {}): Promise<RequestArgs> => {
+        getAccount: async (id: string, date?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getAccount', 'id', id)
             const localVarPath = `/api/v1/accounts/{id}`
@@ -120,7 +120,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -138,7 +138,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAccount: async (page?: number, date?: string, type?: AccountTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listAccount: async (page?: number, date?: string, type?: AccountTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/accounts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -171,7 +171,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -188,7 +188,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachmentByAccount: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachmentByAccount: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listAttachmentByAccount', 'id', id)
             const localVarPath = `/api/v1/accounts/{id}/attachments`
@@ -214,7 +214,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -231,7 +231,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPiggyBankByAccount: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listPiggyBankByAccount: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listPiggyBankByAccount', 'id', id)
             const localVarPath = `/api/v1/accounts/{id}/piggy_banks`
@@ -257,7 +257,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -278,7 +278,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByAccount: async (id: string, page?: number, limit?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByAccount: async (id: string, page?: number, limit?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listTransactionByAccount', 'id', id)
             const localVarPath = `/api/v1/accounts/{id}/transactions`
@@ -324,7 +324,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -340,7 +340,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeAccount: async (accountStore: AccountStore, options: any = {}): Promise<RequestArgs> => {
+        storeAccount: async (accountStore: AccountStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'accountStore' is not null or undefined
             assertParamExists('storeAccount', 'accountStore', accountStore)
             const localVarPath = `/api/v1/accounts`;
@@ -363,7 +363,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(accountStore, localVarRequestOptions, configuration)
@@ -381,7 +381,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateAccount: async (id: string, accountUpdate: AccountUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateAccount: async (id: string, accountUpdate: AccountUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateAccount', 'id', id)
             // verify required parameter 'accountUpdate' is not null or undefined
@@ -407,7 +407,7 @@ export const AccountsApiAxiosParamCreator = function (configuration?: Configurat
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(accountUpdate, localVarRequestOptions, configuration)
@@ -434,7 +434,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteAccount(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteAccount(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteAccount(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -446,7 +446,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccount(id: string, date?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountSingle>> {
+        async getAccount(id: string, date?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAccount(id, date, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -459,7 +459,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAccount(page?: number, date?: string, type?: AccountTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountArray>> {
+        async listAccount(page?: number, date?: string, type?: AccountTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAccount(page, date, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -471,7 +471,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachmentByAccount(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachmentByAccount(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachmentByAccount(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -483,7 +483,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listPiggyBankByAccount(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankArray>> {
+        async listPiggyBankByAccount(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listPiggyBankByAccount(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -499,7 +499,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByAccount(id: string, page?: number, limit?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByAccount(id: string, page?: number, limit?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByAccount(id, page, limit, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -510,7 +510,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeAccount(accountStore: AccountStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountSingle>> {
+        async storeAccount(accountStore: AccountStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeAccount(accountStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -522,7 +522,7 @@ export const AccountsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateAccount(id: string, accountUpdate: AccountUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountSingle>> {
+        async updateAccount(id: string, accountUpdate: AccountUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateAccount(id, accountUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -834,7 +834,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public deleteAccount(requestParameters: AccountsApiDeleteAccountRequest, options?: any) {
+    public deleteAccount(requestParameters: AccountsApiDeleteAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).deleteAccount(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -846,7 +846,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public getAccount(requestParameters: AccountsApiGetAccountRequest, options?: any) {
+    public getAccount(requestParameters: AccountsApiGetAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).getAccount(requestParameters.id, requestParameters.date, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -858,7 +858,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public listAccount(requestParameters: AccountsApiListAccountRequest = {}, options?: any) {
+    public listAccount(requestParameters: AccountsApiListAccountRequest = {}, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).listAccount(requestParameters.page, requestParameters.date, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -870,7 +870,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public listAttachmentByAccount(requestParameters: AccountsApiListAttachmentByAccountRequest, options?: any) {
+    public listAttachmentByAccount(requestParameters: AccountsApiListAttachmentByAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).listAttachmentByAccount(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -882,7 +882,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public listPiggyBankByAccount(requestParameters: AccountsApiListPiggyBankByAccountRequest, options?: any) {
+    public listPiggyBankByAccount(requestParameters: AccountsApiListPiggyBankByAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).listPiggyBankByAccount(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -894,7 +894,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public listTransactionByAccount(requestParameters: AccountsApiListTransactionByAccountRequest, options?: any) {
+    public listTransactionByAccount(requestParameters: AccountsApiListTransactionByAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).listTransactionByAccount(requestParameters.id, requestParameters.page, requestParameters.limit, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -906,7 +906,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public storeAccount(requestParameters: AccountsApiStoreAccountRequest, options?: any) {
+    public storeAccount(requestParameters: AccountsApiStoreAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).storeAccount(requestParameters.accountStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -918,7 +918,7 @@ export class AccountsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AccountsApi
      */
-    public updateAccount(requestParameters: AccountsApiUpdateAccountRequest, options?: any) {
+    public updateAccount(requestParameters: AccountsApiUpdateAccountRequest, options?: AxiosRequestConfig) {
         return AccountsApiFp(this.configuration).updateAccount(requestParameters.id, requestParameters.accountUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

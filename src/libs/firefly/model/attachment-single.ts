@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AttachmentRead } from './attachment-read';
 
 /**
@@ -26,7 +28,6 @@ export interface AttachmentSingle {
      * @type {AttachmentRead}
      * @memberof AttachmentSingle
      */
-    data: AttachmentRead;
+    'data': AttachmentRead;
 }
-
 

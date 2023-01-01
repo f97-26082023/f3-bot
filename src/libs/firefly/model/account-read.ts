@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Account } from './account';
 
 /**
@@ -26,19 +28,18 @@ export interface AccountRead {
      * @type {string}
      * @memberof AccountRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof AccountRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Account}
      * @memberof AccountRead
      */
-    attributes: Account;
+    'attributes': Account;
 }
-
 

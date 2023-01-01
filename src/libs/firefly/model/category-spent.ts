@@ -25,31 +25,30 @@ export interface CategorySpent {
      * @type {string}
      * @memberof CategorySpent
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof CategorySpent
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof CategorySpent
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals supported by the currency
      * @type {number}
      * @memberof CategorySpent
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * The amount spent.
      * @type {string}
      * @memberof CategorySpent
      */
-    sum?: string;
+    'sum'?: string;
 }
-
 

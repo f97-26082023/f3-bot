@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Preference } from './preference';
 
 /**
@@ -26,19 +28,18 @@ export interface PreferenceRead {
      * @type {string}
      * @memberof PreferenceRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof PreferenceRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Preference}
      * @memberof PreferenceRead
      */
-    attributes: Preference;
+    'attributes': Preference;
 }
-
 

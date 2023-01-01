@@ -25,61 +25,60 @@ export interface InsightTransferEntry {
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    id?: string;
+    'id'?: string;
     /**
      * This is the name of the object.
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    name?: string;
+    'name'?: string;
     /**
      * The total amount transferred between start date and end date, a number defined as a string, for this asset account.
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    difference?: string;
+    'difference'?: string;
     /**
      * The total amount transferred between start date and end date, a number as a float, for this asset account. May have rounding errors.
      * @type {number}
      * @memberof InsightTransferEntry
      */
-    difference_float?: number;
+    'difference_float'?: number;
     /**
      * The total amount transferred TO this account between start date and end date, a number defined as a string, for this asset account.
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    _in?: string;
+    'in'?: string;
     /**
      * The total amount transferred FROM this account between start date and end date, a number as a float, for this asset account. May have rounding errors.
      * @type {number}
      * @memberof InsightTransferEntry
      */
-    in_float?: number;
+    'in_float'?: number;
     /**
      * The total amount transferred FROM this account between start date and end date, a number defined as a string, for this asset account.
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    out?: string;
+    'out'?: string;
     /**
      * The total amount transferred TO this account between start date and end date, a number as a float, for this asset account. May have rounding errors.
      * @type {number}
      * @memberof InsightTransferEntry
      */
-    out_float?: number;
+    'out_float'?: number;
     /**
      * The currency ID of the expenses listed for this account.
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * The currency code of the expenses listed for this account.
      * @type {string}
      * @memberof InsightTransferEntry
      */
-    currency_code?: string;
+    'currency_code'?: string;
 }
-
 

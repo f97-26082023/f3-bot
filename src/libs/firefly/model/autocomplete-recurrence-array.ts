@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteRecurrence } from './autocomplete-recurrence';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteRecurrence } from './autocomplete-recurrence';
  */
 export interface AutocompleteRecurrenceArray extends Array<AutocompleteRecurrence> {
 }
-
 

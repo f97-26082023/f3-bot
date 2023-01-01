@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -51,7 +51,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTransaction: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteTransaction: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteTransaction', 'id', id)
             const localVarPath = `/api/v1/transactions/{id}`
@@ -73,7 +73,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -89,7 +89,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteTransactionJournal: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteTransactionJournal: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteTransactionJournal', 'id', id)
             const localVarPath = `/api/v1/transaction-journals/{id}`
@@ -111,7 +111,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -127,7 +127,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransaction: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getTransaction: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getTransaction', 'id', id)
             const localVarPath = `/api/v1/transactions/{id}`
@@ -149,7 +149,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -165,7 +165,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionByJournal: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getTransactionByJournal: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getTransactionByJournal', 'id', id)
             const localVarPath = `/api/v1/transaction-journals/{id}`
@@ -187,7 +187,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -204,7 +204,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttachmentByTransaction: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAttachmentByTransaction: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listAttachmentByTransaction', 'id', id)
             const localVarPath = `/api/v1/transactions/{id}/attachments`
@@ -230,7 +230,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -247,7 +247,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listEventByTransaction: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listEventByTransaction: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listEventByTransaction', 'id', id)
             const localVarPath = `/api/v1/transactions/{id}/piggy_bank_events`
@@ -273,7 +273,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -290,7 +290,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listLinksByJournal: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listLinksByJournal: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listLinksByJournal', 'id', id)
             const localVarPath = `/api/v1/transaction-journals/{id}/links`
@@ -316,7 +316,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -335,7 +335,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransaction: async (page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransaction: async (page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/transactions`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -374,7 +374,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -390,7 +390,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeTransaction: async (transactionStore: TransactionStore, options: any = {}): Promise<RequestArgs> => {
+        storeTransaction: async (transactionStore: TransactionStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'transactionStore' is not null or undefined
             assertParamExists('storeTransaction', 'transactionStore', transactionStore)
             const localVarPath = `/api/v1/transactions`;
@@ -413,7 +413,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(transactionStore, localVarRequestOptions, configuration)
@@ -431,7 +431,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateTransaction: async (id: string, transactionUpdate: TransactionUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateTransaction: async (id: string, transactionUpdate: TransactionUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateTransaction', 'id', id)
             // verify required parameter 'transactionUpdate' is not null or undefined
@@ -457,7 +457,7 @@ export const TransactionsApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(transactionUpdate, localVarRequestOptions, configuration)
@@ -484,7 +484,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteTransaction(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteTransaction(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTransaction(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -495,7 +495,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteTransactionJournal(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteTransactionJournal(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTransactionJournal(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -506,7 +506,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransaction(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
+        async getTransaction(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransaction(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -517,7 +517,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransactionByJournal(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
+        async getTransactionByJournal(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionByJournal(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -529,7 +529,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAttachmentByTransaction(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
+        async listAttachmentByTransaction(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttachmentByTransaction(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -541,7 +541,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listEventByTransaction(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankEventArray>> {
+        async listEventByTransaction(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankEventArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listEventByTransaction(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -553,7 +553,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listLinksByJournal(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkArray>> {
+        async listLinksByJournal(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionLinkArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listLinksByJournal(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -567,7 +567,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransaction(page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransaction(page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransaction(page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -578,7 +578,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeTransaction(transactionStore: TransactionStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
+        async storeTransaction(transactionStore: TransactionStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeTransaction(transactionStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -590,7 +590,7 @@ export const TransactionsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateTransaction(id: string, transactionUpdate: TransactionUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
+        async updateTransaction(id: string, transactionUpdate: TransactionUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateTransaction(id, transactionUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -918,7 +918,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public deleteTransaction(requestParameters: TransactionsApiDeleteTransactionRequest, options?: any) {
+    public deleteTransaction(requestParameters: TransactionsApiDeleteTransactionRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).deleteTransaction(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -930,7 +930,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public deleteTransactionJournal(requestParameters: TransactionsApiDeleteTransactionJournalRequest, options?: any) {
+    public deleteTransactionJournal(requestParameters: TransactionsApiDeleteTransactionJournalRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).deleteTransactionJournal(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -942,7 +942,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public getTransaction(requestParameters: TransactionsApiGetTransactionRequest, options?: any) {
+    public getTransaction(requestParameters: TransactionsApiGetTransactionRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).getTransaction(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -954,7 +954,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public getTransactionByJournal(requestParameters: TransactionsApiGetTransactionByJournalRequest, options?: any) {
+    public getTransactionByJournal(requestParameters: TransactionsApiGetTransactionByJournalRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).getTransactionByJournal(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -966,7 +966,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public listAttachmentByTransaction(requestParameters: TransactionsApiListAttachmentByTransactionRequest, options?: any) {
+    public listAttachmentByTransaction(requestParameters: TransactionsApiListAttachmentByTransactionRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).listAttachmentByTransaction(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -978,7 +978,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public listEventByTransaction(requestParameters: TransactionsApiListEventByTransactionRequest, options?: any) {
+    public listEventByTransaction(requestParameters: TransactionsApiListEventByTransactionRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).listEventByTransaction(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -990,7 +990,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public listLinksByJournal(requestParameters: TransactionsApiListLinksByJournalRequest, options?: any) {
+    public listLinksByJournal(requestParameters: TransactionsApiListLinksByJournalRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).listLinksByJournal(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1002,7 +1002,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public listTransaction(requestParameters: TransactionsApiListTransactionRequest = {}, options?: any) {
+    public listTransaction(requestParameters: TransactionsApiListTransactionRequest = {}, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).listTransaction(requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1014,7 +1014,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public storeTransaction(requestParameters: TransactionsApiStoreTransactionRequest, options?: any) {
+    public storeTransaction(requestParameters: TransactionsApiStoreTransactionRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).storeTransaction(requestParameters.transactionStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1026,7 +1026,7 @@ export class TransactionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof TransactionsApi
      */
-    public updateTransaction(requestParameters: TransactionsApiUpdateTransactionRequest, options?: any) {
+    public updateTransaction(requestParameters: TransactionsApiUpdateTransactionRequest, options?: AxiosRequestConfig) {
         return TransactionsApiFp(this.configuration).updateTransaction(requestParameters.id, requestParameters.transactionUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -20,12 +20,14 @@
  * @enum {string}
  */
 
-export enum ConfigValueUpdateFilter {
-    IsDemoSite = 'configuration.is_demo_site',
-    PermissionUpdateCheck = 'configuration.permission_update_check',
-    LastUpdateCheck = 'configuration.last_update_check',
-    SingleUserMode = 'configuration.single_user_mode'
-}
+export const ConfigValueUpdateFilter = {
+    IsDemoSite: 'configuration.is_demo_site',
+    PermissionUpdateCheck: 'configuration.permission_update_check',
+    LastUpdateCheck: 'configuration.last_update_check',
+    SingleUserMode: 'configuration.single_user_mode'
+} as const;
+
+export type ConfigValueUpdateFilter = typeof ConfigValueUpdateFilter[keyof typeof ConfigValueUpdateFilter];
 
 
 

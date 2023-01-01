@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompletePiggyBalance } from './autocomplete-piggy-balance';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompletePiggyBalance } from './autocomplete-piggy-balance';
  */
 export interface AutocompletePiggyBalanceArray extends Array<AutocompletePiggyBalance> {
 }
-
 

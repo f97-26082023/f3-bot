@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -61,7 +61,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        defaultCurrency: async (code: string, options: any = {}): Promise<RequestArgs> => {
+        defaultCurrency: async (code: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('defaultCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/default`
@@ -83,7 +83,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -99,7 +99,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteCurrency: async (code: string, options: any = {}): Promise<RequestArgs> => {
+        deleteCurrency: async (code: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('deleteCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}`
@@ -121,7 +121,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -137,7 +137,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        disableCurrency: async (code: number, options: any = {}): Promise<RequestArgs> => {
+        disableCurrency: async (code: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('disableCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/disable`
@@ -159,7 +159,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -175,7 +175,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        enableCurrency: async (code: string, options: any = {}): Promise<RequestArgs> => {
+        enableCurrency: async (code: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('enableCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/enable`
@@ -197,7 +197,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -213,7 +213,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrency: async (code: string, options: any = {}): Promise<RequestArgs> => {
+        getCurrency: async (code: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('getCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}`
@@ -235,7 +235,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -250,7 +250,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDefaultCurrency: async (options: any = {}): Promise<RequestArgs> => {
+        getDefaultCurrency: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/currencies/default`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -269,7 +269,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -288,7 +288,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAccountByCurrency: async (code: string, page?: number, date?: string, type?: AccountTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listAccountByCurrency: async (code: string, page?: number, date?: string, type?: AccountTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listAccountByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/accounts`
@@ -324,7 +324,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -341,7 +341,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAvailableBudgetByCurrency: async (code: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listAvailableBudgetByCurrency: async (code: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listAvailableBudgetByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/available_budgets`
@@ -367,7 +367,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -384,7 +384,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBillByCurrency: async (code: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listBillByCurrency: async (code: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listBillByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/bills`
@@ -410,7 +410,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -429,7 +429,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBudgetLimitByCurrency: async (code: string, page?: number, start?: string, end?: string, options: any = {}): Promise<RequestArgs> => {
+        listBudgetLimitByCurrency: async (code: string, page?: number, start?: string, end?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listBudgetLimitByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/budget_limits`
@@ -467,7 +467,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -483,7 +483,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listCurrency: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listCurrency: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/currencies`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -506,7 +506,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -523,7 +523,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRecurrenceByCurrency: async (code: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listRecurrenceByCurrency: async (code: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listRecurrenceByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/recurrences`
@@ -549,7 +549,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -566,7 +566,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listRuleByCurrency: async (code: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listRuleByCurrency: async (code: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listRuleByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/rules`
@@ -592,7 +592,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -612,7 +612,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTransactionByCurrency: async (code: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        listTransactionByCurrency: async (code: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('listTransactionByCurrency', 'code', code)
             const localVarPath = `/api/v1/currencies/{code}/transactions`
@@ -654,7 +654,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -670,7 +670,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        storeCurrency: async (currencyStore: CurrencyStore, options: any = {}): Promise<RequestArgs> => {
+        storeCurrency: async (currencyStore: CurrencyStore, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'currencyStore' is not null or undefined
             assertParamExists('storeCurrency', 'currencyStore', currencyStore)
             const localVarPath = `/api/v1/currencies`;
@@ -693,7 +693,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(currencyStore, localVarRequestOptions, configuration)
@@ -711,7 +711,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateCurrency: async (code: string, currencyUpdate: CurrencyUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateCurrency: async (code: string, currencyUpdate: CurrencyUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'code' is not null or undefined
             assertParamExists('updateCurrency', 'code', code)
             // verify required parameter 'currencyUpdate' is not null or undefined
@@ -737,7 +737,7 @@ export const CurrenciesApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/vnd.api+json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(currencyUpdate, localVarRequestOptions, configuration)
@@ -764,7 +764,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async defaultCurrency(code: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async defaultCurrency(code: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.defaultCurrency(code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -775,7 +775,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteCurrency(code: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteCurrency(code: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteCurrency(code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -786,7 +786,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async disableCurrency(code: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async disableCurrency(code: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.disableCurrency(code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -797,7 +797,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async enableCurrency(code: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async enableCurrency(code: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.enableCurrency(code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -808,7 +808,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrency(code: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async getCurrency(code: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrency(code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -818,7 +818,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDefaultCurrency(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async getDefaultCurrency(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDefaultCurrency(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -832,7 +832,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAccountByCurrency(code: string, page?: number, date?: string, type?: AccountTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountArray>> {
+        async listAccountByCurrency(code: string, page?: number, date?: string, type?: AccountTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AccountArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAccountByCurrency(code, page, date, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -844,7 +844,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listAvailableBudgetByCurrency(code: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AvailableBudgetArray>> {
+        async listAvailableBudgetByCurrency(code: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AvailableBudgetArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAvailableBudgetByCurrency(code, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -856,7 +856,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBillByCurrency(code: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillArray>> {
+        async listBillByCurrency(code: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBillByCurrency(code, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -870,7 +870,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBudgetLimitByCurrency(code: string, page?: number, start?: string, end?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitArray>> {
+        async listBudgetLimitByCurrency(code: string, page?: number, start?: string, end?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BudgetLimitArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBudgetLimitByCurrency(code, page, start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -881,7 +881,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listCurrency(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencyArray>> {
+        async listCurrency(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencyArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listCurrency(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -893,7 +893,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRecurrenceByCurrency(code: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceArray>> {
+        async listRecurrenceByCurrency(code: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RecurrenceArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRecurrenceByCurrency(code, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -905,7 +905,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listRuleByCurrency(code: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
+        async listRuleByCurrency(code: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RuleArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listRuleByCurrency(code, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -920,7 +920,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTransactionByCurrency(code: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
+        async listTransactionByCurrency(code: string, page?: number, start?: string, end?: string, type?: TransactionTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTransactionByCurrency(code, page, start, end, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -931,7 +931,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async storeCurrency(currencyStore: CurrencyStore, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async storeCurrency(currencyStore: CurrencyStore, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.storeCurrency(currencyStore, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -943,7 +943,7 @@ export const CurrenciesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateCurrency(code: string, currencyUpdate: CurrencyUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
+        async updateCurrency(code: string, currencyUpdate: CurrencyUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CurrencySingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateCurrency(code, currencyUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1464,7 +1464,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public defaultCurrency(requestParameters: CurrenciesApiDefaultCurrencyRequest, options?: any) {
+    public defaultCurrency(requestParameters: CurrenciesApiDefaultCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).defaultCurrency(requestParameters.code, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1476,7 +1476,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public deleteCurrency(requestParameters: CurrenciesApiDeleteCurrencyRequest, options?: any) {
+    public deleteCurrency(requestParameters: CurrenciesApiDeleteCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).deleteCurrency(requestParameters.code, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1488,7 +1488,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public disableCurrency(requestParameters: CurrenciesApiDisableCurrencyRequest, options?: any) {
+    public disableCurrency(requestParameters: CurrenciesApiDisableCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).disableCurrency(requestParameters.code, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1500,7 +1500,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public enableCurrency(requestParameters: CurrenciesApiEnableCurrencyRequest, options?: any) {
+    public enableCurrency(requestParameters: CurrenciesApiEnableCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).enableCurrency(requestParameters.code, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1512,7 +1512,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public getCurrency(requestParameters: CurrenciesApiGetCurrencyRequest, options?: any) {
+    public getCurrency(requestParameters: CurrenciesApiGetCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).getCurrency(requestParameters.code, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1523,7 +1523,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public getDefaultCurrency(options?: any) {
+    public getDefaultCurrency(options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).getDefaultCurrency(options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1535,7 +1535,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listAccountByCurrency(requestParameters: CurrenciesApiListAccountByCurrencyRequest, options?: any) {
+    public listAccountByCurrency(requestParameters: CurrenciesApiListAccountByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listAccountByCurrency(requestParameters.code, requestParameters.page, requestParameters.date, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1547,7 +1547,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listAvailableBudgetByCurrency(requestParameters: CurrenciesApiListAvailableBudgetByCurrencyRequest, options?: any) {
+    public listAvailableBudgetByCurrency(requestParameters: CurrenciesApiListAvailableBudgetByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listAvailableBudgetByCurrency(requestParameters.code, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1559,7 +1559,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listBillByCurrency(requestParameters: CurrenciesApiListBillByCurrencyRequest, options?: any) {
+    public listBillByCurrency(requestParameters: CurrenciesApiListBillByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listBillByCurrency(requestParameters.code, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1571,7 +1571,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listBudgetLimitByCurrency(requestParameters: CurrenciesApiListBudgetLimitByCurrencyRequest, options?: any) {
+    public listBudgetLimitByCurrency(requestParameters: CurrenciesApiListBudgetLimitByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listBudgetLimitByCurrency(requestParameters.code, requestParameters.page, requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1583,7 +1583,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listCurrency(requestParameters: CurrenciesApiListCurrencyRequest = {}, options?: any) {
+    public listCurrency(requestParameters: CurrenciesApiListCurrencyRequest = {}, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listCurrency(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1595,7 +1595,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listRecurrenceByCurrency(requestParameters: CurrenciesApiListRecurrenceByCurrencyRequest, options?: any) {
+    public listRecurrenceByCurrency(requestParameters: CurrenciesApiListRecurrenceByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listRecurrenceByCurrency(requestParameters.code, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1607,7 +1607,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listRuleByCurrency(requestParameters: CurrenciesApiListRuleByCurrencyRequest, options?: any) {
+    public listRuleByCurrency(requestParameters: CurrenciesApiListRuleByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listRuleByCurrency(requestParameters.code, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1619,7 +1619,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public listTransactionByCurrency(requestParameters: CurrenciesApiListTransactionByCurrencyRequest, options?: any) {
+    public listTransactionByCurrency(requestParameters: CurrenciesApiListTransactionByCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).listTransactionByCurrency(requestParameters.code, requestParameters.page, requestParameters.start, requestParameters.end, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1631,7 +1631,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public storeCurrency(requestParameters: CurrenciesApiStoreCurrencyRequest, options?: any) {
+    public storeCurrency(requestParameters: CurrenciesApiStoreCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).storeCurrency(requestParameters.currencyStore, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1643,7 +1643,7 @@ export class CurrenciesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CurrenciesApi
      */
-    public updateCurrency(requestParameters: CurrenciesApiUpdateCurrencyRequest, options?: any) {
+    public updateCurrency(requestParameters: CurrenciesApiUpdateCurrencyRequest, options?: AxiosRequestConfig) {
         return CurrenciesApiFp(this.configuration).updateCurrency(requestParameters.code, requestParameters.currencyUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

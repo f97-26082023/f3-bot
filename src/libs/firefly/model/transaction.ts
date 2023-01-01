@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { TransactionSplit } from './transaction-split';
 
 /**
@@ -26,31 +28,30 @@ export interface Transaction {
      * @type {string}
      * @memberof Transaction
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Transaction
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * User ID
      * @type {string}
      * @memberof Transaction
      */
-    user?: string;
+    'user'?: string;
     /**
      * Title of the transaction if it has been split in more than one piece. Empty otherwise.
      * @type {string}
      * @memberof Transaction
      */
-    group_title?: string | null;
+    'group_title'?: string | null;
     /**
      * 
      * @type {Array<TransactionSplit>}
      * @memberof Transaction
      */
-    transactions: Array<TransactionSplit>;
+    'transactions': Array<TransactionSplit>;
 }
-
 

@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectGroupRead } from './object-group-read';
 
 /**
@@ -27,13 +31,12 @@ export interface ObjectGroupArray {
      * @type {Array<ObjectGroupRead>}
      * @memberof ObjectGroupArray
      */
-    data: Array<ObjectGroupRead>;
+    'data': Array<ObjectGroupRead>;
     /**
      * 
      * @type {Meta}
      * @memberof ObjectGroupArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

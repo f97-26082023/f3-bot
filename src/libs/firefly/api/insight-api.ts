@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -41,7 +41,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseAsset: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseAsset: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseAsset', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -80,7 +80,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -99,7 +99,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseBill: async (start: string, end: string, bills?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseBill: async (start: string, end: string, bills?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseBill', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -142,7 +142,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -161,7 +161,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseBudget: async (start: string, end: string, budgets?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseBudget: async (start: string, end: string, budgets?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseBudget', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -204,7 +204,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -223,7 +223,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseCategory: async (start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseCategory: async (start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseCategory', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -266,7 +266,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -284,7 +284,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseExpense: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseExpense: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseExpense', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -323,7 +323,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -341,7 +341,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseNoBill: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseNoBill: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseNoBill', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -380,7 +380,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -398,7 +398,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseNoBudget: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseNoBudget: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseNoBudget', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -437,7 +437,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -455,7 +455,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseNoCategory: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseNoCategory: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseNoCategory', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -494,7 +494,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -512,7 +512,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseNoTag: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseNoTag: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseNoTag', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -551,7 +551,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -570,7 +570,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseTag: async (start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseTag: async (start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseTag', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -613,7 +613,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -631,7 +631,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightExpenseTotal: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightExpenseTotal: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightExpenseTotal', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -670,7 +670,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -688,7 +688,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeAsset: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeAsset: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeAsset', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -727,7 +727,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -746,7 +746,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeCategory: async (start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeCategory: async (start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeCategory', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -789,7 +789,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -807,7 +807,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeNoCategory: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeNoCategory: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeNoCategory', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -846,7 +846,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -864,7 +864,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeNoTag: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeNoTag: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeNoTag', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -903,7 +903,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -921,7 +921,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeRevenue: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeRevenue: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeRevenue', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -960,7 +960,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -979,7 +979,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeTag: async (start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeTag: async (start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeTag', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1022,7 +1022,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1040,7 +1040,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightIncomeTotal: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightIncomeTotal: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightIncomeTotal', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1079,7 +1079,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1098,7 +1098,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightTransferCategory: async (start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightTransferCategory: async (start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightTransferCategory', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1141,7 +1141,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1159,7 +1159,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightTransferNoCategory: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightTransferNoCategory: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightTransferNoCategory', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1198,7 +1198,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1216,7 +1216,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightTransferNoTag: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightTransferNoTag: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightTransferNoTag', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1255,7 +1255,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1274,7 +1274,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightTransferTag: async (start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightTransferTag: async (start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightTransferTag', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1317,7 +1317,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1335,7 +1335,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightTransferTotal: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightTransferTotal: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightTransferTotal', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1374,7 +1374,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1392,7 +1392,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        insightTransfers: async (start: string, end: string, accounts?: Array<number>, options: any = {}): Promise<RequestArgs> => {
+        insightTransfers: async (start: string, end: string, accounts?: Array<number>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('insightTransfers', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -1431,7 +1431,7 @@ export const InsightApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -1459,7 +1459,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseAsset(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightExpenseAsset(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseAsset(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1473,7 +1473,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseBill(start: string, end: string, bills?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightExpenseBill(start: string, end: string, bills?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseBill(start, end, bills, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1487,7 +1487,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseBudget(start: string, end: string, budgets?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightExpenseBudget(start: string, end: string, budgets?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseBudget(start, end, budgets, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1501,7 +1501,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseCategory(start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightExpenseCategory(start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseCategory(start, end, categories, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1514,7 +1514,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseExpense(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightExpenseExpense(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseExpense(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1527,7 +1527,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseNoBill(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightExpenseNoBill(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseNoBill(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1540,7 +1540,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseNoBudget(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightExpenseNoBudget(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseNoBudget(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1553,7 +1553,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseNoCategory(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightExpenseNoCategory(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseNoCategory(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1566,7 +1566,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseNoTag(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightExpenseNoTag(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseNoTag(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1580,7 +1580,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseTag(start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightExpenseTag(start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseTag(start, end, tags, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1593,7 +1593,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightExpenseTotal(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightExpenseTotal(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightExpenseTotal(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1606,7 +1606,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeAsset(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightIncomeAsset(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeAsset(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1620,7 +1620,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeCategory(start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightIncomeCategory(start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeCategory(start, end, categories, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1633,7 +1633,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeNoCategory(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightIncomeNoCategory(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeNoCategory(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1646,7 +1646,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeNoTag(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightIncomeNoTag(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeNoTag(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1659,7 +1659,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeRevenue(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightIncomeRevenue(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeRevenue(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1673,7 +1673,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeTag(start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightIncomeTag(start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeTag(start, end, tags, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1686,7 +1686,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightIncomeTotal(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightIncomeTotal(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightIncomeTotal(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1700,7 +1700,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightTransferCategory(start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightTransferCategory(start: string, end: string, categories?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightTransferCategory(start, end, categories, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1713,7 +1713,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightTransferNoCategory(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightTransferNoCategory(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightTransferNoCategory(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1726,7 +1726,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightTransferNoTag(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightTransferNoTag(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightTransferNoTag(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1740,7 +1740,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightTransferTag(start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
+        async insightTransferTag(start: string, end: string, tags?: Array<number>, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightTransferTag(start, end, tags, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1753,7 +1753,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightTransferTotal(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
+        async insightTransferTotal(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTotal>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightTransferTotal(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1766,7 +1766,7 @@ export const InsightApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async insightTransfers(start: string, end: string, accounts?: Array<number>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTransfer>> {
+        async insightTransfers(start: string, end: string, accounts?: Array<number>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InsightTransfer>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.insightTransfers(start, end, accounts, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -2822,7 +2822,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseAsset(requestParameters: InsightApiInsightExpenseAssetRequest, options?: any) {
+    public insightExpenseAsset(requestParameters: InsightApiInsightExpenseAssetRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseAsset(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2834,7 +2834,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseBill(requestParameters: InsightApiInsightExpenseBillRequest, options?: any) {
+    public insightExpenseBill(requestParameters: InsightApiInsightExpenseBillRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseBill(requestParameters.start, requestParameters.end, requestParameters.bills, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2846,7 +2846,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseBudget(requestParameters: InsightApiInsightExpenseBudgetRequest, options?: any) {
+    public insightExpenseBudget(requestParameters: InsightApiInsightExpenseBudgetRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseBudget(requestParameters.start, requestParameters.end, requestParameters.budgets, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2858,7 +2858,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseCategory(requestParameters: InsightApiInsightExpenseCategoryRequest, options?: any) {
+    public insightExpenseCategory(requestParameters: InsightApiInsightExpenseCategoryRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseCategory(requestParameters.start, requestParameters.end, requestParameters.categories, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2870,7 +2870,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseExpense(requestParameters: InsightApiInsightExpenseExpenseRequest, options?: any) {
+    public insightExpenseExpense(requestParameters: InsightApiInsightExpenseExpenseRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseExpense(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2882,7 +2882,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseNoBill(requestParameters: InsightApiInsightExpenseNoBillRequest, options?: any) {
+    public insightExpenseNoBill(requestParameters: InsightApiInsightExpenseNoBillRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseNoBill(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2894,7 +2894,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseNoBudget(requestParameters: InsightApiInsightExpenseNoBudgetRequest, options?: any) {
+    public insightExpenseNoBudget(requestParameters: InsightApiInsightExpenseNoBudgetRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseNoBudget(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2906,7 +2906,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseNoCategory(requestParameters: InsightApiInsightExpenseNoCategoryRequest, options?: any) {
+    public insightExpenseNoCategory(requestParameters: InsightApiInsightExpenseNoCategoryRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseNoCategory(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2918,7 +2918,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseNoTag(requestParameters: InsightApiInsightExpenseNoTagRequest, options?: any) {
+    public insightExpenseNoTag(requestParameters: InsightApiInsightExpenseNoTagRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseNoTag(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2930,7 +2930,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseTag(requestParameters: InsightApiInsightExpenseTagRequest, options?: any) {
+    public insightExpenseTag(requestParameters: InsightApiInsightExpenseTagRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseTag(requestParameters.start, requestParameters.end, requestParameters.tags, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2942,7 +2942,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightExpenseTotal(requestParameters: InsightApiInsightExpenseTotalRequest, options?: any) {
+    public insightExpenseTotal(requestParameters: InsightApiInsightExpenseTotalRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightExpenseTotal(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2954,7 +2954,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeAsset(requestParameters: InsightApiInsightIncomeAssetRequest, options?: any) {
+    public insightIncomeAsset(requestParameters: InsightApiInsightIncomeAssetRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeAsset(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2966,7 +2966,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeCategory(requestParameters: InsightApiInsightIncomeCategoryRequest, options?: any) {
+    public insightIncomeCategory(requestParameters: InsightApiInsightIncomeCategoryRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeCategory(requestParameters.start, requestParameters.end, requestParameters.categories, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2978,7 +2978,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeNoCategory(requestParameters: InsightApiInsightIncomeNoCategoryRequest, options?: any) {
+    public insightIncomeNoCategory(requestParameters: InsightApiInsightIncomeNoCategoryRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeNoCategory(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -2990,7 +2990,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeNoTag(requestParameters: InsightApiInsightIncomeNoTagRequest, options?: any) {
+    public insightIncomeNoTag(requestParameters: InsightApiInsightIncomeNoTagRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeNoTag(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3002,7 +3002,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeRevenue(requestParameters: InsightApiInsightIncomeRevenueRequest, options?: any) {
+    public insightIncomeRevenue(requestParameters: InsightApiInsightIncomeRevenueRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeRevenue(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3014,7 +3014,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeTag(requestParameters: InsightApiInsightIncomeTagRequest, options?: any) {
+    public insightIncomeTag(requestParameters: InsightApiInsightIncomeTagRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeTag(requestParameters.start, requestParameters.end, requestParameters.tags, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3026,7 +3026,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightIncomeTotal(requestParameters: InsightApiInsightIncomeTotalRequest, options?: any) {
+    public insightIncomeTotal(requestParameters: InsightApiInsightIncomeTotalRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightIncomeTotal(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3038,7 +3038,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightTransferCategory(requestParameters: InsightApiInsightTransferCategoryRequest, options?: any) {
+    public insightTransferCategory(requestParameters: InsightApiInsightTransferCategoryRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightTransferCategory(requestParameters.start, requestParameters.end, requestParameters.categories, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3050,7 +3050,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightTransferNoCategory(requestParameters: InsightApiInsightTransferNoCategoryRequest, options?: any) {
+    public insightTransferNoCategory(requestParameters: InsightApiInsightTransferNoCategoryRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightTransferNoCategory(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3062,7 +3062,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightTransferNoTag(requestParameters: InsightApiInsightTransferNoTagRequest, options?: any) {
+    public insightTransferNoTag(requestParameters: InsightApiInsightTransferNoTagRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightTransferNoTag(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3074,7 +3074,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightTransferTag(requestParameters: InsightApiInsightTransferTagRequest, options?: any) {
+    public insightTransferTag(requestParameters: InsightApiInsightTransferTagRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightTransferTag(requestParameters.start, requestParameters.end, requestParameters.tags, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3086,7 +3086,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightTransferTotal(requestParameters: InsightApiInsightTransferTotalRequest, options?: any) {
+    public insightTransferTotal(requestParameters: InsightApiInsightTransferTotalRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightTransferTotal(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -3098,7 +3098,7 @@ export class InsightApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof InsightApi
      */
-    public insightTransfers(requestParameters: InsightApiInsightTransfersRequest, options?: any) {
+    public insightTransfers(requestParameters: InsightApiInsightTransfersRequest, options?: AxiosRequestConfig) {
         return InsightApiFp(this.configuration).insightTransfers(requestParameters.start, requestParameters.end, requestParameters.accounts, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -20,14 +20,16 @@
  * @enum {string}
  */
 
-export enum AccountRoleProperty {
-    DefaultAsset = 'defaultAsset',
-    SharedAsset = 'sharedAsset',
-    SavingAsset = 'savingAsset',
-    CcAsset = 'ccAsset',
-    CashWalletAsset = 'cashWalletAsset',
-    Null = 'null'
-}
+export const AccountRoleProperty = {
+    DefaultAsset: 'defaultAsset',
+    SharedAsset: 'sharedAsset',
+    SavingAsset: 'savingAsset',
+    CcAsset: 'ccAsset',
+    CashWalletAsset: 'cashWalletAsset',
+    Null: 'null'
+} as const;
+
+export type AccountRoleProperty = typeof AccountRoleProperty[keyof typeof AccountRoleProperty];
 
 
 

@@ -25,31 +25,30 @@ export interface TransactionLinkUpdate {
      * @type {string}
      * @memberof TransactionLinkUpdate
      */
-    link_type_id?: string;
+    'link_type_id'?: string;
     /**
      * The link type name to use. Use this field OR use the link_type_id field.
      * @type {string}
      * @memberof TransactionLinkUpdate
      */
-    link_type_name?: string;
+    'link_type_name'?: string;
     /**
      * The inward transaction transaction_journal_id for the link. This becomes the \'is paid by\' transaction of the set.
      * @type {string}
      * @memberof TransactionLinkUpdate
      */
-    inward_id?: string;
+    'inward_id'?: string;
     /**
      * The outward transaction transaction_journal_id for the link. This becomes the \'pays for\' transaction of the set.
      * @type {string}
      * @memberof TransactionLinkUpdate
      */
-    outward_id?: string;
+    'outward_id'?: string;
     /**
      * Optional. Some notes. If you submit an empty string the current notes will be removed
      * @type {string}
      * @memberof TransactionLinkUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 

@@ -25,19 +25,18 @@ export interface AutocompleteTag {
      * @type {string}
      * @memberof AutocompleteTag
      */
-    id: string;
+    'id': string;
     /**
      * Name of the tag found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteTag
      */
-    name: string;
+    'name': string;
     /**
      * Name of the tag found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteTag
      */
-    tag: string;
+    'tag': string;
 }
-
 

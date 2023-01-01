@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceRepetition } from './recurrence-repetition';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceTransaction } from './recurrence-transaction';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RecurrenceTransactionType } from './recurrence-transaction-type';
 
 /**
@@ -28,85 +34,84 @@ export interface Recurrence {
      * @type {string}
      * @memberof Recurrence
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof Recurrence
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * 
      * @type {RecurrenceTransactionType}
      * @memberof Recurrence
      */
-    type?: RecurrenceTransactionType;
+    'type'?: RecurrenceTransactionType;
     /**
      * 
      * @type {string}
      * @memberof Recurrence
      */
-    title?: string;
+    'title'?: string;
     /**
      * Not to be confused with the description of the actual transaction(s) being created.
      * @type {string}
      * @memberof Recurrence
      */
-    description?: string;
+    'description'?: string;
     /**
      * First time the recurring transaction will fire. Must be after today.
      * @type {string}
      * @memberof Recurrence
      */
-    first_date?: string;
+    'first_date'?: string;
     /**
      * Last time the recurring transaction has fired.
      * @type {string}
      * @memberof Recurrence
      */
-    latest_date?: string | null;
+    'latest_date'?: string | null;
     /**
      * Date until the recurring transaction can fire. Use either this field or repetitions.
      * @type {string}
      * @memberof Recurrence
      */
-    repeat_until?: string | null;
+    'repeat_until'?: string | null;
     /**
      * Max number of created transactions. Use either this field or repeat_until.
      * @type {number}
      * @memberof Recurrence
      */
-    nr_of_repetitions?: number | null;
+    'nr_of_repetitions'?: number | null;
     /**
      * Whether or not to fire the rules after the creation of a transaction.
      * @type {boolean}
      * @memberof Recurrence
      */
-    apply_rules?: boolean;
+    'apply_rules'?: boolean;
     /**
      * If the recurrence is even active.
      * @type {boolean}
      * @memberof Recurrence
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof Recurrence
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * 
      * @type {Array<RecurrenceRepetition>}
      * @memberof Recurrence
      */
-    repetitions?: Array<RecurrenceRepetition>;
+    'repetitions'?: Array<RecurrenceRepetition>;
     /**
      * 
      * @type {Array<RecurrenceTransaction>}
      * @memberof Recurrence
      */
-    transactions?: Array<RecurrenceTransaction>;
+    'transactions'?: Array<RecurrenceTransaction>;
 }
-
 

@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -70,7 +70,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAccountsAC: async (query?: string, limit?: number, date?: string, type?: AccountTypeFilter, options: any = {}): Promise<RequestArgs> => {
+        getAccountsAC: async (query?: string, limit?: number, date?: string, type?: AccountTypeFilter, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/accounts`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -105,7 +105,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -122,7 +122,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBillsAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getBillsAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/bills`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -149,7 +149,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -166,7 +166,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBudgetsAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getBudgetsAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/budgets`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -193,7 +193,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -210,7 +210,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCategoriesAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getCategoriesAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/categories`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -237,7 +237,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -254,7 +254,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrenciesAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getCurrenciesAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/currencies`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -281,7 +281,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -298,7 +298,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getCurrenciesCodeAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getCurrenciesCodeAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/currencies-with-code`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -325,7 +325,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -342,7 +342,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getObjectGroupsAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getObjectGroupsAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/object-groups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -369,7 +369,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -386,7 +386,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPiggiesAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getPiggiesAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/piggy-banks`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -413,7 +413,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -430,7 +430,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPiggiesBalanceAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getPiggiesBalanceAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/piggy-banks-with-balance`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -457,7 +457,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -474,7 +474,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRecurringAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getRecurringAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/recurring`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -501,7 +501,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -518,7 +518,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRuleGroupsAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getRuleGroupsAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/rule-groups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -545,7 +545,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -562,7 +562,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRulesAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getRulesAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/rules`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -589,7 +589,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -606,7 +606,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTagAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getTagAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/tags`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -633,7 +633,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -650,7 +650,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionTypesAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getTransactionTypesAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/transaction-types`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -677,7 +677,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -694,7 +694,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionsAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getTransactionsAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/transactions`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -721,7 +721,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -738,7 +738,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getTransactionsIDAC: async (query?: string, limit?: number, options: any = {}): Promise<RequestArgs> => {
+        getTransactionsIDAC: async (query?: string, limit?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/autocomplete/transactions-with-id`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -765,7 +765,7 @@ export const AutocompleteApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -794,7 +794,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAccountsAC(query?: string, limit?: number, date?: string, type?: AccountTypeFilter, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteAccountArray>> {
+        async getAccountsAC(query?: string, limit?: number, date?: string, type?: AccountTypeFilter, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteAccountArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAccountsAC(query, limit, date, type, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -806,7 +806,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBillsAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteBillArray>> {
+        async getBillsAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteBillArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBillsAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -818,7 +818,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBudgetsAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteBudgetArray>> {
+        async getBudgetsAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteBudgetArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBudgetsAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -830,7 +830,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCategoriesAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteCategoryArray>> {
+        async getCategoriesAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteCategoryArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCategoriesAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -842,7 +842,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrenciesAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteCurrencyArray>> {
+        async getCurrenciesAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteCurrencyArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrenciesAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -854,7 +854,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getCurrenciesCodeAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteCurrencyCodeArray>> {
+        async getCurrenciesCodeAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteCurrencyCodeArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getCurrenciesCodeAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -866,7 +866,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getObjectGroupsAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteObjectGroupArray>> {
+        async getObjectGroupsAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteObjectGroupArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getObjectGroupsAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -878,7 +878,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPiggiesAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompletePiggyArray>> {
+        async getPiggiesAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompletePiggyArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPiggiesAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -890,7 +890,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getPiggiesBalanceAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompletePiggyBalanceArray>> {
+        async getPiggiesBalanceAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompletePiggyBalanceArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getPiggiesBalanceAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -902,7 +902,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRecurringAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteRecurrenceArray>> {
+        async getRecurringAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteRecurrenceArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRecurringAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -914,7 +914,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRuleGroupsAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteRuleGroupArray>> {
+        async getRuleGroupsAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteRuleGroupArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRuleGroupsAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -926,7 +926,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRulesAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteRuleArray>> {
+        async getRulesAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteRuleArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRulesAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -938,7 +938,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTagAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTagArray>> {
+        async getTagAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTagArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTagAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -950,7 +950,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransactionTypesAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTransactionTypeArray>> {
+        async getTransactionTypesAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTransactionTypeArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionTypesAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -962,7 +962,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransactionsAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTransactionArray>> {
+        async getTransactionsAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTransactionArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionsAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -974,7 +974,7 @@ export const AutocompleteApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getTransactionsIDAC(query?: string, limit?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTransactionIDArray>> {
+        async getTransactionsIDAC(query?: string, limit?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AutocompleteTransactionIDArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getTransactionsIDAC(query, limit, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1534,7 +1534,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getAccountsAC(requestParameters: AutocompleteApiGetAccountsACRequest = {}, options?: any) {
+    public getAccountsAC(requestParameters: AutocompleteApiGetAccountsACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getAccountsAC(requestParameters.query, requestParameters.limit, requestParameters.date, requestParameters.type, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1546,7 +1546,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getBillsAC(requestParameters: AutocompleteApiGetBillsACRequest = {}, options?: any) {
+    public getBillsAC(requestParameters: AutocompleteApiGetBillsACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getBillsAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1558,7 +1558,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getBudgetsAC(requestParameters: AutocompleteApiGetBudgetsACRequest = {}, options?: any) {
+    public getBudgetsAC(requestParameters: AutocompleteApiGetBudgetsACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getBudgetsAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1570,7 +1570,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getCategoriesAC(requestParameters: AutocompleteApiGetCategoriesACRequest = {}, options?: any) {
+    public getCategoriesAC(requestParameters: AutocompleteApiGetCategoriesACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getCategoriesAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1582,7 +1582,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getCurrenciesAC(requestParameters: AutocompleteApiGetCurrenciesACRequest = {}, options?: any) {
+    public getCurrenciesAC(requestParameters: AutocompleteApiGetCurrenciesACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getCurrenciesAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1594,7 +1594,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getCurrenciesCodeAC(requestParameters: AutocompleteApiGetCurrenciesCodeACRequest = {}, options?: any) {
+    public getCurrenciesCodeAC(requestParameters: AutocompleteApiGetCurrenciesCodeACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getCurrenciesCodeAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1606,7 +1606,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getObjectGroupsAC(requestParameters: AutocompleteApiGetObjectGroupsACRequest = {}, options?: any) {
+    public getObjectGroupsAC(requestParameters: AutocompleteApiGetObjectGroupsACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getObjectGroupsAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1618,7 +1618,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getPiggiesAC(requestParameters: AutocompleteApiGetPiggiesACRequest = {}, options?: any) {
+    public getPiggiesAC(requestParameters: AutocompleteApiGetPiggiesACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getPiggiesAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1630,7 +1630,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getPiggiesBalanceAC(requestParameters: AutocompleteApiGetPiggiesBalanceACRequest = {}, options?: any) {
+    public getPiggiesBalanceAC(requestParameters: AutocompleteApiGetPiggiesBalanceACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getPiggiesBalanceAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1642,7 +1642,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getRecurringAC(requestParameters: AutocompleteApiGetRecurringACRequest = {}, options?: any) {
+    public getRecurringAC(requestParameters: AutocompleteApiGetRecurringACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getRecurringAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1654,7 +1654,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getRuleGroupsAC(requestParameters: AutocompleteApiGetRuleGroupsACRequest = {}, options?: any) {
+    public getRuleGroupsAC(requestParameters: AutocompleteApiGetRuleGroupsACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getRuleGroupsAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1666,7 +1666,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getRulesAC(requestParameters: AutocompleteApiGetRulesACRequest = {}, options?: any) {
+    public getRulesAC(requestParameters: AutocompleteApiGetRulesACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getRulesAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1678,7 +1678,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getTagAC(requestParameters: AutocompleteApiGetTagACRequest = {}, options?: any) {
+    public getTagAC(requestParameters: AutocompleteApiGetTagACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getTagAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1690,7 +1690,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getTransactionTypesAC(requestParameters: AutocompleteApiGetTransactionTypesACRequest = {}, options?: any) {
+    public getTransactionTypesAC(requestParameters: AutocompleteApiGetTransactionTypesACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getTransactionTypesAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1702,7 +1702,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getTransactionsAC(requestParameters: AutocompleteApiGetTransactionsACRequest = {}, options?: any) {
+    public getTransactionsAC(requestParameters: AutocompleteApiGetTransactionsACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getTransactionsAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1714,7 +1714,7 @@ export class AutocompleteApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AutocompleteApi
      */
-    public getTransactionsIDAC(requestParameters: AutocompleteApiGetTransactionsIDACRequest = {}, options?: any) {
+    public getTransactionsIDAC(requestParameters: AutocompleteApiGetTransactionsIDACRequest = {}, options?: AxiosRequestConfig) {
         return AutocompleteApiFp(this.configuration).getTransactionsIDAC(requestParameters.query, requestParameters.limit, options).then((request) => request(this.axios, this.basePath));
     }
 }

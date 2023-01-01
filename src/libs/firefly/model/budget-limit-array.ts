@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BudgetLimitRead } from './budget-limit-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface BudgetLimitArray {
      * @type {Array<BudgetLimitRead>}
      * @memberof BudgetLimitArray
      */
-    data: Array<BudgetLimitRead>;
+    'data': Array<BudgetLimitRead>;
     /**
      * 
      * @type {Meta}
      * @memberof BudgetLimitArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

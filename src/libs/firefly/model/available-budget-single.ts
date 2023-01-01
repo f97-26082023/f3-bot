@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AvailableBudgetRead } from './available-budget-read';
 
 /**
@@ -26,7 +28,6 @@ export interface AvailableBudgetSingle {
      * @type {AvailableBudgetRead}
      * @memberof AvailableBudgetSingle
      */
-    data: AvailableBudgetRead;
+    'data': AvailableBudgetRead;
 }
-
 

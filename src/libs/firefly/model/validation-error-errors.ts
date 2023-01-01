@@ -25,13 +25,12 @@ export interface ValidationErrorErrors {
      * @type {Array<string>}
      * @memberof ValidationErrorErrors
      */
-    field1?: Array<string>;
+    'field1'?: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof ValidationErrorErrors
      */
-    field2?: Array<string>;
+    'field2'?: Array<string>;
 }
-
 

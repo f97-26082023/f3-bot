@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BudgetRead } from './budget-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface BudgetArray {
      * @type {Array<BudgetRead>}
      * @memberof BudgetArray
      */
-    data: Array<BudgetRead>;
+    'data': Array<BudgetRead>;
     /**
      * 
      * @type {Meta}
      * @memberof BudgetArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

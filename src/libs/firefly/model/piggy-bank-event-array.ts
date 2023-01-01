@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PiggyBankEventRead } from './piggy-bank-event-read';
 
 /**
@@ -28,19 +34,18 @@ export interface PiggyBankEventArray {
      * @type {Array<PiggyBankEventRead>}
      * @memberof PiggyBankEventArray
      */
-    data: Array<PiggyBankEventRead>;
+    'data': Array<PiggyBankEventRead>;
     /**
      * 
      * @type {Meta}
      * @memberof PiggyBankEventArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof PiggyBankEventArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

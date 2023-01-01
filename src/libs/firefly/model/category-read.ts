@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Category } from './category';
 
 /**
@@ -26,19 +28,18 @@ export interface CategoryRead {
      * @type {string}
      * @memberof CategoryRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof CategoryRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {Category}
      * @memberof CategoryRead
      */
-    attributes: Category;
+    'attributes': Category;
 }
-
 

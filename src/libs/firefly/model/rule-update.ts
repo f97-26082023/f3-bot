@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleActionUpdate } from './rule-action-update';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTriggerType } from './rule-trigger-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleTriggerUpdate } from './rule-trigger-update';
 
 /**
@@ -28,61 +34,60 @@ export interface RuleUpdate {
      * @type {string}
      * @memberof RuleUpdate
      */
-    title?: string;
+    'title'?: string;
     /**
      * 
      * @type {string}
      * @memberof RuleUpdate
      */
-    description?: string;
+    'description'?: string;
     /**
      * ID of the rule group under which the rule must be stored. Either this field or rule_group_title is mandatory.
      * @type {string}
      * @memberof RuleUpdate
      */
-    rule_group_id?: string;
+    'rule_group_id'?: string;
     /**
      * 
      * @type {number}
      * @memberof RuleUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * 
      * @type {RuleTriggerType}
      * @memberof RuleUpdate
      */
-    trigger?: RuleTriggerType;
+    'trigger'?: RuleTriggerType;
     /**
      * Whether or not the rule is even active. Default is true.
      * @type {boolean}
      * @memberof RuleUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * If the rule is set to be strict, ALL triggers must hit in order for the rule to fire. Otherwise, just one is enough. Default value is true.
      * @type {boolean}
      * @memberof RuleUpdate
      */
-    strict?: boolean;
+    'strict'?: boolean;
     /**
      * If this value is true and the rule is triggered, other rules  after this one in the group will be skipped. Default value is false.
      * @type {boolean}
      * @memberof RuleUpdate
      */
-    stop_processing?: boolean;
+    'stop_processing'?: boolean;
     /**
      * 
      * @type {Array<RuleTriggerUpdate>}
      * @memberof RuleUpdate
      */
-    triggers?: Array<RuleTriggerUpdate>;
+    'triggers'?: Array<RuleTriggerUpdate>;
     /**
      * 
      * @type {Array<RuleActionUpdate>}
      * @memberof RuleUpdate
      */
-    actions?: Array<RuleActionUpdate>;
+    'actions'?: Array<RuleActionUpdate>;
 }
-
 

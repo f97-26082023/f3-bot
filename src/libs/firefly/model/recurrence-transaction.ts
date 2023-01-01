@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AccountTypeProperty } from './account-type-property';
 
 /**
@@ -26,157 +28,156 @@ export interface RecurrenceTransaction {
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    description: string;
+    'description': string;
     /**
      * Amount of the transaction.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    amount: string;
+    'amount': string;
     /**
      * Foreign amount of the transaction.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    foreign_amount?: string | null;
+    'foreign_amount'?: string | null;
     /**
      * Submit either a currency_id or a currency_code.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Submit either a currency_id or a currency_code.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals in the currency
      * @type {number}
      * @memberof RecurrenceTransaction
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
     /**
      * Submit either a foreign_currency_id or a foreign_currency_code, or neither.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    foreign_currency_id?: string | null;
+    'foreign_currency_id'?: string | null;
     /**
      * Submit either a foreign_currency_id or a foreign_currency_code, or neither.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    foreign_currency_code?: string | null;
+    'foreign_currency_code'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    foreign_currency_symbol?: string | null;
+    'foreign_currency_symbol'?: string | null;
     /**
      * Number of decimals in the currency
      * @type {number}
      * @memberof RecurrenceTransaction
      */
-    foreign_currency_decimal_places?: number | null;
+    'foreign_currency_decimal_places'?: number | null;
     /**
      * The budget ID for this transaction.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    budget_id?: string;
+    'budget_id'?: string;
     /**
      * The name of the budget to be used. If the budget name is unknown, the ID will be used or the value will be ignored.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    budget_name?: string | null;
+    'budget_name'?: string | null;
     /**
      * Category ID for this transaction.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    category_id?: string;
+    'category_id'?: string;
     /**
      * Category name for this transaction.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    category_name?: string;
+    'category_name'?: string;
     /**
      * ID of the source account. Submit either this or source_name.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    source_id?: string;
+    'source_id'?: string;
     /**
      * Name of the source account. Submit either this or source_id.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    source_name?: string;
+    'source_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    source_iban?: string | null;
+    'source_iban'?: string | null;
     /**
      * 
      * @type {AccountTypeProperty}
      * @memberof RecurrenceTransaction
      */
-    source_type?: AccountTypeProperty;
+    'source_type'?: AccountTypeProperty;
     /**
      * ID of the destination account. Submit either this or destination_name.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    destination_id?: string;
+    'destination_id'?: string;
     /**
      * Name of the destination account. Submit either this or destination_id.
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    destination_name?: string;
+    'destination_name'?: string;
     /**
      * 
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    destination_iban?: string | null;
+    'destination_iban'?: string | null;
     /**
      * 
      * @type {AccountTypeProperty}
      * @memberof RecurrenceTransaction
      */
-    destination_type?: AccountTypeProperty;
+    'destination_type'?: AccountTypeProperty;
     /**
      * Array of tags.
      * @type {Array<string>}
      * @memberof RecurrenceTransaction
      */
-    tags?: Array<string> | null;
+    'tags'?: Array<string> | null;
     /**
      * Optional. Use either this or the piggy_bank_name
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    piggy_bank_id?: string | null;
+    'piggy_bank_id'?: string | null;
     /**
      * Optional. Use either this or the piggy_bank_id
      * @type {string}
      * @memberof RecurrenceTransaction
      */
-    piggy_bank_name?: string | null;
+    'piggy_bank_name'?: string | null;
 }
-
 

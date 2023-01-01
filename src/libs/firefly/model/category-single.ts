@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { CategoryRead } from './category-read';
 
 /**
@@ -26,7 +28,6 @@ export interface CategorySingle {
      * @type {CategoryRead}
      * @memberof CategorySingle
      */
-    data: CategoryRead;
+    'data': CategoryRead;
 }
-
 

@@ -25,25 +25,24 @@ export interface InsightTotalEntry {
      * @type {string}
      * @memberof InsightTotalEntry
      */
-    difference?: string;
+    'difference'?: string;
     /**
      * The amount spent between start date and end date, defined as a string, for this expense account and all asset accounts. This number is a float (double) and may have rounding errors.
      * @type {number}
      * @memberof InsightTotalEntry
      */
-    difference_float?: number;
+    'difference_float'?: number;
     /**
      * The currency ID of the expenses listed for this expense account.
      * @type {string}
      * @memberof InsightTotalEntry
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * The currency code of the expenses listed for this expense account.
      * @type {string}
      * @memberof InsightTotalEntry
      */
-    currency_code?: string;
+    'currency_code'?: string;
 }
-
 

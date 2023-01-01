@@ -20,9 +20,11 @@
  * @enum {string}
  */
 
-export enum ExportFileFilter {
-    Csv = 'csv'
-}
+export const ExportFileFilter = {
+    Csv: 'csv'
+} as const;
+
+export type ExportFileFilter = typeof ExportFileFilter[keyof typeof ExportFileFilter];
 
 
 

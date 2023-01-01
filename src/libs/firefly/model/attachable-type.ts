@@ -20,14 +20,16 @@
  * @enum {string}
  */
 
-export enum AttachableType {
-    Account = 'Account',
-    Budget = 'Budget',
-    Bill = 'Bill',
-    TransactionJournal = 'TransactionJournal',
-    PiggyBank = 'PiggyBank',
-    Tag = 'Tag'
-}
+export const AttachableType = {
+    Account: 'Account',
+    Budget: 'Budget',
+    Bill: 'Bill',
+    TransactionJournal: 'TransactionJournal',
+    PiggyBank: 'PiggyBank',
+    Tag: 'Tag'
+} as const;
+
+export type AttachableType = typeof AttachableType[keyof typeof AttachableType];
 
 
 

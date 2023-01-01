@@ -25,31 +25,30 @@ export interface TransactionLinkStore {
      * @type {string}
      * @memberof TransactionLinkStore
      */
-    link_type_id: string;
+    'link_type_id': string;
     /**
      * The link type name to use. You can also use the link_type_id field.
      * @type {string}
      * @memberof TransactionLinkStore
      */
-    link_type_name?: string;
+    'link_type_name'?: string;
     /**
      * The inward transaction transaction_journal_id for the link. This becomes the \'is paid by\' transaction of the set.
      * @type {string}
      * @memberof TransactionLinkStore
      */
-    inward_id: string;
+    'inward_id': string;
     /**
      * The outward transaction transaction_journal_id for the link. This becomes the \'pays for\' transaction of the set.
      * @type {string}
      * @memberof TransactionLinkStore
      */
-    outward_id: string;
+    'outward_id': string;
     /**
      * Optional. Some notes.
      * @type {string}
      * @memberof TransactionLinkStore
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 

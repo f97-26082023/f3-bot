@@ -20,11 +20,13 @@
  * @enum {string}
  */
 
-export enum LiabilityDirection {
-    Credit = 'credit',
-    Debit = 'debit',
-    Null = 'null'
-}
+export const LiabilityDirection = {
+    Credit: 'credit',
+    Debit: 'debit',
+    Null: 'null'
+} as const;
+
+export type LiabilityDirection = typeof LiabilityDirection[keyof typeof LiabilityDirection];
 
 
 

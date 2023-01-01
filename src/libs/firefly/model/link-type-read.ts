@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { LinkType } from './link-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
 
 /**
@@ -27,25 +31,24 @@ export interface LinkTypeRead {
      * @type {string}
      * @memberof LinkTypeRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof LinkTypeRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {LinkType}
      * @memberof LinkTypeRead
      */
-    attributes: LinkType;
+    'attributes': LinkType;
     /**
      * 
      * @type {ObjectLink}
      * @memberof LinkTypeRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

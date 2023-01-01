@@ -25,19 +25,18 @@ export interface LinkTypeUpdate {
      * @type {string}
      * @memberof LinkTypeUpdate
      */
-    name?: string;
+    'name'?: string;
     /**
      * 
      * @type {string}
      * @memberof LinkTypeUpdate
      */
-    inward?: string;
+    'inward'?: string;
     /**
      * 
      * @type {string}
      * @memberof LinkTypeUpdate
      */
-    outward?: string;
+    'outward'?: string;
 }
-
 

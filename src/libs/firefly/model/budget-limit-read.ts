@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BudgetLimit } from './budget-limit';
 
 /**
@@ -26,19 +28,18 @@ export interface BudgetLimitRead {
      * @type {string}
      * @memberof BudgetLimitRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof BudgetLimitRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {BudgetLimit}
      * @memberof BudgetLimitRead
      */
-    attributes: BudgetLimit;
+    'attributes': BudgetLimit;
 }
-
 

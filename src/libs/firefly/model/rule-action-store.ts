@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { RuleActionKeyword } from './rule-action-keyword';
 
 /**
@@ -26,31 +28,30 @@ export interface RuleActionStore {
      * @type {RuleActionKeyword}
      * @memberof RuleActionStore
      */
-    type: RuleActionKeyword;
+    'type': RuleActionKeyword;
     /**
      * The accompanying value the action will set, change or update. Can be empty, but for some types this value is mandatory.
      * @type {string}
      * @memberof RuleActionStore
      */
-    value: string | null;
+    'value': string | null;
     /**
      * Order of the action
      * @type {number}
      * @memberof RuleActionStore
      */
-    order?: number;
+    'order'?: number;
     /**
      * If the action is active. Defaults to true.
      * @type {boolean}
      * @memberof RuleActionStore
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * When true, other actions will not be fired after this action has fired. Defaults to false.
      * @type {boolean}
      * @memberof RuleActionStore
      */
-    stop_processing?: boolean;
+    'stop_processing'?: boolean;
 }
-
 

@@ -25,19 +25,18 @@ export interface AutocompleteRecurrence {
      * @type {string}
      * @memberof AutocompleteRecurrence
      */
-    id: string;
+    'id': string;
     /**
      * Name of the recurrence found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteRecurrence
      */
-    name: string;
+    'name': string;
     /**
      * Description of the recurrence found by auto-complete.
      * @type {string}
      * @memberof AutocompleteRecurrence
      */
-    description?: string;
+    'description'?: string;
 }
-
 

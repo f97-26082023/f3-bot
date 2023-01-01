@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteAccount } from './autocomplete-account';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteAccount } from './autocomplete-account';
  */
 export interface AutocompleteAccountArray extends Array<AutocompleteAccount> {
 }
-
 

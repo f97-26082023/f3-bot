@@ -13,9 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AccountRoleProperty } from './account-role-property';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CreditCardType } from './credit-card-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { InterestPeriod } from './interest-period';
+// May contain unused imports in some cases
+// @ts-ignore
 import { LiabilityType } from './liability-type';
 
 /**
@@ -29,133 +37,132 @@ export interface AccountUpdate {
      * @type {string}
      * @memberof AccountUpdate
      */
-    name: string;
+    'name': string;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    iban?: string | null;
+    'iban'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    bic?: string | null;
+    'bic'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    account_number?: string | null;
+    'account_number'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    opening_balance?: string;
+    'opening_balance'?: string;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    opening_balance_date?: string | null;
+    'opening_balance_date'?: string | null;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    virtual_balance?: string;
+    'virtual_balance'?: string;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof AccountUpdate
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Use either currency_id or currency_code. Defaults to the user\'s default currency.
      * @type {string}
      * @memberof AccountUpdate
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * If omitted, defaults to true.
      * @type {boolean}
      * @memberof AccountUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * Order of the account
      * @type {number}
      * @memberof AccountUpdate
      */
-    order?: number;
+    'order'?: number;
     /**
      * If omitted, defaults to true.
      * @type {boolean}
      * @memberof AccountUpdate
      */
-    include_net_worth?: boolean;
+    'include_net_worth'?: boolean;
     /**
      * 
      * @type {AccountRoleProperty}
      * @memberof AccountUpdate
      */
-    account_role?: AccountRoleProperty | null;
+    'account_role'?: AccountRoleProperty | null;
     /**
      * 
      * @type {CreditCardType}
      * @memberof AccountUpdate
      */
-    credit_card_type?: CreditCardType | null;
+    'credit_card_type'?: CreditCardType | null;
     /**
      * Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank.
      * @type {string}
      * @memberof AccountUpdate
      */
-    monthly_payment_date?: string | null;
+    'monthly_payment_date'?: string | null;
     /**
      * 
      * @type {LiabilityType}
      * @memberof AccountUpdate
      */
-    liability_type?: LiabilityType | null;
+    'liability_type'?: LiabilityType | null;
     /**
      * Mandatory when type is liability. Interest percentage.
      * @type {string}
      * @memberof AccountUpdate
      */
-    interest?: string | null;
+    'interest'?: string | null;
     /**
      * 
      * @type {InterestPeriod}
      * @memberof AccountUpdate
      */
-    interest_period?: InterestPeriod | null;
+    'interest_period'?: InterestPeriod | null;
     /**
      * 
      * @type {string}
      * @memberof AccountUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * Latitude of the account\'s location, if applicable. Can be used to draw a map. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed.
      * @type {number}
      * @memberof AccountUpdate
      */
-    latitude?: number | null;
+    'latitude'?: number | null;
     /**
      * Latitude of the account\'s location, if applicable. Can be used to draw a map. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed.
      * @type {number}
      * @memberof AccountUpdate
      */
-    longitude?: number | null;
+    'longitude'?: number | null;
     /**
      * Zoom level for the map, if drawn. This to set the box right. Unfortunately this is a proprietary value because each map provider has different zoom levels. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed.
      * @type {number}
      * @memberof AccountUpdate
      */
-    zoom_level?: number | null;
+    'zoom_level'?: number | null;
 }
-
 

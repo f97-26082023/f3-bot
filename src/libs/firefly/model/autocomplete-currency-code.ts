@@ -25,31 +25,30 @@ export interface AutocompleteCurrencyCode {
      * @type {string}
      * @memberof AutocompleteCurrencyCode
      */
-    id: string;
+    'id': string;
     /**
      * Currency name with the code between brackets.
      * @type {string}
      * @memberof AutocompleteCurrencyCode
      */
-    name: string;
+    'name': string;
     /**
      * Currency code.
      * @type {string}
      * @memberof AutocompleteCurrencyCode
      */
-    code: string;
+    'code': string;
     /**
      * 
      * @type {string}
      * @memberof AutocompleteCurrencyCode
      */
-    symbol: string;
+    'symbol': string;
     /**
      * 
      * @type {number}
      * @memberof AutocompleteCurrencyCode
      */
-    decimal_places: number;
+    'decimal_places': number;
 }
-
 

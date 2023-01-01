@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { ObjectLink } from './object-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { TagModel } from './tag-model';
 
 /**
@@ -27,25 +31,24 @@ export interface TagRead {
      * @type {string}
      * @memberof TagRead
      */
-    type: string;
+    'type': string;
     /**
      * 
      * @type {string}
      * @memberof TagRead
      */
-    id: string;
+    'id': string;
     /**
      * 
      * @type {TagModel}
      * @memberof TagRead
      */
-    attributes: TagModel;
+    'attributes': TagModel;
     /**
      * 
      * @type {ObjectLink}
      * @memberof TagRead
      */
-    links: ObjectLink;
+    'links': ObjectLink;
 }
-
 

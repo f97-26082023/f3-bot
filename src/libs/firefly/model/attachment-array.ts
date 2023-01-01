@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AttachmentRead } from './attachment-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
 
 /**
@@ -27,13 +31,12 @@ export interface AttachmentArray {
      * @type {Array<AttachmentRead>}
      * @memberof AttachmentArray
      */
-    data: Array<AttachmentRead>;
+    'data': Array<AttachmentRead>;
     /**
      * 
      * @type {Meta}
      * @memberof AttachmentArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

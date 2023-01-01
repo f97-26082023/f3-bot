@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -37,7 +37,7 @@ export const SummaryApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBasicSummary: async (start: string, end: string, currencyCode?: string, options: any = {}): Promise<RequestArgs> => {
+        getBasicSummary: async (start: string, end: string, currencyCode?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('getBasicSummary', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -76,7 +76,7 @@ export const SummaryApiAxiosParamCreator = function (configuration?: Configurati
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -104,7 +104,7 @@ export const SummaryApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getBasicSummary(start: string, end: string, currencyCode?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BasicSummary>> {
+        async getBasicSummary(start: string, end: string, currencyCode?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BasicSummary>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getBasicSummary(start, end, currencyCode, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -176,7 +176,7 @@ export class SummaryApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SummaryApi
      */
-    public getBasicSummary(requestParameters: SummaryApiGetBasicSummaryRequest, options?: any) {
+    public getBasicSummary(requestParameters: SummaryApiGetBasicSummaryRequest, options?: AxiosRequestConfig) {
         return SummaryApiFp(this.configuration).getBasicSummary(requestParameters.start, requestParameters.end, requestParameters.currencyCode, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -25,19 +25,18 @@ export interface AttachmentUpdate {
      * @type {string}
      * @memberof AttachmentUpdate
      */
-    filename?: string;
+    'filename'?: string;
     /**
      * 
      * @type {string}
      * @memberof AttachmentUpdate
      */
-    title?: string;
+    'title'?: string;
     /**
      * 
      * @type {string}
      * @memberof AttachmentUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 

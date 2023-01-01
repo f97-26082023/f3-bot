@@ -25,31 +25,30 @@ export interface MetaPagination {
      * @type {number}
      * @memberof MetaPagination
      */
-    total?: number;
+    'total'?: number;
     /**
      * 
      * @type {number}
      * @memberof MetaPagination
      */
-    count?: number;
+    'count'?: number;
     /**
      * 
      * @type {number}
      * @memberof MetaPagination
      */
-    per_page?: number;
+    'per_page'?: number;
     /**
      * 
      * @type {number}
      * @memberof MetaPagination
      */
-    current_page?: number;
+    'current_page'?: number;
     /**
      * 
      * @type {number}
      * @memberof MetaPagination
      */
-    total_pages?: number;
+    'total_pages'?: number;
 }
-
 

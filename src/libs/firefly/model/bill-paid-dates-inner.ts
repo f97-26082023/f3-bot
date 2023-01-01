@@ -17,27 +17,26 @@
 /**
  * 
  * @export
- * @interface BillPaidDates
+ * @interface BillPaidDatesInner
  */
-export interface BillPaidDates {
+export interface BillPaidDatesInner {
     /**
      * Transaction group ID of the paid bill.
      * @type {string}
-     * @memberof BillPaidDates
+     * @memberof BillPaidDatesInner
      */
-    transaction_group_id?: string;
+    'transaction_group_id'?: string;
     /**
      * Transaction journal ID of the paid bill.
      * @type {string}
-     * @memberof BillPaidDates
+     * @memberof BillPaidDatesInner
      */
-    transaction_journal_id?: string;
+    'transaction_journal_id'?: string;
     /**
      * Date the bill was paid.
      * @type {string}
-     * @memberof BillPaidDates
+     * @memberof BillPaidDatesInner
      */
-    date?: string;
+    'date'?: string;
 }
-
 

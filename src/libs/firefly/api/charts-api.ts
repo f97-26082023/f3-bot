@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -36,7 +36,7 @@ export const ChartsApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getChartAccountOverview: async (start: string, end: string, options: any = {}): Promise<RequestArgs> => {
+        getChartAccountOverview: async (start: string, end: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'start' is not null or undefined
             assertParamExists('getChartAccountOverview', 'start', start)
             // verify required parameter 'end' is not null or undefined
@@ -71,7 +71,7 @@ export const ChartsApiAxiosParamCreator = function (configuration?: Configuratio
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -98,7 +98,7 @@ export const ChartsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getChartAccountOverview(start: string, end: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ChartLine>> {
+        async getChartAccountOverview(start: string, end: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ChartLine>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getChartAccountOverview(start, end, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -162,7 +162,7 @@ export class ChartsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ChartsApi
      */
-    public getChartAccountOverview(requestParameters: ChartsApiGetChartAccountOverviewRequest, options?: any) {
+    public getChartAccountOverview(requestParameters: ChartsApiGetChartAccountOverviewRequest, options?: AxiosRequestConfig) {
         return ChartsApiFp(this.configuration).getChartAccountOverview(requestParameters.start, requestParameters.end, options).then((request) => request(this.axios, this.basePath));
     }
 }

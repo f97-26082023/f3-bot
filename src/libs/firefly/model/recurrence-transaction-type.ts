@@ -20,11 +20,13 @@
  * @enum {string}
  */
 
-export enum RecurrenceTransactionType {
-    Withdrawal = 'withdrawal',
-    Transfer = 'transfer',
-    Deposit = 'deposit'
-}
+export const RecurrenceTransactionType = {
+    Withdrawal: 'withdrawal',
+    Transfer: 'transfer',
+    Deposit: 'deposit'
+} as const;
+
+export type RecurrenceTransactionType = typeof RecurrenceTransactionType[keyof typeof RecurrenceTransactionType];
 
 
 

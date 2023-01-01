@@ -13,7 +13,11 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { WebhookAttemptRead } from './webhook-attempt-read';
 
 /**
@@ -27,13 +31,12 @@ export interface WebhookAttemptArray {
      * @type {Array<WebhookAttemptRead>}
      * @memberof WebhookAttemptArray
      */
-    data: Array<WebhookAttemptRead>;
+    'data': Array<WebhookAttemptRead>;
     /**
      * 
      * @type {Meta}
      * @memberof WebhookAttemptArray
      */
-    meta: Meta;
+    'meta': Meta;
 }
-
 

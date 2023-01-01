@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -45,7 +45,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteObjectGroup: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        deleteObjectGroup: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('deleteObjectGroup', 'id', id)
             const localVarPath = `/api/v1/object_groups/{id}`
@@ -67,7 +67,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -83,7 +83,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getObjectGroup: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        getObjectGroup: async (id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('getObjectGroup', 'id', id)
             const localVarPath = `/api/v1/object_groups/{id}`
@@ -105,7 +105,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -122,7 +122,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listBillByObjectGroup: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listBillByObjectGroup: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listBillByObjectGroup', 'id', id)
             const localVarPath = `/api/v1/object_groups/{id}/bills`
@@ -148,7 +148,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -164,7 +164,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listObjectGroups: async (page?: number, options: any = {}): Promise<RequestArgs> => {
+        listObjectGroups: async (page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/object_groups`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -187,7 +187,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -204,7 +204,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listPiggyBankByObjectGroup: async (id: string, page?: number, options: any = {}): Promise<RequestArgs> => {
+        listPiggyBankByObjectGroup: async (id: string, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('listPiggyBankByObjectGroup', 'id', id)
             const localVarPath = `/api/v1/object_groups/{id}/piggy_banks`
@@ -230,7 +230,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -247,7 +247,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateObjectGroup: async (id: string, objectGroupUpdate: ObjectGroupUpdate, options: any = {}): Promise<RequestArgs> => {
+        updateObjectGroup: async (id: string, objectGroupUpdate: ObjectGroupUpdate, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('updateObjectGroup', 'id', id)
             // verify required parameter 'objectGroupUpdate' is not null or undefined
@@ -273,7 +273,7 @@ export const ObjectGroupsApiAxiosParamCreator = function (configuration?: Config
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(objectGroupUpdate, localVarRequestOptions, configuration)
@@ -300,7 +300,7 @@ export const ObjectGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteObjectGroup(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async deleteObjectGroup(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteObjectGroup(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -311,7 +311,7 @@ export const ObjectGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getObjectGroup(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectGroupSingle>> {
+        async getObjectGroup(id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectGroupSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getObjectGroup(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -323,7 +323,7 @@ export const ObjectGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listBillByObjectGroup(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillArray>> {
+        async listBillByObjectGroup(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listBillByObjectGroup(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -334,7 +334,7 @@ export const ObjectGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listObjectGroups(page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectGroupArray>> {
+        async listObjectGroups(page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectGroupArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listObjectGroups(page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -346,7 +346,7 @@ export const ObjectGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listPiggyBankByObjectGroup(id: string, page?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankArray>> {
+        async listPiggyBankByObjectGroup(id: string, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PiggyBankArray>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listPiggyBankByObjectGroup(id, page, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -358,7 +358,7 @@ export const ObjectGroupsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateObjectGroup(id: string, objectGroupUpdate: ObjectGroupUpdate, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectGroupSingle>> {
+        async updateObjectGroup(id: string, objectGroupUpdate: ObjectGroupUpdate, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ObjectGroupSingle>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateObjectGroup(id, objectGroupUpdate, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -558,7 +558,7 @@ export class ObjectGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectGroupsApi
      */
-    public deleteObjectGroup(requestParameters: ObjectGroupsApiDeleteObjectGroupRequest, options?: any) {
+    public deleteObjectGroup(requestParameters: ObjectGroupsApiDeleteObjectGroupRequest, options?: AxiosRequestConfig) {
         return ObjectGroupsApiFp(this.configuration).deleteObjectGroup(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -570,7 +570,7 @@ export class ObjectGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectGroupsApi
      */
-    public getObjectGroup(requestParameters: ObjectGroupsApiGetObjectGroupRequest, options?: any) {
+    public getObjectGroup(requestParameters: ObjectGroupsApiGetObjectGroupRequest, options?: AxiosRequestConfig) {
         return ObjectGroupsApiFp(this.configuration).getObjectGroup(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -582,7 +582,7 @@ export class ObjectGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectGroupsApi
      */
-    public listBillByObjectGroup(requestParameters: ObjectGroupsApiListBillByObjectGroupRequest, options?: any) {
+    public listBillByObjectGroup(requestParameters: ObjectGroupsApiListBillByObjectGroupRequest, options?: AxiosRequestConfig) {
         return ObjectGroupsApiFp(this.configuration).listBillByObjectGroup(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -594,7 +594,7 @@ export class ObjectGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectGroupsApi
      */
-    public listObjectGroups(requestParameters: ObjectGroupsApiListObjectGroupsRequest = {}, options?: any) {
+    public listObjectGroups(requestParameters: ObjectGroupsApiListObjectGroupsRequest = {}, options?: AxiosRequestConfig) {
         return ObjectGroupsApiFp(this.configuration).listObjectGroups(requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -606,7 +606,7 @@ export class ObjectGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectGroupsApi
      */
-    public listPiggyBankByObjectGroup(requestParameters: ObjectGroupsApiListPiggyBankByObjectGroupRequest, options?: any) {
+    public listPiggyBankByObjectGroup(requestParameters: ObjectGroupsApiListPiggyBankByObjectGroupRequest, options?: AxiosRequestConfig) {
         return ObjectGroupsApiFp(this.configuration).listPiggyBankByObjectGroup(requestParameters.id, requestParameters.page, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -618,7 +618,7 @@ export class ObjectGroupsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectGroupsApi
      */
-    public updateObjectGroup(requestParameters: ObjectGroupsApiUpdateObjectGroupRequest, options?: any) {
+    public updateObjectGroup(requestParameters: ObjectGroupsApiUpdateObjectGroupRequest, options?: AxiosRequestConfig) {
         return ObjectGroupsApiFp(this.configuration).updateObjectGroup(requestParameters.id, requestParameters.objectGroupUpdate, options).then((request) => request(this.axios, this.basePath));
     }
 }

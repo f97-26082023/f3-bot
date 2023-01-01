@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteTransaction } from './autocomplete-transaction';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteTransaction } from './autocomplete-transaction';
  */
 export interface AutocompleteTransactionArray extends Array<AutocompleteTransaction> {
 }
-
 

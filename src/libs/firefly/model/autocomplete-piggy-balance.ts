@@ -25,55 +25,54 @@ export interface AutocompletePiggyBalance {
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    id: string;
+    'id': string;
     /**
      * Name of the piggy bank found by an auto-complete search.
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    name: string;
+    'name': string;
     /**
      * Name of the piggy bank found by an auto-complete search with the current balance formatted nicely.
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    name_with_balance?: string;
+    'name_with_balance'?: string;
     /**
      * The group ID of the group this object is part of. NULL if no group.
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    object_group_id?: string | null;
+    'object_group_id'?: string | null;
     /**
      * The name of the group. NULL if no group.
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    object_group_title?: string | null;
+    'object_group_title'?: string | null;
     /**
      * Currency ID for this piggy bank.
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Currency code for this piggy bank.
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof AutocompletePiggyBalance
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * 
      * @type {number}
      * @memberof AutocompletePiggyBalance
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
 }
-
 

@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { BillRepeatFrequency } from './bill-repeat-frequency';
 
 /**
@@ -26,85 +28,84 @@ export interface BillUpdate {
      * @type {string}
      * @memberof BillUpdate
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * Use either currency_id or currency_code
      * @type {string}
      * @memberof BillUpdate
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof BillUpdate
      */
-    name?: string;
+    'name'?: string;
     /**
      * 
      * @type {string}
      * @memberof BillUpdate
      */
-    amount_min?: string;
+    'amount_min'?: string;
     /**
      * 
      * @type {string}
      * @memberof BillUpdate
      */
-    amount_max?: string;
+    'amount_max'?: string;
     /**
      * 
      * @type {string}
      * @memberof BillUpdate
      */
-    date?: string;
+    'date'?: string;
     /**
      * The date after which this bill is no longer valid or applicable
      * @type {string}
      * @memberof BillUpdate
      */
-    end_date?: string;
+    'end_date'?: string;
     /**
      * The date before which the bill must be renewed (or cancelled)
      * @type {string}
      * @memberof BillUpdate
      */
-    extension_date?: string;
+    'extension_date'?: string;
     /**
      * 
      * @type {BillRepeatFrequency}
      * @memberof BillUpdate
      */
-    repeat_freq?: BillRepeatFrequency;
+    'repeat_freq'?: BillRepeatFrequency;
     /**
      * How often the bill must be skipped. 1 means a bi-monthly bill.
      * @type {number}
      * @memberof BillUpdate
      */
-    skip?: number;
+    'skip'?: number;
     /**
      * If the bill is active.
      * @type {boolean}
      * @memberof BillUpdate
      */
-    active?: boolean;
+    'active'?: boolean;
     /**
      * 
      * @type {string}
      * @memberof BillUpdate
      */
-    notes?: string | null;
+    'notes'?: string | null;
     /**
      * The group ID of the group this object is part of. NULL if no group.
      * @type {string}
      * @memberof BillUpdate
      */
-    object_group_id?: string | null;
+    'object_group_id'?: string | null;
     /**
      * The name of the group. NULL if no group.
      * @type {string}
      * @memberof BillUpdate
      */
-    object_group_title?: string | null;
+    'object_group_title'?: string | null;
 }
-
 

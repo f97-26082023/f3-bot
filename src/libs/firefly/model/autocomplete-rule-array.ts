@@ -13,6 +13,8 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { AutocompleteRule } from './autocomplete-rule';
 
 /**
@@ -22,5 +24,4 @@ import { AutocompleteRule } from './autocomplete-rule';
  */
 export interface AutocompleteRuleArray extends Array<AutocompleteRule> {
 }
-
 

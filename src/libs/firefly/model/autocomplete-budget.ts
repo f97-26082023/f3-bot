@@ -25,13 +25,12 @@ export interface AutocompleteBudget {
      * @type {string}
      * @memberof AutocompleteBudget
      */
-    id: string;
+    'id': string;
     /**
      * Name of the budget found by an auto-complete search.
      * @type {string}
      * @memberof AutocompleteBudget
      */
-    name: string;
+    'name': string;
 }
-
 

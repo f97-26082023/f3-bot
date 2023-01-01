@@ -25,31 +25,30 @@ export interface BudgetSpent {
      * @type {string}
      * @memberof BudgetSpent
      */
-    sum?: string;
+    'sum'?: string;
     /**
      * 
      * @type {string}
      * @memberof BudgetSpent
      */
-    currency_id?: string;
+    'currency_id'?: string;
     /**
      * 
      * @type {string}
      * @memberof BudgetSpent
      */
-    currency_code?: string;
+    'currency_code'?: string;
     /**
      * 
      * @type {string}
      * @memberof BudgetSpent
      */
-    currency_symbol?: string;
+    'currency_symbol'?: string;
     /**
      * Number of decimals supported by the currency
      * @type {number}
      * @memberof BudgetSpent
      */
-    currency_decimal_places?: number;
+    'currency_decimal_places'?: number;
 }
-
 

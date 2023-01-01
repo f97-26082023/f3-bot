@@ -20,13 +20,15 @@
  * @enum {string}
  */
 
-export enum RecurrenceRepetitionType {
-    Daily = 'daily',
-    Weekly = 'weekly',
-    Ndom = 'ndom',
-    Monthly = 'monthly',
-    Yearly = 'yearly'
-}
+export const RecurrenceRepetitionType = {
+    Daily: 'daily',
+    Weekly: 'weekly',
+    Ndom: 'ndom',
+    Monthly: 'monthly',
+    Yearly: 'yearly'
+} as const;
+
+export type RecurrenceRepetitionType = typeof RecurrenceRepetitionType[keyof typeof RecurrenceRepetitionType];
 
 
 

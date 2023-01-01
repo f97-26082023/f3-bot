@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
+// May contain unused imports in some cases
+// @ts-ignore
 import { UserRead } from './user-read';
 
 /**
@@ -28,19 +34,18 @@ export interface UserArray {
      * @type {Array<UserRead>}
      * @memberof UserArray
      */
-    data: Array<UserRead>;
+    'data': Array<UserRead>;
     /**
      * 
      * @type {Meta}
      * @memberof UserArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof UserArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

@@ -13,8 +13,14 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
 import { LinkTypeRead } from './link-type-read';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Meta } from './meta';
+// May contain unused imports in some cases
+// @ts-ignore
 import { PageLink } from './page-link';
 
 /**
@@ -28,19 +34,18 @@ export interface LinkTypeArray {
      * @type {Array<LinkTypeRead>}
      * @memberof LinkTypeArray
      */
-    data: Array<LinkTypeRead>;
+    'data': Array<LinkTypeRead>;
     /**
      * 
      * @type {Meta}
      * @memberof LinkTypeArray
      */
-    meta: Meta;
+    'meta': Meta;
     /**
      * 
      * @type {PageLink}
      * @memberof LinkTypeArray
      */
-    links: PageLink;
+    'links': PageLink;
 }
-
 

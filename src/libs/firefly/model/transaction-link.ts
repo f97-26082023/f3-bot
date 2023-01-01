@@ -25,43 +25,42 @@ export interface TransactionLink {
      * @type {string}
      * @memberof TransactionLink
      */
-    created_at?: string;
+    'created_at'?: string;
     /**
      * 
      * @type {string}
      * @memberof TransactionLink
      */
-    updated_at?: string;
+    'updated_at'?: string;
     /**
      * The link type ID to use. You can also use the link_type_name field.
      * @type {string}
      * @memberof TransactionLink
      */
-    link_type_id: string;
+    'link_type_id': string;
     /**
      * The link type name to use. You can also use the link_type_id field.
      * @type {string}
      * @memberof TransactionLink
      */
-    link_type_name?: string;
+    'link_type_name'?: string;
     /**
      * The inward transaction transaction_journal_id for the link. This becomes the \'is paid by\' transaction of the set.
      * @type {string}
      * @memberof TransactionLink
      */
-    inward_id: string;
+    'inward_id': string;
     /**
      * The outward transaction transaction_journal_id for the link. This becomes the \'pays for\' transaction of the set.
      * @type {string}
      * @memberof TransactionLink
      */
-    outward_id: string;
+    'outward_id': string;
     /**
      * Optional. Some notes.
      * @type {string}
      * @memberof TransactionLink
      */
-    notes?: string | null;
+    'notes'?: string | null;
 }
-
 
