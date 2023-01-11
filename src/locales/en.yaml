@@ -183,7 +183,7 @@ transactions:
       📆 ${date}  
         
       📤 Added ${description === 'N/A' ? '' : '*' + description + '*'}
-      *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}* *${currency}*${category ? ' to category *' + category + '*' : ''}  
+      *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}* *${currency}*${category ? ' to category *' + category + '*' : ''}  
 
       ${source} ➡️ ${destination}
         
@@ -192,19 +192,19 @@ transactions:
       📆 ${date}  
        
       📥 Added ${description === 'N/A' ? '' : '*' + description + '* '}
-      *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}* *${currency}*
+      *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}* *${currency}*
       
       ${source} ➡️ ${destination}
     transferMessage: >
       📆 ${date}  
          
-      ↔️ Transfer *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}* *${currency}* from account *${source}* to account *${destination}*
-    selectCategory: 'In which category to add *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}*?'
+      ↔️ Transfer *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}* *${currency}* from account *${source}* to account *${destination}*
+    selectCategory: 'In which category to add *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}*?'
     transactionDeleted: Transaction deleted!
     couldNotDelete: 'Could not delete transaction by id: ${id}'
-    selectRevenueAccount: 'Choose a revenue account to withdraw *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}*:'
-    selectAssetAccount: 'Choose an asset account to add *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}*:'
-    selectSourceAccount: 'Choose an account to transfer *${new Intl.NumberFormat("en", { maximumSignificantDigits: 3}).format(amount)}* from:'
+    selectRevenueAccount: 'Choose a revenue account to withdraw *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}*:'
+    selectAssetAccount: 'Choose an asset account to add *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}*:'
+    selectSourceAccount: 'Choose an account to transfer *${new Intl.NumberFormat("en", { maximumSignificantDigits: 20 }).format(amount)}* from:'
     selectDestAccount: 'Choose an account to transfer to:'
     transactionError: '❗😰 Ann error occurred during transaction creation: *${message}*'
     created: Transaction created!

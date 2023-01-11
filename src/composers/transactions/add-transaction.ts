@@ -426,10 +426,10 @@ async function getDefaultAccountId(userId: number) {
     let { defaultAssetAccountId } = getUserStorage(userId)
 
     if (!defaultAssetAccountId) {
-      const firstAccount = (await firefly(userId).Accounts.listAccount(
-        1, moment().format('YYYY-MM-DD'), AccountTypeFilter.Asset)).data.data[0]
-      log('firstAccount: %O', firstAccount)
-      defaultAssetAccountId = parseInt(firstAccount.id, 10)
+      const accounts = (await firefly(userId).Accounts.listAccount(
+        1, moment().format('YYYY-MM-DD'), AccountTypeFilter.Asset)).data.data
+      log('accounts: %O', accounts)
+      defaultAssetAccountId = parseInt(accounts[2]?.id || accounts[1]?.id || accounts[0].id, 10)
     }
 
     return defaultAssetAccountId

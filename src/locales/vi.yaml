@@ -183,7 +183,7 @@ transactions:
       📆 ${date}  
         
       📤 Đã thêm ${description === 'N/A' ? '' : '*' + description + '*'}
-      *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* *${currency}*${category ? ' vào danh mục *' + category + '*' : ''}  
+      *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}* *${currency}*${category ? ' vào danh mục *' + category + '*' : ''}  
 
       ${source} ➡️ ${destination}
         
@@ -192,19 +192,19 @@ transactions:
       📆 ${date}  
        
       📥 Đã thêm ${description === 'N/A' ? '' : '*' + description + '* '}
-      *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* *${currency}*
+      *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}* *${currency}*
       
       ${source} ➡️ ${destination}
     transferMessage: >
       📆 ${date}  
          
-      ↔️ Chuyển *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* *${currency}* từ tài khoản *${source}* đến tài khoản *${destination}*
-    selectCategory: 'Bạn muốn thêm *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* vào danh mục:'
+      ↔️ Chuyển *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}* *${currency}* từ tài khoản *${source}* đến tài khoản *${destination}*
+    selectCategory: 'Bạn muốn thêm *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}* vào danh mục:'
     transactionDeleted: Giao dịch đã được xóa!
     couldNotDelete: 'Không thể xóa giao dịch với id: ${id}'
-    selectRevenueAccount: 'Chọn một tài khoản để rút *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}*:'
-    selectAssetAccount: 'Chọn tài khoản để thêm *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}*:'
-    selectSourceAccount: 'Chọn tài khoản để chuyển *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 3}).format(amount)}* đến:'
+    selectRevenueAccount: 'Chọn một tài khoản để rút *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}*:'
+    selectAssetAccount: 'Chọn tài khoản để thêm *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}*:'
+    selectSourceAccount: 'Chọn tài khoản để chuyển *${new Intl.NumberFormat("vi", { maximumSignificantDigits: 20 }).format(amount)}* đến:'
     selectDestAccount: 'Chọn tài khoản để chuyển đến:'
     transactionError: '❗😰 Đã xảy ra lỗi trong quá trình tạo giao dịch: *${message}*'
     created: Giao dịch đã được tạo!
